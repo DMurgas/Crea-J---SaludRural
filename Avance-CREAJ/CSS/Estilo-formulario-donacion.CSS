@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
 }
 
 body {
@@ -15,6 +14,7 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
+    
 }
 
 .container-form {
