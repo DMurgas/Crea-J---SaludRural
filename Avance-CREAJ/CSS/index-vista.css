@@ -77,7 +77,29 @@ body {
   background: #f9f9f9;
 }
 
+section {
+  min-height: 100vh;
+  padding: 0 9%;
+  padding-top: 7.5rem;
+  padding-bottom: 2rem;
+}
 
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+  padding: .8rem 4rem;
+  color: #fff;
+  border-radius: 5rem;
+  background: var(--degradado);
+  cursor: pointer;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+  transition: all .3s linear;
+}
+
+btn:hover {
+  transform: scale(1.1);
+}
 
 .boton1 {
   background: #B3B6B7;
@@ -164,25 +186,113 @@ header label {
   opacity: 0;
 }
 
-.bienvenida {
+.inicio {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 2rem;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
 }
 
-.bienvenida .p {
-  width: 50%;
-  font-size: 1.5rem;
+.inicio .image img {
+  width: 40vw;
+  animation: float 3s linear infinite;
 }
 
-.bienvenida img {
-  width: 50%;
-  max-width: 500px;
-  margin-left: 2rem;
+/*@keyframes float{
+  0% , 100%{
+    transform: translateY(0rem);
+
+  }
+  50%{
+    transform: translateY(-3.5rem);
+  }
+}*/
+
+.inicio .content h3 {
+  font-size: 5.5rem;
+  color: #333;
+  text-transform: uppercase;
 }
 
-footer{
-  background-color: #333333;
+.inicio .content h3 span {
+  color: var(--rojo);
 }
 
+.inicio .content p {
+  font-size: 1.7rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+.detalles .caja-contenedor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.detalles .caja-contenedor .caja {
+  flex: 1 1 30rem;
+  background: white;
+  border-radius: .5rem;
+  border: .1rem solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+  margin: 1.5rem;
+  padding: 3rem 2rch;
+  border-radius: .5rem;
+  text-align: center;
+  transition: .2s linear;
+}
+
+.detalles .caja-contenedor .caja h3 {
+  font-size: 2rem;
+  color: #333;
+  padding-top: 1rem;
+}
+
+.detalles .caja-contenedor .caja p {
+  font-size: 1.3rem;
+  color: #666;
+  padding: 1rem 0;
+}
+
+
+@media (max-width: 767px) {
+  footer .col {
+    width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 574px) {
+  footer .col {
+    width: 100%;
+  }
+}
+
+@media (max-width: 767px) {
+  header label {
+    visibility: visible;
+    opacity: 1;
+  }
+  header input:checked~.navbar {
+    transform: translateX(0%);
+  }
+  header .navbar {
+    position: fixed;
+    top: 6rem;
+    left: 0;
+    width: 100;
+    height: 100vh;
+    background: var(--verde);
+    padding: 2rem;
+    text-align: center;
+    transform: translateX(-100%);
+    transition: 0.5s ease-in-out;
+  }
+  header input:checked~.navbar a {
+    color: var(--blanco);
+    margin: 1rem 0;
+  }
+}
