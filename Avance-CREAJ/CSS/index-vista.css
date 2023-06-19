@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Mynerve&family=Poppins:ital,wght@0,100;0,300;0,400;0,500;1,200&display=swap');
+
+:root {
+  --verde: #0c443a;
+  --limon: #25d1b2;
+  --blanco: #fff;
+  --celeste: #4975ce;
+  --degradado: linear-gradient(90deg, var(--celeste), var(--limon));
+}
+
+::selection {
+  background: var(--limon);
+  color: white;
+}
+
+html {
+  font-size: 62.4%;
+  overflow: hidden;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 2rem;
+  color: var(--blanco);
+}
+
+header .logo span {
+  color: var(--blanco);
+}
+
+header .navbar a {
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  color: var(--blanco);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: none;
+  text-decoration: none;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+
+::selection {
+  background: var(--celeste);
+  color: white;
+}
+
+html {
+  font-size: 62.4%;
+  overflow: hidden;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+
+
+.boton1 {
+  background: #B3B6B7;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  display: block;
+  border-radius: 5%;
+}
+
+.boton2 {
+  background: #FF8000;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  display: block;
+  border-radius: 5%;
+}
+
+.boton3 {
+  background: #607D8B;
+  float: left;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  padding: 10px;
+  display: block;
+  border-radius: 5%;
+}
+
+.heading {
+  text-align: center;
+  background: var(--verde);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333333;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.1);
+  padding: 2rem 9%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+header .logo {
+  font-size: 2rem;
+  color: var(--blanco);
+}
+
+header .logo span {
+  color: var(--blanco);
+}
+
+header .navbar a {
+  font-size: 1.8rem;
+  margin-left: 2rem;
+  color: var(--blanco);
+}
+
+header .navbar a:hover {
+  color: var(--blanco);
+}
+
+header input {
+  display: none;
+}
+
+header label {
+  font-size: 3rem;
+  color: var(--blanco);
+  cursor: pointer;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.bienvenida {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.bienvenida .p {
+  width: 50%;
+  font-size: 1.5rem;
+}
+
+.bienvenida img {
+  width: 50%;
+  max-width: 500px;
+  margin-left: 2rem;
+}
+
+footer{
+  background-color: #333333;
+}
+
