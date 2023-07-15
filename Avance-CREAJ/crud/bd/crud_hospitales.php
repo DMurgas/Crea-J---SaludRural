@@ -5,34 +5,34 @@ $conexion = $objeto->Conectar();
 // Recepción de los datos enviados mediante POST desde el JS   
 
 $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
-$apellidos = (isset($_POST['apellidos'])) ? $_POST['apellidos'] : '';
-$telefono = (isset($_POST['telefono'])) ? $_POST['telefono'] : '';
+$descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : '';
+$lugar = (isset($_POST['lugar'])) ? $_POST['lugar'] : '';
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $id = (isset($_POST['id'])) ? $_POST['id'] : '';
 
 switch($opcion){
     case 1: //alta
-        $consulta = "INSERT INTO registro (nombre, apellidos, telefono) VALUES('$nombre','$apellidos', '$telefono') ";			
+        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar) VALUES('$nombre','$descripcion', '$lugar') ";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
 
-        $consulta = "SELECT id, nombre, apellidos, telefono  FROM registro ORDER BY id DESC LIMIT 1";
+        $consulta = "SELECT id, nombre, descripcion, lugar FROM hospitales ORDER BY id DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
     case 2: //modificación
-        $consulta = "UPDATE registro SET nombre='$nombre', apellidos='$apellidos', telefono='$telefono' WHERE id='$id' ";		
+        $consulta = "UPDATE hospitales SET nombre='$nombre', descripcion='$descripcion', lugar='$lugar' WHERE id='$id' ";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();        
         
-        $consulta = "SELECT id, nombre, apellidos, telefono FROM registro WHERE id='$id' ";       
+        $consulta = "SELECT id, nombre, descripcion, lugar FROM hospitales WHERE id='$id' ";       
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;        
     case 3://baja
-        $consulta = "DELETE FROM registro WHERE id='$id' ";		
+        $consulta = "DELETE FROM hospitales WHERE id='$id' ";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();                           
         break;        

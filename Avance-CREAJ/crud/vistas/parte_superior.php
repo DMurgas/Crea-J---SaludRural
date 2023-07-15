@@ -78,7 +78,7 @@ if($_SESSION["correo"] === null){
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="buttons.php">Buttons</a>
-            <a class="collapse-item" href="cards.php">Cards</a>
+            <a class="collapse-item" href="hospitales.php">Cards</a>
           </div>
         </div>
       </li>
@@ -265,10 +265,6 @@ if($_SESSION["correo"] === null){
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="bd/logout.php" >
-                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Cerrar Sesión
-                </a>
               </div>
             </li>
 
