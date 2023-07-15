@@ -8,52 +8,51 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../CSS/login.css" >
-    <title>SaludRural</title>
-    <link rel="shortcut icon" href="../Imagenes/favicon.png" />
+    <title>Salud Rural</title>
   </head>
   <body>
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
           <form action="../php/login.php" class="sign-in-form" method="post">
-            <h2 class="title">Iniciar sesión</h2>
+            <h2 class="title">Login</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Correo electrónico" name="correo" required>
+              <input type="text" placeholder="Correo" name="correo">
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="contrasena" required>
+              <input type="password" placeholder="Contraseña" name="contraseña">
             </div>
-            <input type="submit" value="INGRESAR" class="btn solid">
+            <input type="submit" value="Login" class="btn solid" >
           </form>
           <form action="../php/registro.php" class="sign-up-form" method="post">
-            <h2 class="title">Regístrate</h2>
+            <h2 class="title">Registro</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" name="nombre" required>
+              <input type="text" placeholder="Nombre" name="nombre" >
             </div>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Apellido" name="apellidos" required>
+              <input type="text" placeholder="Apellido" name="apellidos">
               </div>
               <div class="input-field">
                 <i class="fas fas fa-phone"></i>
-                <input type="text" placeholder="Teléfono" name="telefono" required>
+                <input type="text" placeholder="Telefono" name="telefono">
                 </div>
                 <div class="input-field">
                   <i class="fas far fa-id-card"></i>
-                  <input type="text" placeholder="DUI" name="dui" required>
+                  <input type="text" placeholder="dui" name="dui">
                   </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Correo electrónico" name="correo" required>
+              <input type="email" placeholder="Correo" name="email">
             </div>
             <div class="input-field">
              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="contra" required>
+              <input type="password" placeholder="Contraseña" name="contra">
                   </div>
-                  <input type="submit" class="btn" value="REGISTRARME">
+                  <input type="submit" class="btn" value="Sign up" >
           </form>
         </div>
       </div>
@@ -61,12 +60,12 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>¿Nuevo aquí?</h3>
+            <h3>¿Nuevo aqui?</h3>
             <p>
-              ¡Regístrate ahora!
+              Registrate ahora!!!
             </p>
             <button class="btn transparent" id="sign-up-btn">
-              REGISTRARSE
+              Sign up
             </button>
           </div>
           <img src="../IMAGENES/mano.png" class="image" alt="" >
@@ -75,10 +74,10 @@
           <div class="content">
             <h3>¿Ya tienes cuenta?</h3>
             <p>
-              Inicia sesión y haz tu donación ahora!!!
+              Inicia sesion y dona ahora!!!  
             </p>
             <button class="btn transparent" id="sign-in-btn">
-              INICIAR SESIÓN 
+              Iniciar sesion
             </button>
           </div>
           <img src="../IMAGENES/mano-login.png" class="image" alt="" >
