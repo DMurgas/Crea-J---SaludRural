@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    tablaPersonas = $("#tablaPersonas").DataTable({
+    tablaregistro = $("#tablaPersonas").DataTable({
        "columnDefs":[{
         "targets": -1,
         "data":null,
@@ -32,20 +32,17 @@ $("#btnNuevo").click(function(){
     id=null;
     opcion = 1; //alta
 });    
-    
-var fila; //capturar la fila para editar o borrar el registro
-    
-//botón EDITAR    
+
 $(document).on("click", ".btnEditar", function(){
     fila = $(this).closest("tr");
     id = parseInt(fila.find('td:eq(0)').text());
     nombre = fila.find('td:eq(1)').text();
-    pais = fila.find('td:eq(2)').text();
-    edad = parseInt(fila.find('td:eq(3)').text());
+    apellidos = fila.find('td:eq(2)').text();
+    telefono = parseInt(fila.find('td:eq(3)').text());
     
     $("#nombre").val(nombre);
-    $("#pais").val(pais);
-    $("#edad").val(edad);
+    $("#apellidos").val(apellidos);
+    $("#telefono").val(telefono);
     opcion = 2; //editar
     
     $(".modal-header").css("background-color", "#4e73df");
@@ -54,8 +51,10 @@ $(document).on("click", ".btnEditar", function(){
     $("#modalCRUD").modal("show");  
     
 });
-
-//botón BORRAR
+    
+var fila; //capturar la fila para editar o borrar el registro
+    
+//botón EDITAR    
 $(document).on("click", ".btnBorrar", function(){    
     fila = $(this);
     id = parseInt($(this).closest("tr").find('td:eq(0)').text());
@@ -68,8 +67,10 @@ $(document).on("click", ".btnBorrar", function(){
             dataType: "json",
             data: {opcion:opcion, id:id},
             success: function(){
-                tablaPersonas.row(fila.parents('tr')).remove().draw();
+                tablaregistro.row(fila.parents('tr')).remove().draw();
+                location.reload();
             }
+            
         });
     }   
 });
@@ -77,25 +78,27 @@ $(document).on("click", ".btnBorrar", function(){
 $("#formPersonas").submit(function(e){
     e.preventDefault();    
     nombre = $.trim($("#nombre").val());
-    pais = $.trim($("#pais").val());
-    edad = $.trim($("#edad").val());    
+    apellidos = $.trim($("#apellidos").val());
+    telefono = $.trim($("#telefono").val());    
     $.ajax({
         url: "bd/crud.php",
         type: "POST",
         dataType: "json",
-        data: {nombre:nombre, apellidos:apellidos, edad:edad, id:id, opcion:opcion},
+        data: {nombre:nombre, apellidos:apellidos, telefono:telefono, id:id, opcion:opcion},
         success: function(data){  
             console.log(data);
             id = data[0].id;            
             nombre = data[0].nombre;
             apellidos = data[0].apellidos;
             telefono = data[0].telefono;
-            if(opcion == 1){tablaPersonas.row.add([id,nombre,pais,edad]).draw();}
-            else{tablaPersonas.row(fila).data([id,nombre,pais,edad]).draw();}            
+            if(opcion == 1){tablaregistro.row.add([id,nombre,apellidos,telefono]).draw();}
+            else{tablaregistro.row(fila).data([id,nombre,apellidos,telefono]).draw();}  
+            location.reload();          
         }        
     });
     $("#modalCRUD").modal("hide");    
     
 });    
+    
     
 });

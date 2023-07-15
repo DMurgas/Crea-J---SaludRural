@@ -1,5 +1,5 @@
 <?php
-include_once '../bd/conexion.php';
+include_once 'conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 // Recepción de los datos enviados mediante POST desde el JS   
@@ -16,13 +16,13 @@ switch($opcion){
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
 
-        $consulta = "SELECT id, nombre, pais, edad FROM personas ORDER BY id DESC LIMIT 1";
+        $consulta = "SELECT id, nombre, apellidos, telefono  FROM personas ORDER BY id DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         break;
     case 2: //modificación
-        $consulta = "UPDATE registro SET nombre='$nombre', apelledios='$apellidos', telefono='$telefono' WHERE id='$id' ";		
+        $consulta = "UPDATE registro SET nombre='$nombre', apellidos='$apellidos', telefono='$telefono' WHERE id='$id' ";		
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();        
         
