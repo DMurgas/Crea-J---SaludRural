@@ -18,7 +18,7 @@
             <h2 class="title">Login</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Correo" name="correo">
+              <input type="text" placeholder="Correo electrónico" name="correo">
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
@@ -42,7 +42,7 @@
                 </div>
                 <div class="input-field">
                   <i class="fas far fa-id-card"></i>
-                  <input type="text" placeholder="dui" name="dui">
+                  <input type="text" placeholder="DUI" name="dui">
                   </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
@@ -60,12 +60,12 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>¿Nuevo aqui?</h3>
+            <h3>¿Nuevo aquí?</h3>
             <p>
-              Registrate ahora!!!
+            ¡Regístrate ahora!
             </p>
             <button class="btn transparent" id="sign-up-btn">
-              Sign up
+              REGISTRARME
             </button>
           </div>
           <img src="../IMAGENES/mano.png" class="image" alt="" >
@@ -74,10 +74,10 @@
           <div class="content">
             <h3>¿Ya tienes cuenta?</h3>
             <p>
-              Inicia sesion y dona ahora!!!  
+              ¡Inicia sesión y haz tu donación ahora!
             </p>
             <button class="btn transparent" id="sign-in-btn">
-              Iniciar sesion
+              Iniciar sesión
             </button>
           </div>
           <img src="../IMAGENES/mano-login.png" class="image" alt="" >
