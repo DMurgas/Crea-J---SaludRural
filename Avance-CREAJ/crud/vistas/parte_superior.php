@@ -18,7 +18,7 @@ if($_SESSION["correo"] === null){
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SaludRural</title>
+  <title>SB Admin 2 - Dashboard</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@ if($_SESSION["correo"] === null){
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SaludRural</div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
       </a>
 
       <!-- Divider -->
@@ -78,7 +78,7 @@ if($_SESSION["correo"] === null){
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="buttons.php">Buttons</a>
-            <a class="collapse-item" href="hospitales.php">Cards</a>
+            <a class="collapse-item" href="cards.php">Cards</a>
           </div>
         </div>
       </li>
@@ -246,7 +246,7 @@ if($_SESSION["correo"] === null){
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION["correo"];?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION["s_usuario"];?></span>
 <!--                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                 <img class="img-profile rounded-circle" src="img/user.png">
               </a>
@@ -265,6 +265,10 @@ if($_SESSION["correo"] === null){
                   Activity Log
                 </a>
                 <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                  <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Cerrar Sesión
+                </a>
               </div>
             </li>
 
