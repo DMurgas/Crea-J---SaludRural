@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0" >
@@ -8,7 +8,7 @@
       crossorigin="anonymous"
     ></script>
     <link rel="stylesheet" href="../CSS/login.css" >
-    <title>Salud Rural</title>
+    <title>SaludRural</title>
   </head>
   <body>
     <div class="container">
