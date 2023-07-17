@@ -45,7 +45,6 @@ if($_SESSION["correo"] === null){
         <li><a href="#">Contact</a></li>
         <li><a href="#" class="action_btn">Iniciar Sesion</a></li>
       </div>
-
     </header>
 
     <main>
