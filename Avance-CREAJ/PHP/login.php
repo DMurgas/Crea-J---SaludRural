@@ -22,7 +22,7 @@ $sql_admin = "SELECT * FROM administradores WHERE correo = '$correo' and contras
 $result_admin = mysqli_query($conn, $sql_admin);
 $existe1 = mysqli_num_rows($result_admin);
 
-$sql_user = "SELECT * FROM registro WHERE email = '$correo' and contra = '$contra'";
+$sql_user = "SELECT * FROM registro WHERE correo = '$correo' and contra = '$contra'";
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
@@ -36,7 +36,7 @@ if ($existe1 > 0) {
     }
 } else if ($existe2 > 0) {
     while ($row = mysqli_fetch_array($result_user)) {
-        if ($correo == $row['correo'] && $contra == $row['contraseña']) {
+        if ($correo == $row['correo'] && $contra == $row['contra']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
             echo '<script language="javascript">window.location.href="../HTML/index.php";alert("Bienvenido!!!!");</script>';

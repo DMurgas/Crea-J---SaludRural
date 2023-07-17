@@ -12,12 +12,7 @@ if($_SESSION["correo"] === null){
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link 
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font.awesome/6.2.1/css/all.min.css"
-    integrity="sha512.MV7K8+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK10nMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>SaludRural</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <link rel="stylesheet" href="../CSS/nav-menu.css">
@@ -38,7 +33,7 @@ if($_SESSION["correo"] === null){
         </div>
       </div>
 
-      <div class="dropdown_menu open ">
+      <div class="dropdown_menu">
         <li><a href="#"><strong>Inicio</strong></a></li>
         <li><a href="#">Donaciones</a></li>
         <li><a href="#">Blog</a></li>
@@ -58,7 +53,7 @@ if($_SESSION["correo"] === null){
     </main>
 
     <script>
-      const toggleBth = document.querySelector('.toggle_btn')
+      const toggleBtn = document.querySelector('.toggle_btn')
       const toggleBtnIcon = document.querySelector('.toggle_btn i')
       const dropDownMenu = document.querySelector('.dropdown_menu')
 
@@ -67,8 +62,8 @@ if($_SESSION["correo"] === null){
         const isOpen = dropDownMenu.classList.contains('open')
 
         toggleBtnIcon.classList = isOpen
-        ?'fa-solid fa-xmark'
-        :'fa-solid fa-bars'
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
       }
 
     </script>

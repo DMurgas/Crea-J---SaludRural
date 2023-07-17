@@ -22,7 +22,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="contraseña" minlength="6" maxlength="10" required>
+              <input type="password" placeholder="Contraseña" name="contraseña" minlength="3" maxlength="10" required>
             </div>
             <input type="submit" value="INGRESAR" class="btn solid">
           </form>
