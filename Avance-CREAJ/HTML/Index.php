@@ -33,7 +33,7 @@ if($_SESSION["correo"] === null){
         </div>
       </div>
 
-      <div class="dropdown_menu open ">
+      <div class="dropdown_menu">
         <li><a href="#"><strong>Inicio</strong></a></li>
         <li><a href="#">Donaciones</a></li>
         <li><a href="#">Blog</a></li>
@@ -53,7 +53,7 @@ if($_SESSION["correo"] === null){
     </main>
 
     <script>
-      const toggleBth = document.querySelector('.toggle_btn')
+      const toggleBtn = document.querySelector('.toggle_btn')
       const toggleBtnIcon = document.querySelector('.toggle_btn i')
       const dropDownMenu = document.querySelector('.dropdown_menu')
 
@@ -62,8 +62,8 @@ if($_SESSION["correo"] === null){
         const isOpen = dropDownMenu.classList.contains('open')
 
         toggleBtnIcon.classList = isOpen
-        ?'fa-solid fa-xmark'
-        :'fa-solid fa-bars'
+        ? 'fa-solid fa-xmark'
+        : 'fa-solid fa-bars'
       }
 
     </script>
