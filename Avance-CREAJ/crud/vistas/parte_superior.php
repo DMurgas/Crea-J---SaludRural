@@ -18,7 +18,7 @@ if($_SESSION["correo"] === null){
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>SB Admin 2 - Dashboard</title>
+  <title>Salud Rural</title>
 
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@ if($_SESSION["correo"] === null){
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+        <div class="sidebar-brand-text mx-3">Salud Rural</div>
       </a>
 
       <!-- Divider -->
@@ -57,7 +57,7 @@ if($_SESSION["correo"] === null){
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Dashboard</span></a>
+          <span>Registro de Usuarios</span></a>
       </li>
 
       <!-- Divider -->
@@ -78,7 +78,7 @@ if($_SESSION["correo"] === null){
           <div class="bg-white py-2 collapse-inner rounded">
             <h6 class="collapse-header">Custom Components:</h6>
             <a class="collapse-item" href="buttons.php">Buttons</a>
-            <a class="collapse-item" href="cards.php">Cards</a>
+            <a class="collapse-item" href="hospitales.php">Hospitales</a>
           </div>
         </div>
       </li>
@@ -246,7 +246,7 @@ if($_SESSION["correo"] === null){
             <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION["s_usuario"];?></span>
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?php echo $_SESSION["correo"];?></span>
 <!--                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">-->
                 <img class="img-profile rounded-circle" src="img/user.png">
               </a>
