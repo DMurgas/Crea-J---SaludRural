@@ -15,44 +15,44 @@
       <div class="forms-container">
         <div class="signin-signup">
           <form action="../php/login.php" class="sign-in-form" method="post">
-            <h2 class="title">Login</h2>
+            <h2 class="title">Inicio de sesión</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Correo electrónico" name="correo">
+              <input type="email" placeholder="Correo electrónico" name="correo" required>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="contraseña">
+              <input type="password" placeholder="Contraseña" name="contraseña" required>
             </div>
-            <input type="submit" value="Login" class="btn solid" >
+            <input type="submit" value="INGRESAR" class="btn solid">
           </form>
           <form action="../php/registro.php" class="sign-up-form" method="post">
-            <h2 class="title">Registro</h2>
+            <h2 class="title">Regístrate</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Nombre" name="nombre" >
+              <input type="text" placeholder="Nombre" name="nombre" required>
             </div>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" placeholder="Apellido" name="apellidos">
+              <input type="text" placeholder="Apellido" name="apellidos" required>
               </div>
               <div class="input-field">
                 <i class="fas fas fa-phone"></i>
-                <input type="text" placeholder="Telefono" name="telefono">
+                <input type="tel" placeholder="Teléfono" name="telefono" minlength="8" maxlength="11" required>
                 </div>
                 <div class="input-field">
                   <i class="fas far fa-id-card"></i>
-                  <input type="text" placeholder="DUI" name="dui">
+                  <input type="tel" placeholder="DUI" name="dui" minlength="10" maxlength="12" required>
                   </div>
             <div class="input-field">
               <i class="fas fa-envelope"></i>
-              <input type="email" placeholder="Correo" name="email">
+              <input type="email" placeholder="Correo electrónico" name="email" required>
             </div>
             <div class="input-field">
              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="contra">
+              <input type="password" placeholder="Contraseña" name="contra" minlength="6" maxlength="10" required>
                   </div>
-                  <input type="submit" class="btn" value="Sign up" >
+                  <input type="submit" class="btn" value="CREAR CUENTA">
           </form>
         </div>
       </div>
