@@ -7,8 +7,7 @@
   
   body {
     height: 100vh;
-    background-color: #000;
-    background-image: url('../Imagenes/fondo-index.jpg');
+    background-color: rgb(248, 247, 245);
     background-size: cover;
     background-position: center;
   }
