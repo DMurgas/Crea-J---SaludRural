@@ -36,7 +36,7 @@ if ($existe1 > 0) {
     }
 } else if ($existe2 > 0) {
     while ($row = mysqli_fetch_array($result_user)) {
-        if ($correo == $row['correo'] && $contra == $row['contraseña']) {
+        if ($correo == $row['correo'] && $contra == $row['contra']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
             echo '<script language="javascript">window.location.href="../HTML/index.php";alert("Bienvenido!!!!");</script>';
