@@ -22,7 +22,7 @@ if($_SESSION["correo"] === null){
       <div class="navbar">
         <div clas="logo"><a href="#">SaludRural</a></div>
         <ul class="links">
-          <li><a href="#"><strong>Inicio</strong></a></li>
+          <li><a><strong>Inicio</strong></a></li>
           <li><a href="#">Donaciones</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
