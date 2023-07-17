@@ -27,7 +27,7 @@ if($_SESSION["correo"] === null){
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
-        <a href="#" class="action_btn"><strong>Iniciar sesión</strong></a>
+        <a href="#" class="action_btn"><strong>Cerrar sesión</strong></a>
         <div class="toggle_btn">
           <i class="fa-solid fa-bars"></i>
         </div>
