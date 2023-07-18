@@ -13,9 +13,11 @@
 
   header {
     /*height: 100vh;*/
-    background-color: rgb(253, 253, 253);
+    background-color: rgb(238, 235, 235);
+    position: fixed;
     background-size: cover;
     background-position: center;
+    filter: brightness(1);
   }
 
   li{
@@ -164,4 +166,17 @@ section#hero {
         left: 2rem;
         width: unset
     }
+}
+
+/* Carrusel - slider */
+.c-item {
+  height: 800px;
+  width: 0;
+  padding: 0 0;
+}
+
+.c-img {
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.6);
 }
