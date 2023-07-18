@@ -19,7 +19,7 @@ $dinero = $_POST['dinero'];
 $tarjeta = $_POST['tarjeta'];
 $cvv = $_POST['cvv'];
 
-    $sql = "INSERT INTO (nombre, correo, telefono, dinero, tarjeta, cvv) VALUES ('$nombre', '$correo', '$telefono','$dinero','$tarjeta','$cvv')";
+    $sql = "INSERT INTO mentaria (nombre, correo, telefono, dinero, tarjeta, cvv) VALUES ('$nombre', '$correo', '$telefono','$dinero','$tarjeta','$cvv')";
     if (mysqli_query($conn, $sql)) {
       echo "<script>alert('La donacion ha sido realizada correctamente'); window.location.href='#';</script>";
     } else {

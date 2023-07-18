@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if($_SESSION["correo"] === null){
+    header("Location: ../HTML/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,33 +29,34 @@
                 <button class="sign-up-btn">Donar</button>
             </div>
         </div>
-        <form action="../PHP/form-donacion-monetaria.PHP" method="post" enctype="multipart/form-data" class="formulario">
+        <form action="../PHP/resgistrar_donaciones_1.php" method="post" enctype="multipart/form-data" class="formulario">
             <h2 class="create-account">Haz tu donacion aqui</h2>
             <div class="iconos">
                 
             </div>
             <p class="cuenta-gratis">Donacion monetaria</p>
+            <input type="hidden" name="categoria" value="monetaria">
             <input type="text" placeholder="Nombre" name="nombre" required>
             <input type="email" placeholder="Email" name="correo" required>
             <input type="number" placeholder="Numero de Telefono (opcional)" name="telefono">
             <input type="number" placeholder="Cantidad de dinero que donaras" name="dinero" required>
             <input type="number" placeholder="Numero de tarjeta" name="tarjeta" required>
             <input type="number" placeholder="CVV (Codigo de validacion)" name="cvv" required>
-            <input type="button" value="Donar">
+            <input type="submit" value="Donar">
             
         </form>
     </div>
     <div class="container-form sign-in">
-        <form action="../PHP/form-equipo-medico.PHP" method="post" enctype="multipart/form-data" class="formulario">
+        <form action="../PHP/resgistrar_donaciones_1.php" method="post" enctype="multipart/form-data" class="formulario">
             <h2 class="create-account">Donar equipo medico</h2>
             <div class="iconos">
             </div>
-            
+            <input type="hidden" name="categoria" value="equipamiento">
             <input type="email" placeholder="Email" name="correo" required>
             <input type="number" placeholder="Numero de telefono" name="telefono" required>
             <input type="text" placeholder="Equipo medico que donaras" name="equipo" required>
             <input type="number" placeholder="Cantidad de equipos medicos" name="cantidad" required>
-            <input type="button" value="Donar">
+            <input type="submit" value="Donar">
         </form>
         <div class="welcome-back">
             <div class="message">

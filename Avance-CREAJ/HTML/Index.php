@@ -28,7 +28,7 @@ if($_SESSION["correo"] === null){
         <div clas="logo"><a href="#">SaludRural</a></div>
         <ul class="links">
           <li><a href="#"><strong>Inicio</strong></a></li>
-          <li><a href="#">Donaciones</a></li>
+          <li><a href="../HTML/form-donacion-monetaria.php">Donaciones</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>

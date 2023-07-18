@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+if($_SESSION["correo"] === null){
+    header("Location: ../HTML/login.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +35,7 @@
                 
             </div>
             <p class="cuenta-gratis">Donacion de medicamentos</p>
+            <input type="hidden" name="categoria" value="medicamentos">
             <input type="text" placeholder="Nombre del donatario" name="nombre" required>
             <input type="email" placeholder="Email" name="correo" required>
             <input type="number" placeholder="Numero de Telefono (opcional)" name="telefono">
@@ -44,6 +52,7 @@
             <h2 class="create-account">Donar insumo medico</h2>
             <div class="iconos">
             </div>
+            <input type="hidden" name="categoria" value="insumos">
             <input type="text" placeholder="Nombre de insumo medico" name="insumo" required>
             <input type="email" placeholder="Email" name="correo" required>
             <input type="number" placeholder="Numero de telefono" name="telefono" required>
