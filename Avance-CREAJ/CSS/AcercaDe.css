@@ -184,7 +184,44 @@ section#hero {
   filter: brightness(0.6);
 }
 
-/* Código de la info de Sobre Nosotros */
+/* Código de dos párrafos a la par */
+.targets-parrafos {
+  display: flex;
+  justify-content: space-between;
+}
+
+.target1 {
+  width: 48%;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: center;
+  border: none;
+}
+
+.target1 h3 {
+  font-family: 'Poppins', sans-serif;
+  font-size: x-large;
+}
+
+.target1 p {
+  font-family: 'Nunito', sans-serif;
+  font-size: large;
+  font-weight: bolder;
+}
+
+@media (max-width: 768px) {
+  .targets-parrafos {
+    flex-direction: column;
+  }
+
+  .target1 {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+/* Código de la Misión y Visión */
 .targets-container {
   display: flex;
   justify-content: space-between;
