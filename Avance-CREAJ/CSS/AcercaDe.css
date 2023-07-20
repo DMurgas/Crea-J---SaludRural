@@ -184,6 +184,57 @@ section#hero {
   filter: brightness(0.6);
 }
 
+/* Código para el párrafo con la imagen */
+.container1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.text {
+  width: 60%;
+  line-height: 1.7;
+  margin-bottom: 15px;
+  margin-left: 6rem;
+  margin-right: 11rem;
+}
+
+.text h2 {
+  margin-bottom: auto;
+  text-align: justify;
+}
+
+.text p {
+  text-align: justify;
+  font-size: large;
+  margin: auto;
+}
+
+.image {
+  width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  border: none;
+}
+
+.image .donativoimg {
+  border-radius: 3rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .text, .image {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
+
 /* Código de dos párrafos a la par */
 .container {
   display: flex;
