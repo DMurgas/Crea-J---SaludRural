@@ -185,37 +185,30 @@ section#hero {
 }
 
 /* Código de dos párrafos a la par */
-.targets-parrafos {
+.container {
   display: flex;
   justify-content: space-between;
+  background-color: rgb(1, 80, 1);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  overflow: hidden;
 }
 
-.target1 {
-  width: 48%;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: center;
-  border: none;
-}
-
-.target1 h3 {
-  font-family: 'Poppins', sans-serif;
-  font-size: x-large;
-}
-
-.target1 p {
-  font-family: 'Nunito', sans-serif;
+.paragraph {
+  width: 45%;
+  padding: 28px;
+  text-align: justify;
   font-size: large;
-  font-weight: bolder;
+  margin: auto;
+  color: #d4d1d1;
 }
 
 @media (max-width: 768px) {
-  .targets-parrafos {
+  .container {
     flex-direction: column;
   }
 
-  .target1 {
+  .paragraph {
     width: 100%;
     margin-bottom: 20px;
   }
@@ -239,6 +232,7 @@ section#hero {
 .target h3 {
   font-family: 'Poppins', sans-serif;
   font-size: x-large;
+  margin-bottom: 2.2px;
 }
 
 .target p {
