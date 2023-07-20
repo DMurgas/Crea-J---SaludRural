@@ -38,7 +38,7 @@ if($_SESSION["correo"] === null){
         </div>
       </div>
 
-      <div class="dropdown_menu open ">
+      <div class="dropdown_menu">
         <li><a href="#"><strong>Inicio</strong></a></li>
         <li><a href="#">Donaciones</a></li>
         <li><a href="#">Blog</a></li>
