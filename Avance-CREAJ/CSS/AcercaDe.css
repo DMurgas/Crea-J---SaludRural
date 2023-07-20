@@ -193,7 +193,7 @@ section#hero {
 }
 
 .text {
-  width: 130%;
+  width: 150%;
   line-height: 1.6;
   margin-bottom: 15px;
   margin-left: 13.5rem;
@@ -208,7 +208,7 @@ section#hero {
 
 .text p {
   text-align: justify;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   line-height: 1.8;
   margin: auto;
   font-family: 'Roboto Condensed', sans-serif;
