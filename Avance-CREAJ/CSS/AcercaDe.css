@@ -206,6 +206,8 @@ section#hero {
 
 .text p {
   text-align: justify;
+  font-size: large;
+  margin: auto;
 }
 
 .image {
