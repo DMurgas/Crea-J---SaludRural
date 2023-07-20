@@ -1,8 +1,22 @@
 <?php
 session_start();
+error_reporting(0);
+$correo = $_SESSION['correo'];
 
-if($_SESSION["correo"] === null){
-    header("Location: ../HTML/login.php");
+if ($correo == null || $correo == '') {
+  echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+  die();
+} else {
+  include("../PHP/conex.php");
+
+  // Consulta SQL para obtener el ID del usuario según el correo electrónico
+  $query = "SELECT id FROM registro WHERE correo = '$correo'";
+  $result = $conn->query($query);
+
+  if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      $_SESSION['usuario_id'] = $row['id'];
+  }
 }
 ?>
 
@@ -23,7 +37,7 @@ if($_SESSION["correo"] === null){
         <div clas="logo"><a href="#">SaludRural</a></div>
         <ul class="links">
           <li><a href="#"><strong>Inicio</strong></a></li>
-          <li><a href="../HTML/form-donacion-monetaria.php">Donaciones</a></li>
+          <li><a href="../HTML/donaciones-reali.php">Donaciones</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
@@ -38,7 +52,7 @@ if($_SESSION["correo"] === null){
         <li><a href="#">Donaciones</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
-        <li><a href="#" class="action_btn"><strong>Iniciar sesión</strong></a></li>
+        <li><a href="../PHP/cerrar.php" class="action_btn"><strong>Iniciar sesión</strong></a></li>
       </div>
     </header>
 

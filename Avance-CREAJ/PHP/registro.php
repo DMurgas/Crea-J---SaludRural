@@ -7,7 +7,7 @@ $email = $_POST['email'];
 $dui = $_POST['dui'];
 $contra = $_POST['contra'];
 
-$sql= "INSERT INTO `registro`(`id`, `nombre`, `apellidos`, `telefono`, `email`, `dui`, `contra`) VALUES (NULL, '$nombre', '$apellidos','$telefono','$email','$dui','$contra')";
+$sql= "INSERT INTO `registro`(`id`, `nombre`, `apellidos`, `telefono`, `correo`, `dui`, `contra`) VALUES (NULL, '$nombre', '$apellidos','$telefono','$email','$dui','$contra')";
 
 $resultado = mysqli_query($conn,$sql);
 mysqli_close($conn);
