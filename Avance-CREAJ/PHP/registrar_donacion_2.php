@@ -1,56 +1,47 @@
 <?php
-session_start(); // Iniciar sesión si aún no lo has hecho
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-// Obtener el ID del usuario autenticado
-$userId = $_SESSION['correo']; // Asumiendo que has iniciado sesión y almacenado el ID del usuario en la variable de sesión 'userId'
+$db_host = 'localhost';
+$db_username = 'root';
+$db_password = '';
+$db_name = 'saludrural';
+$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
-// Verificar si el usuario está autenticado
-if (!$userId) {
-    // El usuario no está autenticado, redirigir a la página de inicio de sesión o mostrar un mensaje de error
-    header("Location: login.php");
-    exit();
+if (!$conn) {
+    die("Error de la conexion a la base de datos: " . mysqli_connect_error());
 }
 
-// Obtener los datos del formulario
-$categoria = $_POST['categoria'];
-$nombre = $_POST['nombre'];
-$correo = $_POST['correo'];
-$telefono = $_POST['telefono'];
-
-// Realizar la conexión a la base de datos y guardar los datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "saludrural";
-
-// Crear la conexión
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Verificar la conexión
-if ($conn->connect_error) {
-    die("La conexión a la base de datos ha fallado: " . $conn->connect_error);
+if(!empty($_POST["correo"])){
+    session_start();
+    $usuarioId = $_SESSION['usuario_id'];
+    if (!empty($_POST["nombre"]) && !empty($_POST["correo"])  && !empty($_POST["telefono"])  && !empty($_POST["fecha"]) && !empty($_POST["monto"]) && !empty($_POST["tarjeta"]) && !empty($_POST["cvv"])) {
+        $nombre = $_POST["nombre"];
+        $correo = $_POST["correo"];
+        #$contacto = $_POST["info"];
+        $telefono = $_POST["telefono"];
+        $genero = $_POST["genero"];
+        $fecha = $_POST["fecha"];
+        $monto = $_POST["monto"];
+        $tarjeta = $_POST["tarjeta"];
+        $cvv = $_POST["cvv"];
+    
+        // Insertar la donación asociada al usuario ID
+        $sql = $conn->query ("INSERT INTO `donacion`(`ID`, `usuario_id`, `nombre`, `correo`, `telefono`, `genero`, `fecha`, `monto`, `tarjeta`, `cvv`) VALUES (NULL, '$usuarioId', '$nombre', '$correo', '$telefono', '$genero', '$fecha', '$monto', '$tarjeta', '$cvv')");
+    
+        // Ejecutar la consulta
+        if ($sql) {
+            echo '<script language="javascript">alert("Donación registrada correctamente"); window.location.href="../HTML/Index.php";</script>';
+            exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
+        } else {
+            echo '<script language="javascript">alert("Error en el registro de la donación: ' . mysqli_error($conn) . '");</script>';
+        }
+    }
 }
 
-// Preparar la consulta SQL basada en la categoría
-if ($categoria == "medicamentos") {
-    $medicamento = $_POST['medicamento'];
-    $cantidad = $_POST['cantidad'];
+//}else{
+    #echo '<script language="javascript">alert("Donacion no registrada"); window.location.href="../HTML/form-prueba.php";</script>';
+    exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
 
-    $sql = "INSERT INTO donaciones_medicamentos (usuario_id, nombre, correo, telefono, medicamento, cantidad) VALUES ('$userId', '$nombre', '$correo', '$telefono', '$medicamento', '$cantidad')";
-} elseif ($categoria == "insumos") {
-    $insumo = $_POST['insumo'];
-    $cantidad = $_POST['cantidades'];
-
-    $sql = "INSERT INTO donaciones_insumos (usuario_id, nombre, correo, telefono, insumo, cantidad) VALUES ('$userId', '$nombre', '$correo', '$telefono', '$insumo', '$cantidad')";
-}
-
-// Ejecutar la consulta
-if ($conn->query($sql) === true) {
-    echo "Donación registrada exitosamente";
-} else {
-    echo "Error al registrar la donación: " . $conn->error;
-}
-
-// Cerrar la conexión
-$conn->close();
 ?>

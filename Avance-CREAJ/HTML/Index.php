@@ -42,6 +42,7 @@ if ($correo == null || $correo == '') {
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
         <a href="#" class="action_btn"><strong>Iniciar sesión</strong></a>
+        <a href="../PHP/cerrar.php" class="action_btn"><strong>Iniciar sesión</strong></a>
         <div class="toggle_btn">
           <i class="fa-solid fa-bars"></i>
         </div>

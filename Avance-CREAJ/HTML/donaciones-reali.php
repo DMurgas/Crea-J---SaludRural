@@ -83,17 +83,17 @@
     if ($resultado->num_rows > 0) {
         while ($fila = $resultado->fetch_assoc()) {
             echo '<div class="cita">';
-            echo '<div class="fecha">' . $fila['Nom'] . '</div>';
-            echo '<div class="hora">' . $fila['edad'] . '</div>';
-            echo '<div class="hora">' . $fila['problema'] . '</div>';
-            echo '<div class="estado">' . $fila['date'] . '</div>';
-            echo '<div class="descripcion">' . $fila['estado'] . '</div>';
+            echo '<div class="fecha">' . $fila['nombre'] . '</div>';
+            echo '<div class="hora">' . $fila['correo'] . '</div>';
+            echo '<div class="hora">' . $fila['telefono'] . '</div>';
+            echo '<div class="estado">' . $fila['genero'] . '</div>';
+            echo '<div class="descripcion">' . $fila['fecha'] . '</div>';
 
             // Formulario para editar el día de la cita
-            echo '<form action="editar_cita.php" method="post">';
+            echo '<form action="editar_donacion.php" method="post">';
             echo '<input type="hidden" name="cita_id" value="' . $fila['ID'] . '">';
             echo '<label>Nuevo día de la cita:</label>';
-            echo '<input type="date" name="nuevo_dia" value="' . $fila['date'] . '">';
+            echo '<input type="date" name="nuevo_dia" value="' . $fila['fecha'] . '">';
             echo '<button type="submit">Editar</button>';
             echo '</form>';
             echo '</div>';
