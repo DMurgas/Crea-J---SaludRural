@@ -1,15 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@600&family=Roboto+Slab:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
+
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
   }
   
   body {
-    background-color: rgb(248, 247, 245);
+    background-color: #f9ffff;
     background-size: cover;
     background-position: center;
   }
@@ -21,6 +24,7 @@
     background-size: cover;
     background-position: center;
     filter: brightness(1);
+    font-family: 'Open Sans', sans-serif;
   }
 
   li{
@@ -37,6 +41,7 @@
     text-decoration: none;
     color: black;
     font-size: 19px;
+    font-family: 'Open Sans', sans-serif;
   }
 
   a:hover {
@@ -112,6 +117,7 @@
     border-radius: 10px;
     overflow: hidden;
     transition: height .2 cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-family: 'Open Sans', sans-serif;
 }
 
 .dropdown_menu.open {
@@ -192,29 +198,37 @@ section#hero {
 }
 
 .text {
-  width: 60%;
-  line-height: 1.7;
+  width: 150%;
+  line-height: 1.6;
   margin-bottom: 15px;
-  margin-left: 6rem;
-  margin-right: 11rem;
+  margin-left: 13.5rem;
+  margin-right: 8.4rem;
 }
 
 .text h2 {
   margin-bottom: auto;
   text-align: justify;
+  font-size: xx-large;
+  font-family: 'Raleway', sans-serif;
 }
 
 .text p {
   text-align: justify;
-  font-size: large;
+  font-size: 1.3rem;
+  line-height: 1.8;
   margin: auto;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.bolded1{
+  font-weight: bold;
 }
 
 .image {
   width: 100%;
   display: block;
   margin-left: auto;
-  margin-right: auto;
+  margin-right: 13.5rem;
   margin-top: 4rem;
   margin-bottom: 4rem;
   border: none;
@@ -252,6 +266,21 @@ section#hero {
   font-size: large;
   margin: auto;
   color: #d4d1d1;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.bolded {
+  font-weight: bold;
+}
+
+.paragraph .negra {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: bold;
+  color: #d4d1d1;
+}
+
+.paragraph .negra:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -269,6 +298,8 @@ section#hero {
 .targets-container {
   display: flex;
   justify-content: space-between;
+  margin-top: 2.2rem;
+  margin-bottom: 2.2rem;
 }
 
 .target {
