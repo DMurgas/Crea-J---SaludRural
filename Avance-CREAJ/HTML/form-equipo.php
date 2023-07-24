@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Formulario Multipasos :: Urian Viera</title>
+    <title>Donacion Monetaria</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="form-outer">
-        <form action="../PHP/registrar_donacion_2.php" method="post">
+        <form action="../PHP/form-equipo-medico.php" method="post">
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
@@ -57,7 +57,6 @@
           </div>
 
           <div class="page">
-            <div class="title">Información de Contacto</div>
             <div class="field">
               <div class="label">Número de Telefono</div>
               <input type="Number" required name="telefono">
@@ -81,7 +80,7 @@
               <input type="date"required name="fecha">
             </div>
             <div class="field">
-              <div class="label">Monto a donar</div>
+              <div class="label">Nombre del insumo</div>
               <input type="number" required name="monto">
             </div>
             <div class="field btns">
@@ -91,14 +90,16 @@
           </div>
 
           <div class="page">
-            <div class="title">Datos de tarjeta</div>
             <div class="field">
-              <div class="label">Numero de tarjeta</div>
-              <input type="text" required name="tarjeta">
+              <div class="label">Cantidad</div>
+              <input type="password" required name="cvv">
             </div>
             <div class="field">
-              <div class="label">CVV</div>
-              <input type="password" required name="cvv">
+            <div class="label">Lugar</div>
+            <select name="genero">
+                  <option value="Masculino">Masculino</option>
+                  <option value="Femenino">Femenino</option>
+              </select>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>

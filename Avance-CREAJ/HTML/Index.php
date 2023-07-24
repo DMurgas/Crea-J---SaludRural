@@ -37,12 +37,11 @@ if ($correo == null || $correo == '') {
         <div clas="logo"><a href="#">SaludRural</a></div>
         <ul class="links">
           <li><a href="#"><strong>Inicio</strong></a></li>
-          <li><a href="../HTML/donaciones-reali.php">Donaciones</a></li>
+          <li><a href="../HTML/form-mone.php">Donaciones</a></li>
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
-        <a href="#" class="action_btn"><strong>Iniciar sesión</strong></a>
-        <a href="../PHP/cerrar.php" class="action_btn"><strong>Iniciar sesión</strong></a>
+        <a href="../PHP/cerrar.php" class="action_btn"><strong>Cerrar sesion</strong></a>
         <div class="toggle_btn">
           <i class="fa-solid fa-bars"></i>
         </div>
@@ -53,7 +52,7 @@ if ($correo == null || $correo == '') {
         <li><a href="#">Donaciones</a></li>
         <li><a href="#">Blog</a></li>
         <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
-        <li><a href="../PHP/cerrar.php" class="action_btn"><strong>Iniciar sesión</strong></a></li>
+        <li><a href="../PHP/cerrar.php" class="action_btn"><strong>Cerrar sesion</strong></a></li>
       </div>
     </header>
 
