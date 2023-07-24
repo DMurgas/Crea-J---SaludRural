@@ -11,7 +11,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id, `nombre`, `correo`, `telefono`, `fecha`, `monto` FROM donacion";
+$consulta = "SELECT id, `nombre`, `correo`, `telefono`, `fecha`, `monto` FROM donaciones_insumos";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
