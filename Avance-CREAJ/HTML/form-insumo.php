@@ -45,11 +45,11 @@
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
-              <input type="text" required name="nombre">
+              <input type="text" name="nombre" required >
             </div>
             <div class="field">
               <div class="label">Fecha de la donacion</div>
-              <input type="date"required name="fecha">
+              <input type="date" name="fecha" required>
             </div>
             <div class="field">
               <button class="firstNext next">Siguiente</button>
@@ -60,7 +60,7 @@
             <div class="title">Información de Contacto</div>
             <div class="field">
               <div class="label">Cantidad</div>
-              <input type="Number" required name="telefono">
+              <input type="Number"  name="telefono" required>
             </div>
             <div class="field">
             <div class="label">Tipo de insumo</div>
@@ -78,7 +78,7 @@
           <div class="page">
             <div class="field">
               <div class="label">Descripcion</div>
-              <input type="date"required name="fecha">
+              <input type="date" name="fecha" require>
             </div>
             <div class="field">
               <div class="label">Proveedor</div>
