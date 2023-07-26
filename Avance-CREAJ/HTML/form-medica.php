@@ -74,11 +74,11 @@
 
           <div class="page">
             <div class="field">
-              <div class="label">Nombre del insumo medico</div>
+              <div class="label">Nombre del medicamento</div>
               <input type="text" name="fecha" required>
             </div>
             <div class="field">
-              <div class="label">Cantidad de insumo medico</div>
+              <div class="label">Cantidad de medicamentos</div>
               <input type="number"name="monto" required>
             </div>
             <div class="field btns">
@@ -89,12 +89,12 @@
 
           <div class="page">
             <div class="field">
-              <div class="label">Nombre del hospital al que sera entregado los insumos medicos</div>
-              <input type="text" name="tarjeta" required>
+              <div class="label" >Nombre del hospital </div>
+              <input type="text" placeholder="Donde sera entregada la donacion" name="tarjeta" required>
             </div>
             <div class="field">
-              <div class="label">CVV</div>
-              <input type="password" name="cvv" required>
+              <div class="label">Descripcion del medicamento</div>
+              <input type="text" placeholder="Fercha de vencimiento, etc.." name="cvv" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>

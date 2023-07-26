@@ -63,11 +63,9 @@
               <input type="Number" name="telefono" required>
             </div>
             <div class="field">
-            <div class="label">Género</div>
-              <select name="genero">
-                  <option value="Masculino">Masculino</option>
-                  <option value="Femenino">Femenino</option>
-              </select>
+            <div class="field">
+              <div class="label" >Nombre del hospital </div>
+              <input type="text" placeholder="Donde sera entregada la donacion" name="tarjeta" required>
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>
