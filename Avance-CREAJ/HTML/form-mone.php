@@ -45,11 +45,11 @@
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
-              <input type="text" required name="nombre">
+              <input type="text" name="nombre" required>
             </div>
             <div class="field">
               <div class="label">Correo Electronico</div>
-              <input type="text" required name="correo" r>
+              <input type="text" name="correo" required>
             </div>
             <div class="field">
               <button class="firstNext next">Siguiente</button>
@@ -60,7 +60,7 @@
             <div class="title">Información de Contacto</div>
             <div class="field">
               <div class="label">Número de Telefono</div>
-              <input type="Number" required name="telefono">
+              <input type="Number" name="telefono" required>
             </div>
             <div class="field">
             <div class="label">Género</div>
@@ -78,11 +78,11 @@
           <div class="page">
             <div class="field">
               <div class="label">Fecha de la donacion</div>
-              <input type="date"required name="fecha">
+              <input type="date" name="fecha" required>
             </div>
             <div class="field">
               <div class="label">Monto a donar</div>
-              <input type="number" required name="monto">
+              <input type="number"name="monto" required>
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
@@ -94,11 +94,11 @@
             <div class="title">Datos de tarjeta</div>
             <div class="field">
               <div class="label">Numero de tarjeta</div>
-              <input type="text" required name="tarjeta">
+              <input type="text" name="tarjeta" required>
             </div>
             <div class="field">
               <div class="label">CVV</div>
-              <input type="password" required name="cvv">
+              <input type="password" name="cvv" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>
