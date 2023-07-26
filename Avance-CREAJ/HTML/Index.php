@@ -37,7 +37,12 @@ if ($correo == null || $correo == '') {
         <div clas="logo"><a href="#">SaludRural</a></div>
         <ul class="links">
           <li><a href="#"><strong>Inicio</strong></a></li>
-          <li><a href="../HTML/form-mone.php">Donaciones</a></li>
+            <ul>
+            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
+            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
+            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
+            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
+            </ul>
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
