@@ -63,11 +63,8 @@
               <input type="Number" name="telefono" required>
             </div>
             <div class="field">
-            <div class="label">Género</div>
-              <select name="genero">
-                  <option value="Masculino">Masculino</option>
-                  <option value="Femenino">Femenino</option>
-              </select>
+              <div class="label">Fecha de la donacion</div>
+              <input type="datetime-local" name="fecha" required>
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>
@@ -77,11 +74,11 @@
 
           <div class="page">
             <div class="field">
-              <div class="label">Fecha de la donacion</div>
-              <input type="datetime-local" name="fecha" required>
+              <div class="label">Nombre del equipo medico</div>
+              <input type="text" name="fecha" required>
             </div>
             <div class="field">
-              <div class="label">Monto a donar</div>
+              <div class="label">Cantidad del equipo medico</div>
               <input type="number"name="monto" required>
             </div>
             <div class="field btns">
@@ -91,14 +88,13 @@
           </div>
 
           <div class="page">
-            <div class="title">Datos de tarjeta</div>
             <div class="field">
-              <div class="label">Numero de tarjeta</div>
-              <input type="text" name="tarjeta" required>
+              <div class="label" >Nombre del hospital </div>
+              <input type="text" placeholder="Donde sera entregada la donacion" name="tarjeta" required>
             </div>
             <div class="field">
-              <div class="label">CVV</div>
-              <input type="password" name="cvv" required>
+              <div class="label">Descripcion del insumo</div>
+              <input type="text" placeholder="Valor de la donacion" name="cvv" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>
