@@ -78,7 +78,7 @@
           <div class="page">
             <div class="field">
               <div class="label">Fecha de la donacion</div>
-              <input type="date" name="fecha" required>
+              <input type="datetime-local" name="fecha" required>
             </div>
             <div class="field">
               <div class="label">Monto a donar</div>

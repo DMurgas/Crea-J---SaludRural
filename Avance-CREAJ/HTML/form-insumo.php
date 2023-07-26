@@ -49,7 +49,7 @@
             </div>
             <div class="field">
               <div class="label">Fecha de la donacion</div>
-              <input type="date" name="fecha" required>
+              <input type="datetime-local" name="fecha" required>
             </div>
             <div class="field">
               <button class="firstNext next">Siguiente</button>
@@ -59,11 +59,11 @@
           <div class="page">
             <div class="title">Información de Contacto</div>
             <div class="field">
-              <div class="label">Cantidad</div>
+              <div class="label">Cantidad de insumo medico</div>
               <input type="Number"  name="telefono" required>
             </div>
             <div class="field">
-            <div class="label">Tipo de insumo</div>
+            <div class="label">Tipo de insumo medico</div>
               <select name="genero">
                   <option value="Masculino">Masculino</option>
                   <option value="Femenino">Femenino</option>
@@ -78,11 +78,11 @@
           <div class="page">
             <div class="field">
               <div class="label">Descripcion</div>
-              <input type="date" name="fecha" require>
+              <input type="date" name="fecha" required>
             </div>
             <div class="field">
               <div class="label">Proveedor</div>
-              <input type="number" required name="monto">
+              <input type="number" name="monto" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>
