@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Formulario Multipasos :: Urian Viera</title>
+    <title>Donacion monetaria</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -49,7 +49,7 @@
             </div>
             <div class="field">
               <div class="label">Correo Electronico</div>
-              <input type="text" required name="correo">
+              <input type="text" required name="correo" r>
             </div>
             <div class="field">
               <button class="firstNext next">Siguiente</button>
