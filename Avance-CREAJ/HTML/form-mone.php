@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-      <header>Realizar una donacion</header>
+      <header>Donacion monetaria</header>
       <div class="progress-bar">
         <div class="step">
           <p>Paso 1</p>
@@ -65,7 +65,7 @@
             <div class="field">
             <div class="field">
               <div class="label" >Nombre del hospital </div>
-              <input type="text" placeholder="Donde sera entregada la donacion" name="tarjeta" required>
+              <input type="text" placeholder="Donde sera entregada la donacion" name="hospital" required>
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>

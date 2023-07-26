@@ -9,7 +9,7 @@
 <body>
 
     <div class="container">
-      <header>Realizar una donacion</header>
+      <header>Donacion de insumos</header>
       <div class="progress-bar">
         <div class="step">
           <p>Paso 1</p>
@@ -75,11 +75,11 @@
           <div class="page">
             <div class="field">
               <div class="label">Nombre del insumo medico</div>
-              <input type="text" name="fecha" required>
+              <input type="text" name="insumo" required>
             </div>
             <div class="field">
               <div class="label">Cantidad de insumo medico</div>
-              <input type="number"name="monto" required>
+              <input type="number"name="cantidad" required>
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
@@ -90,11 +90,11 @@
           <div class="page">
             <div class="field">
               <div class="label" >Nombre del hospital </div>
-              <input type="text" placeholder="Donde sera entregada la donacion" name="tarjeta" required>
+              <input type="text" placeholder="Donde sera entregada la donacion" name="hospital" required>
             </div>
             <div class="field">
               <div class="label">Descripcion del insumo</div>
-              <input type="text" placeholder="Informacion del insumo" name="cvv" required>
+              <input type="text" placeholder="Informacion del insumo" name="descripcion" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>

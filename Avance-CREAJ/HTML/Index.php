@@ -37,12 +37,15 @@ if ($correo == null || $correo == '') {
         <div clas="logo"><a href="#">SaludRural</a></div>
         <ul class="links">
           <li><a href="#"><strong>Inicio</strong></a></li>
-            <ul>
-            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
-            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
-            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
-            <li><a href="../HTML/form-mone.php">Donaciones</a></li>
-            </ul>
+           <li class="menu-despegable">
+            <a href="#" class="dropbtn">Donaciones <i class="fa-solid fa-caret-down"></i></a>
+             <div class="dropdown-content">
+             <a href="../HTML/form-mone.php">Donacion monetaria</a>
+             <a href="../HTML/form-insumo.php">Donar insumos medicos</a>
+             <a href="../HTML/form-medica.php">Donar medicamentos</a>
+             <a href="../HTML/form-equipo.php">Donar equipos medicos</a>
+            </div>
+         </li>
           <li><a href="#">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
