@@ -62,13 +62,10 @@
               <div class="label">Número de Telefono</div>
               <input type="Number" name="telefono" required>
             </div>
-
             <div class="field">
               <div class="label">Fecha de la donacion</div>
               <input type="datetime-local" name="fecha" required>
             </div>
-
-
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>
               <button class="next-1 next">Siguiente</button>
@@ -91,9 +88,8 @@
           </div>
 
           <div class="page">
-            <div class="title">Descripcion</div>
             <div class="field">
-              <div class="label">Descripcion de los insumo o razon por las que los dona</div>
+              <div class="label">Nombre del hospital al que sera entregado los insumos medicos</div>
               <input type="text" name="tarjeta" required>
             </div>
             <div class="field">
@@ -111,3 +107,4 @@
     <script src="../JS/donaciones.JS"></script>
   </body>
 </html>
+
