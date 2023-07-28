@@ -335,18 +335,100 @@ section#hero {
 }
 
 /* Código CSS del footer */
-.footer {
-  padding: 0 0;
+footer {
   background-color: rgb(1, 80, 1);
-  box-sizing: border-box;
   position: relative;
-  display: grid;
+  left: 0;
+  right: 0;
+  height: auto;
+  /*width: 100vw;*/
+  padding-top: 40px;
   bottom: 0;
-  width: 100%;
-  margin: 0;
 }
 
-.footer .social {
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+} 
+
+.footer-content h3 {
+  font-size: 2.1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 20px;
+  font-size: 18px;
+  color: #e7e8eb;
+}
+
+.footer-content .socials {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.footer-content .socials li {
+  margin: 0 10px;
+}
+
+.socials li a {
+  text-decoration: none;
+  color: #fff;
+  border: 1.1px solid white;
+  padding: 5px;
+  border-radius: 50%;
+  width: 32px;
+}
+
+.sociales .footer-menu {
+  margin-bottom: 20px;
+}
+
+.footer-menu ul {
+  display: flex;
+}
+
+.footer-menu ul li {
+  padding-right: 10px;
+  display: block;
+}
+
+.footer-menu ul li a {
+  color: #cfd2d6;
+  border: 1.3px solid white;
+  padding: 6px 15px;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+.footer-menu ul li a:hover {
+  color: #27bcda;
+}
+
+.footer-bottom {
+  background: #000;
+  margin-top: 30px;
+  width: auto;
+  height: auto;
+  padding: 22px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  text-align: center;
+}
+
+/*.footer .social {
   text-align: center;
   padding-bottom: 25px;
   color: #4b4c4d;
@@ -414,4 +496,4 @@ section#hero {
   border: none;
   position: absolute;
   top: 50%;
-}
+}*/
