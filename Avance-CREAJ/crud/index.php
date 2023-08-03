@@ -28,8 +28,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre</th>
-                                <th>País</th>                                
-                                <th>Edad</th>  
+                                <th>apellidos</th>                                
+                                <th>telefono</th>  
                                 <th>Acciones</th>
                             </tr>
                         </thead>
