@@ -2,48 +2,8 @@
 <html>
 <head>
     <title>Donaciones realizadas</title>
-    <style>
-      body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-        }
-
-        h1 {
-            text-align: center;
-        }
-
-        .cita {
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        .fecha {
-            font-weight: bold;
-        }
-
-        .hora {
-            color: #888;
-        }
-
-        .estado {
-            color: green;
-            font-weight: bold;
-        }
-
-        .descripcion {
-            margin-top: 5px;
-        }
-
-        .no-citas {
-            text-align: center;
-            font-style: italic;
-            color: #888;
-        }
-
-    </style>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body>
     <h1>Donaciones realizadas</h1>
