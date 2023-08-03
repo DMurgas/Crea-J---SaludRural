@@ -18,25 +18,18 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
 
-<div class="container">
-        <div class="row">
-            <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Nuevo</button>    
-            </div>    
-        </div>    
-    </div>    
-    <br>  
+
 <div class="container">
         <div class="row">
                 <div class="col-lg-12">
-                    <div class="table-responsive">         
+                    <div class="table-responsive">        
                         <table id="tablaPersonas" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
                                 <th>Id</th>
                                 <th>Nombre</th>
-                                <th>Apellidos</th>                                
-                                <th>Telefono</th>  
+                                <th>País</th>                                
+                                <th>Edad</th>  
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -59,9 +52,9 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                     </div>
                 </div>
         </div>  
-    </div>    
+    </div>      
       
-<!--Modal para CRUD-->
+<!--Modal para 
 <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -96,6 +89,6 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
       
     
     
-</div>
+</div>CRUD-->
 <!--FIN del cont principal-->
 <?php require_once "vistas/parte_inferior.php"?>
