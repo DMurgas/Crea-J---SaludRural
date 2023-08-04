@@ -46,7 +46,7 @@ if ($correo == null || $correo == '') {
              <a href="../HTML/form-equipo.php">Donar equipos medicos</a>
             </div>
          </li>
-          <li><a href="#">Blog</a></li>
+          <li><a href="blog.php">Blog</a></li>
           <li><a href="../HTML/AcercaDe.html">Acerca de</a></li>
         </ul>
         <a href="../PHP/cerrar.php" class="action_btn"><strong>Cerrar sesion</strong></a>
