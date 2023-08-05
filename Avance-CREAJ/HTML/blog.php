@@ -31,7 +31,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <title>SaludRural</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <link rel="stylesheet" href="../CSS/css-blog.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   </head>
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">

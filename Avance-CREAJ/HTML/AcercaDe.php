@@ -34,7 +34,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         <link rel="shortcut icon" href="../Imagenes/favicon.png" />
         <title>Acerca De</title>
         <link rel="stylesheet" href="../CSS/AcercaDe.css">
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.3/dist/tailwind.min.css" rel="stylesheet">
+        <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     </head>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
               <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
               <li class="relative">
                   <!-- Enlace con menú desplegable -->
-                  <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
+                  <a href="#" class="text-black hover:bg-green-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
                       <span>Donaciones</span>
                       <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                   </a>
