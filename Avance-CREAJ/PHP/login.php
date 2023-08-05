@@ -26,6 +26,10 @@ $sql_user = "SELECT * FROM registro WHERE correo = '$correo' and contra = '$cont
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
+$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' and password = '$contra'";
+$result_hospital = mysqli_query($conn, $sql_hospital);
+$existe3 = mysqli_num_rows($result_hospital);
+
 if ($existe1 > 0) {
     while ($row = mysqli_fetch_array($result_admin)) {
         if ($correo == $row['correo'] && $contra == $row['contraseña']) {
@@ -40,6 +44,14 @@ if ($existe1 > 0) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
             echo '<script language="javascript">window.location.href="../HTML/index.php";alert("Bienvenido!!!!");</script>';
+        }
+    }
+} else if($existe3 > 0){
+    while ($row = mysqli_fetch_array($result_hospital)) {
+        if ($correo == $row['nombre'] && $contra == $row['password']) {
+            $_SESSION['nombre'] = $row['nombre'];
+            $_SESSION['id'] = $row['id'];
+            echo '<script language="javascript">window.location.href="../crud_hospitales/index.php";alert("Bienvenido!!!!");</script>';
         }
     }
 } else {

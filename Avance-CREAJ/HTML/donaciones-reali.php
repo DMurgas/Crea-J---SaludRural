@@ -27,7 +27,7 @@ if ($correo == null || $correo == '') {
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="bg-gray-100">
 <nav class="bg-white p-4">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio -->
@@ -62,7 +62,7 @@ if ($correo == null || $correo == '') {
                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 </button>
                 <!-- Menú desplegable del usuario -->
-            <ul class="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-md hidden" id="user-menu">
+            <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
                 <?php
                 // Mostrar nombre del usuario si está disponible en la sesión
                 if (isset($_SESSION['correo']) && !empty($_SESSION['correo'])) {
@@ -75,7 +75,7 @@ if ($correo == null || $correo == '') {
             </div>
     </nav>
 
-    <div class="w-full max-w-mn p-8 bg-white rounded-lg shadow-lg  mx-auto">
+    <div class="w-full max-w-mn p-8  rounded-lg shadow-lg  mx-auto">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>
 
         <?php
@@ -117,7 +117,7 @@ if ($correo == null || $correo == '') {
             foreach ($donaciones_pares as $donaciones_columna) {
                 echo '<div class="grid grid-cols-2 gap-8">';
                 foreach ($donaciones_columna as $donacion) {
-                    echo '<div class="bg-gray-100 p-4 rounded-lg shadow-md">';
+                    echo '<div class="bg-white p-4 rounded-lg shadow-md">';
                     echo '<div class="font-bold text-xl">' . $donacion['nombre'] . '</div>';
                     echo '<div><span class="font-semibold">Correo:</span> ' . $donacion['correo'] . '</div>';
                     echo '<div><span class="font-semibold">Teléfono:</span> ' . $donacion['telefono'] . '</div>';
@@ -160,6 +160,11 @@ if ($correo == null || $correo == '') {
         });
     </script>
 </body>
+<footer class="bg-white text-black py-6">
+    <div class="container mx-auto text-center">
+      <p>&copy; 2023 Mi Blog. Todos los derechos reservados.</p>
+    </div>
+  </footer>
 </html>
  
 
