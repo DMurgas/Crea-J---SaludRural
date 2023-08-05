@@ -17,6 +17,7 @@ if(!empty($_POST["correo"])){
     session_start();
     $usuarioId = $_SESSION['usuario_id'];
     if (!empty($_POST["nombre"]) && !empty($_POST["correo"])  && !empty($_POST["telefono"])  && !empty($_POST["fecha"]) && !empty($_POST["monto"]) && !empty($_POST["tarjeta"]) && !empty($_POST["cvv"])) {
+        
         $nombre = $_POST["nombre"];
         $correo = $_POST["correo"];
         #$contacto = $_POST["info"];
@@ -38,10 +39,8 @@ if(!empty($_POST["correo"])){
             echo '<script language="javascript">alert("Error en el registro de la donación: ' . mysqli_error($conn) . '");</script>';
         }
     }
-}
-
-//}else{
-    #echo '<script language="javascript">alert("Donacion no registrada"); window.location.href="../HTML/form-prueba.php";</script>';
+}else{
+    #echo '<script language="javascript">alert("Donacion no registrada"); window.location.href="../HTML/Index.php";</script>';
     exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
-
+}
 ?>

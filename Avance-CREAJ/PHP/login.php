@@ -55,7 +55,7 @@ if ($existe1 > 0) {
         }
     }
 } else {
-    echo '<script language="javascript">alert("Usuario o contraseñas incorrectos");window.location.href="../HTML/login.php";</script>';
+   echo '<script language="javascript">alert("Usuario o contraseñas incorrectos");window.location.href="../HTML/login.php";</script>';
 }
 
 ?>

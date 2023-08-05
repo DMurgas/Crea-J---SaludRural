@@ -107,7 +107,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
             while ($row = $result->fetch_assoc()) {
                 echo '<article class="bg-white p-6 rounded-md shadow-lg hover:shadow-xl transition duration-300 flex flex-col justify-between">';
                 echo '<div>';
-                echo '<img src="../' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
+                echo '<img src="' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
                 echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">' . $row['titulo'] . '</h2>';
                 echo '<p class="text-gray-700 mb-4">' . $row['contenido'] . '</p>';
                 echo '</div>';

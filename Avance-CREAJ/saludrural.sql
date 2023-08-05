@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-07-2023 a las 21:07:22
+-- Tiempo de generación: 05-08-2023 a las 21:32:48
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -43,6 +43,28 @@ INSERT INTO `administradores` (`id`, `correo`, `contraseña`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `blogs`
+--
+
+CREATE TABLE `blogs` (
+  `id` int(11) NOT NULL,
+  `hospital_id` int(11) DEFAULT NULL,
+  `titulo` varchar(255) DEFAULT NULL,
+  `contenido` text DEFAULT NULL,
+  `imagen` blob DEFAULT NULL,
+  `fecha_publicacion` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `hospital_id`, `titulo`, `contenido`, `imagen`, `fecha_publicacion`) VALUES
+(1, 5, 'dasdsa', 'dsadsads', 0x2e2e2f696d6167656e2f576861747341707020496d61676520323032332d30372d323820617420392e33302e303220504d2e6a706567, '2023-08-05 18:13:22');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `donacion`
 --
 
@@ -73,7 +95,8 @@ INSERT INTO `donacion` (`ID`, `usuario_id`, `nombre`, `correo`, `telefono`, `gen
 (6, 1, 'Gacha life 2', 'admin1@gmail.com', '2123121313', 'Masculino', '2023-07-27 14:14:00', '1.00', '111', '11111', 'pendiente'),
 (7, 1, 'Gacha life 2', 'admin1@gmail.com', '2123121313', 'Masculino', '2023-07-27 14:14:00', '1.00', '111', '11111', 'pendiente'),
 (8, 1, 'dsad', '123@gmail.com', '2123121313', 'Masculino', '2023-07-21 15:25:00', '6.00', '12', '12', 'pendiente'),
-(9, 2, 'Julio Rodrigo', 'admiJosue@gmail.com', '149382', 'Masculino', '2023-07-24 00:00:00', '140.00', '1278394', '111', 'pendiente');
+(9, 2, 'Julio Rodrigo', 'admiJosue@gmail.com', '149382', 'Masculino', '2023-07-24 00:00:00', '140.00', '1278394', '111', 'pendiente'),
+(10, 1, 'Julio Rodrigo', 'admin1@gmail.com', '11', 'Masculino', '2023-07-27 00:00:00', '100000.00', '1278394', '1234', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -116,16 +139,18 @@ CREATE TABLE `hospitales` (
   `id` int(11) NOT NULL,
   `nombre` varchar(70) NOT NULL,
   `descripcion` text NOT NULL,
-  `lugar` text NOT NULL
+  `lugar` text NOT NULL,
+  `password` varchar(250) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `hospitales`
 --
 
-INSERT INTO `hospitales` (`id`, `nombre`, `descripcion`, `lugar`) VALUES
-(1, 'adadsa', 'dasasdas', 'dsadas'),
-(3, 'figo', 'a', 'aa');
+INSERT INTO `hospitales` (`id`, `nombre`, `descripcion`, `lugar`, `password`) VALUES
+(1, 'adadsa', 'dasasdas', 'dsadas', ''),
+(3, 'figo', 'a', 'aa', ''),
+(5, 'San Rafael', 'asdasdasd', 'dasdsadas', '123');
 
 -- --------------------------------------------------------
 
@@ -162,6 +187,13 @@ INSERT INTO `registro` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `dui`
 --
 ALTER TABLE `administradores`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `blogs`
+--
+ALTER TABLE `blogs`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `hospital_id` (`hospital_id`);
 
 --
 -- Indices de la tabla `donacion`
@@ -207,10 +239,16 @@ ALTER TABLE `administradores`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT de la tabla `blogs`
+--
+ALTER TABLE `blogs`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT de la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `donaciones_insumos`
@@ -228,7 +266,7 @@ ALTER TABLE `donaciones_medicamentos`
 -- AUTO_INCREMENT de la tabla `hospitales`
 --
 ALTER TABLE `hospitales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
@@ -239,6 +277,12 @@ ALTER TABLE `registro`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `blogs`
+--
+ALTER TABLE `blogs`
+  ADD CONSTRAINT `blogs_ibfk_1` FOREIGN KEY (`hospital_id`) REFERENCES `hospitales` (`id`);
 
 --
 -- Filtros para la tabla `donacion`

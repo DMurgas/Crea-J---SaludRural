@@ -16,7 +16,7 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $_SESSION['hospitales_id'] = $row['id'];
+        $_SESSION['hospital_id'] = $row['id'];
     }
 }
 ?>
@@ -45,20 +45,29 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
-                        <span>Donaciones</span>
+                        <span>Blog</span>
                         <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="form-medica.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Medicamentos</a></li>
-                        <li><a href="form-equipo" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Equipos medicos</a></li>
-                        <li><a href="form-insumo.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Isumos medicos</a></li>
-                        <li><a href="form-mone" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Monetaria</a></li>
+                        <li><a href="agregar-blog.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Agregar </a></li>
+                        <li><a href="form-equipo" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizados</a></li>
                     </ul>
                 </li>
-                <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.html" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
+                <li class="relative items-center">
+                    <!-- Enlace con menú desplegable -->
+                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="exito-menu">
+                        <span>Historias de exito</span>
+                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                    </a>
+
+                    <!-- Menú desplegable -->
+                    <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="exito-menu-items">
+                        <li><a href="form-medica.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Agregar </a></li>
+                        <li><a href="form-equipo" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizados</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <div class="relative">
@@ -103,6 +112,13 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     const donacionesMenuItems = document.getElementById('donaciones-menu-items');
     donacionesMenuButton.addEventListener('click', () => {
         donacionesMenuItems.classList.toggle('hidden');
+    });
+
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const exitoMenuButton = document.getElementById('exito-menu');
+    const exitoMenuItems = document.getElementById('exito-menu-items');
+    exitoMenuButton.addEventListener('click', () => {
+        exitoMenuItems.classList.toggle('hidden');
     });
 
     const mobileMenuButton = document.getElementById('mobile-menu-button');
