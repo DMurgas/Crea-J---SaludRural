@@ -14,11 +14,11 @@
     <div class="container">
       <div class="forms-container">
         <div class="signin-signup">
-          <form action="../php/login.php" class="sign-in-form" method="post">
+          <form action="../php/login.php" class="sign-in-form" method="post" autocomplete="off">
             <h2 class="title">Inicio de sesión</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="email" placeholder="Correo electrónico" name="correo" required>
+              <input type="text" placeholder="Correo electrónico" name="correo" required>
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
@@ -26,7 +26,7 @@
             </div>
             <input type="submit" value="INGRESAR" class="btn solid">
           </form>
-          <form action="../php/registro.php" class="sign-up-form" method="post">
+          <form action="../php/registro.php" class="sign-up-form" method="post" autocomplete="off">
             <h2 class="title">Regístrate</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>

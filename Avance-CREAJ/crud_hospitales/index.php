@@ -3,20 +3,20 @@ session_start();
 error_reporting(0);
 
 // Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
+if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
     die();
 } else {
     include("../PHP/conex.php");
 
     // Consulta SQL para obtener el ID del usuario según el correo electrónico
-    $correo = $_SESSION['correo'];
-    $query = "SELECT id FROM registro WHERE correo = '$correo'";
+    $nombre = $_SESSION['nombre'];
+    $query = "SELECT id FROM hospitales WHERE nombre = '$nombre'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
-        $_SESSION['usuario_id'] = $row['id'];
+        $_SESSION['hospital_id'] = $row['id'];
     }
 }
 ?>
@@ -45,20 +45,29 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
-                        <span>Donaciones</span>
+                        <span>Blog</span>
                         <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="form-medica.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Medicamentos</a></li>
-                        <li><a href="form-equipo" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Equipos medicos</a></li>
-                        <li><a href="form-insumo.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Isumos medicos</a></li>
-                        <li><a href="form-mone" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Monetaria</a></li>
+                        <li><a href="agregar-blog.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Agregar </a></li>
+                        <li><a href="form-equipo" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizados</a></li>
                     </ul>
                 </li>
-                <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.html" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
+                <li class="relative items-center">
+                    <!-- Enlace con menú desplegable -->
+                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="exito-menu">
+                        <span>Historias de exito</span>
+                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                    </a>
+
+                    <!-- Menú desplegable -->
+                    <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="exito-menu-items">
+                        <li><a href="form-medica.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Agregar </a></li>
+                        <li><a href="form-equipo" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizados</a></li>
+                    </ul>
+                </li>
             </ul>
 
             <div class="relative">
@@ -71,12 +80,12 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
             <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
                 <?php
                 // Mostrar nombre del usuario si está disponible en la sesión
-                if (isset($_SESSION['correo']) && !empty($_SESSION['correo'])) {
-                    echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
+                if (isset($_SESSION['nombre']) && !empty($_SESSION['nombre'])) {
+                    echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['nombre'] . '</a></li>';
                 }
                 ?>
                 <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
-                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+                <li><a href="../PHP/close.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
     </div>
     <!-- Mobile menu, show/hide based on menu state. -->
@@ -90,32 +99,6 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     </div>
   </div>
     </nav>
-    <main>
-    <section class="bg-blue-600 text-white py-24">
-      <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a llevar la salud a zonas rurales!</h1>
-        <p class="text-lg mb-8">Tu generosa donación marca la diferencia en la vida de quienes más lo necesitan.</p>
-        <a href="#" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar Donación</a>
-      </div>
-    </section>
-    <section class="bg-white py-24">
-      <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">Acerca de SaludRural</h2>
-        <p class="text-lg mb-8">En SaludRural, estamos comprometidos con...</p>
-        <a href="#" class="text-blue-600 hover:underline">Leer más sobre nuestra misión</a>
-      </div>
-    </section>
-
-    </main>
-    <main>
-      <section id="hero">
-        <h1>¡Bienvenido a SaludRural!</h1>
-        <p>
-          Ayudanos a apoyar a los mas necesitados
-        </p></br>
-        </p>
-      </section>
-    </main>
     <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
@@ -131,6 +114,13 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         donacionesMenuItems.classList.toggle('hidden');
     });
 
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const exitoMenuButton = document.getElementById('exito-menu');
+    const exitoMenuItems = document.getElementById('exito-menu-items');
+    exitoMenuButton.addEventListener('click', () => {
+        exitoMenuItems.classList.toggle('hidden');
+    });
+
     const mobileMenuButton = document.getElementById('mobile-menu-button');
     const mobileMenu = document.getElementById('mobile-menu');
     const header = document.querySelector('.flex'); // Cambia esto al selector correcto de tu encabezado
@@ -140,11 +130,5 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
     });
 </script>
-<footer class="bg-white text-black py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2023 Mi Blog. Todos los derechos reservados.</p>
-    </div>
-  </footer>
-
   </body>
 </html>
