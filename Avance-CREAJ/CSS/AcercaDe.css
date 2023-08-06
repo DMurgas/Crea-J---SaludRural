@@ -401,6 +401,15 @@ footer {
   margin-bottom: 20px;
 }
 
+.footer-menu {
+  display: flex;
+  justify-content: center;
+}
+
+.f-menu {
+  gap: 20px;
+}
+
 .footer-menu ul {
   display: flex;
 }
@@ -408,6 +417,11 @@ footer {
 .footer-menu ul li {
   padding-right: 10px;
   display: block;
+  margin: 0;
+}
+
+.f-menu li {
+  margin: 0;
 }
 
 .footer-menu ul li a {
@@ -422,6 +436,17 @@ footer {
   color: #27bcda;
 }
 
+/* Media query para ajustar el diseño en pantallas más pequeñas */
+@media (max-width:516px) {
+  .footer-menu ul {
+    display: inline;
+  }
+  .footer-menu ul li {
+    margin-bottom: 20px;
+  }
+}
+
+/* Footer sub-alterno */
 .footer-bottom {
   background: rgb(2, 37, 2);
   margin-top: 30px;
