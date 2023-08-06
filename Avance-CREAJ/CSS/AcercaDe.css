@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@500&display=swap');
 
 * {
     margin: 0;
@@ -341,8 +342,8 @@ footer {
   left: 0;
   right: 0;
   height: auto;
-  /*width: 100vw;*/
-  padding-top: 40px;
+  width: auto;
+  padding-top: 21px;
   bottom: 0;
 }
 
@@ -355,18 +356,24 @@ footer {
 } 
 
 .footer-content h3 {
-  font-size: 2.1rem;
+  font-size: 2.3rem;
   font-weight: 600;
   text-transform: capitalize;
   line-height: 3rem;
+  font-family: 'Ubuntu', sans-serif;
+  margin-bottom: 8.6px;
+  cursor: default;
+  color: #cfd2d6;
 }
 
 .footer-content p {
   max-width: 500px;
-  margin: 10px auto;
+  margin: 5px auto;
+  margin-bottom: 1px;
   line-height: 20px;
-  font-size: 18px;
+  font-size: 18.8px;
   color: #e7e8eb;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-content .socials {
@@ -374,7 +381,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 1rem 0 3rem 0;
+  margin: 1.6rem 0 2.8rem 0;
 }
 
 .footer-content .socials li {
@@ -420,7 +427,7 @@ footer {
   margin-top: 30px;
   width: auto;
   height: auto;
-  padding: 16px;
+  padding: 15px;
   text-align: center;
 }
 
