@@ -335,6 +335,42 @@ section#hero {
   }
 }
 
+/* Código CSS de la sección de la historia de SaludRural */
+.title1 {
+  text-align: center;
+  background-color: rgb(1, 80, 1);
+}
+
+.container2 {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(1, 80, 1);
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 10px;
+  overflow: hidden;
+  margin-bottom: 30px;
+}
+
+.column {
+  flex: 0 0 calc(50% - 20px);
+  margin: 10px;
+  padding: 15px;
+  box-sizing: border-box;
+  background-color: rgb(1, 80, 1);
+}
+
+.column p {
+  text-align: justify;
+  color: #d4d1d1;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  margin: auto;
+  width: 93%;
+  padding: 22px;
+  padding-bottom: 17.4px;
+  font-size: large;
+}
+
 /* Código CSS del footer */
 footer {
   background-color: rgb(1, 80, 1);
@@ -458,7 +494,7 @@ footer {
 }
 
 /* Media query para ajustar el diseño en pantallas más pequeñas */
-@media (max-width:516px) {
+@media (max-width:524px) {
   .footer-menu ul {
     display: inline;
   }
