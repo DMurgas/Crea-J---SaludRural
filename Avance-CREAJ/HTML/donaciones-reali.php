@@ -85,75 +85,57 @@ if ($correo == null || $correo == '') {
                 header('Location: login.php');
                 exit();
             }
-
-            // Verificar si el usuario ha iniciado sesión y tiene un usuario_id válido
-            if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
-                // Obtener el usuario_id de la sesión
-                $usuarioId = $_SESSION['usuario_id'];
-
-                // Realizar la conexión a la base de datos
-                $servername = 'localhost';
-                $username = "root";
-                $password = "";
-                $dbname = "saludrural";
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                // Verificar la conexión
-                if ($conn->connect_error) {
-                    die("Conexión fallida: " . $conn->connect_error);
-                }
-
-                // Realizar la consulta para obtener las donaciones del usuario
-                $sql = "SELECT * FROM medicamentos WHERE id_usuario = $usuarioId";
-                $resultado = $conn->query($sql);
-
-                // Verificar si hubo algún error en la consulta
-                if ($resultado === false) {
-                    // Manejo de errores
-                    echo "Error en la consulta: " . $conn->error;
-                } else {
-                    if ($resultado->num_rows > 0) {
-                        echo '<h1>Donaciones Realizadas</h1>';
-                        echo '<div class="grid grid-cols-2 gap-8">';
-                        while ($donacion = $resultado->fetch_assoc()) {
-                            echo '<div class="bg-white p-4 rounded-lg shadow-md">';
-                            echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
-                            echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($donacion['nombre']) . '</div>';
-                            echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['nombre'] . '</div>';
-                            echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['medicamento'] . '</div>';
-                            echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
-                            echo '</div>';
-                        }
-                        echo '</div>';
-                    } else {
-                        echo '<div class="text-center mt-4">No se encontraron donaciones para este usuario.</div>';
-                    }
-                }
-
-                // Cerrar la conexión
-                $conn->close();
-            } else {
-                echo "Debe iniciar sesión para ver las donaciones realizadas.";
+            
+            // Realizar la conexión a la base de datos
+            $servername = "localhost";
+            $username = "root";
+            $password = "";
+            $dbname = "saludrural";
+            $conn = new mysqli($servername, $username, $password, $dbname);
+            
+            // Verificar la conexión
+            if ($conn->connect_error) {
+                die("Conexión fallida: " . $conn->connect_error);
             }
-
-            // Función para obtener el nombre del hospital por su ID
-            function obtenerNombreHospital($id_hospital) {
-                // Realizar la conexión a la base de datos (puedes reutilizar la conexión anterior)
-                $servername = 'localhost';
-                $username = "root";
-                $password = "";
-                $dbname = "saludrural";
-                $conn = new mysqli($servername, $username, $password, $dbname);
-
-                // Verificar la conexión
-                if ($conn->connect_error) {
-                    die("Conexión fallida: " . $conn->connect_error);
+            
+            // Obtener el usuario_id de la sesión
+            $usuarioId = $_SESSION['usuario_id'];
+            
+            // Realizar la consulta para obtener las donaciones del usuario
+            $sql = "SELECT id_donacion, id_hospital, fecha, medicamento, descripcion FROM medicamentos WHERE id_usuario = $usuarioId";
+            $resultado = $conn->query($sql);
+            
+            // Verificar si hubo algún error en la consulta
+            if ($resultado === false) {
+                // Manejo de errores
+                echo "Error en la consulta: " . $conn->error;
+            } else {
+                if ($resultado->num_rows > 0) {
+                    echo '<div class="grid grid-cols-2 gap-8">';
+                    while ($donacion = $resultado->fetch_assoc()) {
+                        echo '<div class="bg-white p-4 rounded-lg shadow-md">';
+                        echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
+                        echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
+                        echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
+                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['medicamento'] . '</div>';
+                        echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
+                        echo '</div>';
+                    }
+                    echo '</div>';
+                } else {
+                    echo '<div class="text-center mt-4">No se encontraron donaciones para este usuario.</div>';
                 }
-
+            }
+            
+            // Cerrar la conexión
+            $conn->close();
+            
+            // Función para obtener el nombre del hospital por su ID
+            function obtenerNombreHospital($conn, $id_hospital) {
                 // Realizar la consulta para obtener el nombre del hospital por su ID
                 $sql = "SELECT nombre FROM hospitales WHERE id = $id_hospital";
                 $resultado = $conn->query($sql);
-
+            
                 // Verificar si hubo algún error en la consulta
                 if ($resultado === false) {
                     // Manejo de errores
@@ -161,15 +143,13 @@ if ($correo == null || $correo == '') {
                 } else {
                     if ($resultado->num_rows > 0) {
                         $nombre_hospital = $resultado->fetch_assoc()['nombre'];
-                        // Cerrar la conexión (esto puede ser opcional dependiendo de cómo manejes las conexiones)
-                        $conn->close();
                         return $nombre_hospital;
                     } else {
                         return "Hospital Desconocido";
                     }
                 }
             }
-        ?>
+            ?>
 
     </div>
 
@@ -189,11 +169,24 @@ if ($correo == null || $correo == '') {
         });
     </script>
 </body>
-<footer class="bg-white text-black py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2023 Mi Blog. Todos los derechos reservados.</p>
+<footer class="bg-gray-800 text-center text-white py-8">
+  <div class="container mx-auto">
+    <p class="text-lg font-bold">SaludRural</p>
+    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
     </div>
-  </footer>
+    <ul class="flex items-center justify-center space-x-4">
+      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+    </ul>
+  </div>
+</footer>
 </html>
  
 

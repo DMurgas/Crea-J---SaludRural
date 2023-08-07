@@ -34,7 +34,6 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
         <link rel="shortcut icon" href="../Imagenes/favicon.png" />
         <title>Acerca De</title>
-        <link rel="stylesheet" href="../CSS/AcercaDe.css">
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
@@ -100,91 +99,61 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
           </div>
   </nav>
 
-    <body>
-      <!-- Código del slider carrusel -->
-      <!--<div id="hero-carousel" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active c-item">
-            <img src="../Imagenes/Fondo1.jpeg" class="d-block w-100 c-img" alt="...">
-          </div>
-          <div class="carousel-item c-item">
-            <img src="../Imagenes/Imagen2.png" class="d-block w-100 c-img" alt="...">
-          </div>
-          <div class="carousel-item c-item">
-            <img src="../Imagenes/Fondo3.jpeg" class="d-block w-100 c-img" alt="...">
-          </div>
-        </div>
-      </div>-->
+  <body class="bg-gray-100">
+  <div class="container mx-auto p-8">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold text-black mb-4">¡Bienvenido a SaludRural!</h1>
+      <p class="text-xl text-black">Ayudando a mejorar la salud en las comunidades rurales de El Salvador</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+      <div class="text-center p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Sobre Nosotros</h2>
+        <p class="text-gray-600">Somos una organización que busca marcar la diferencia en las comunidades más necesitadas de El Salvador, especialmente aquellas ubicadas en zonas rurales. Nuestra misión es proporcionar apoyo a hospitales y centros médicos para mejorar la atención médica y el bienestar de la población en estas áreas marginadas.</p>
+        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-6 rounded-lg" width="250" height="200" alt="imagen">
+      </div>
+      <div class="text-center p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Nuestra Visión</h2>
+        <p class="text-gray-600">En SaludRural, creemos en un futuro donde todas las comunidades rurales tengan acceso a una atención médica de calidad. Nos esforzamos por establecer alianzas sólidas y transparentes con donantes comprometidos para marcar un cambio significativo en la salud y el bienestar de las personas que más lo necesitan.</p>
+      </div>
+    </div>
 
-      <!-- Código de la info Sobre Nosotros -->
-      <div class="container1">
-        <div class="text">
-          <h2 class="subtitle">
-            <strong>Sobre Nosotros</strong>
-          </h2>
-          <p>Somos una organización que busca ayudar a la sociedad más necesitada de nuestro país <span class="bolded1">"El Salvador"</span>, a través de donaciones para hospitales y centros médicos que se encuentran en las zonas rurales del país, es decir, las comunidades marginadas y abandonadas que existen en todo el territorio nacional.</p>
-        </div>
-        <div class="image">
-          <img class="donativoimg" src="../Imagenes/CajaDonativos.png" width="330" height="250" alt="imagen">
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+      <div class="text-center p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Nuestra Misión</h2>
+        <p class="text-gray-600">Facilitar donaciones seguras y directas a hospitales y centros médicos en zonas rurales de El Salvador, canalizando recursos para mejorar la atención médica y el bienestar de las comunidades más vulnerables.</p>
       </div>
-      
-      <div class="container">
-        <div class="paragraph">
-          <p>Nuestro equipo está conformado por profesionales apasionados y comprometidos con la salud pública y la equidad en la atención médica. Trabajamos en estrecha colaboración con hospitales y centros médicos en áreas rurales para comprender sus necesidades y brindarles el apoyo necesario. Valoramos la transparencia y la responsabilidad en nuestro trabajo. Nos esforzamos por mantener una comunicación clara con nuestros donantes y socios, proporcionándoles actualizaciones sobre cómo se utilizan sus contribuciones y el impacto que están generando.</p>
-        </div>
-        <div class="paragraph">
-          <p>En <span class="bolded">SaludRural</span>, creemos firmemente en el poder de la solidaridad y la generosidad. A través de nuestra plataforma, permitimos a personas y organizaciones donar de manera segura y directa a proyectos y necesidades específicas de los hospitales y centros médicos rurales. Facilitamos la conexión entre donantes y receptores, asegurando que cada donación tenga un impacto significativo y positivo en la vida de las personas. Estamos emocionados de ser parte del cambio y el progreso en la atención médica de las zonas rurales. <a href="../HTML/login.php"><span class="negra">Únete a nosotros en SaludRural</span></a> y juntos hagamos la diferencia en la salud y el bienestar de las comunidades rurales de nuestro país.</p>
-        </div>
+      <div class="text-center p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Nuestros Valores</h2>
+        <p class="text-gray-600">Transparencia, compromiso, solidaridad y equidad son los valores fundamentales que guían nuestro trabajo en SaludRural.</p>
       </div>
+      <div class="text-center p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4">Únete a Nosotros</h2>
+        <p class="text-gray-600">Si compartes nuestra visión y deseas ser parte del cambio en la atención médica de las comunidades rurales, únete a SaludRural y hagamos la diferencia juntos.</p>
+      </div>
+    </div>
+  </div>
+</body>
 
-      <div class="targets-container">
-        <div class="target">
-          <h3><strong>Misión</strong></h3>
-          <p>Ser una organización que promueva y facilite las donaciones a hospitales y centros médicos ubicados en zonas rurales del país. <strong class="strongT">SaludRural</strong> se compromete a conectar de manera efectiva a los donantes con estas instituciones, brindando una plataforma segura y transparente para canalizar recursos y apoyar la atención médica en las comunidades más remotas y marginadas de todo el territorio nacional. Por último, impulsar un cambio significativo en la salud, promoviendo la equidad y la mejora de la calidad de vida de quienes más lo necesitan.</p>
-        </div>
-        <div class="target">
-          <h3><strong>Visión</strong></h3>
-          <p>Queremos lograr ser una organización líder en el ámbito de las donaciones a hospitales y centros médicos en zonas rurales del país. Nos esforzamos por ser el referente principal para aquellos que deseen contribuir al bienestar de las comunidades rurales a través de donaciones significativas y de impacto. Buscamos establecer alianzas sólidas con hospitales y centros médicos, así como con donantes comprometidos, para construir en un futuro una cultura de equidad, y que el acceso a la atención médica sea una realidad para todos, sin importar su ubicación geográfica. Aspiramos a ser reconocidos como un agente de cambio en la atención médica rural, mejorando la calidad de vida de las personas y generando un impacto duradero en la salud de la población salvadoreña.</p>
-        </div>
-      </div>
- 
-      <h2><strong>Historia de SaludRural</strong></h2>
-      <p><strong>SaludRural</strong> nació como una idea en común de 5 estudiantes del <a href="https://www.cdb.edu.sv/"><strong>Colegio Don Bosco</strong></a>, estos estudiantes son: Xavier Zañas, Carlos López, David Murgas, César Serrano y Julio Jacinto. Estos jóvenes compartían una pasión común por ayudar a los demás y siempre estaban buscando formas de marcar una diferencia positiva en la sociedad.</p>
-      <p>Un día, mientras se reunían en la biblioteca de la escuela para trabajar en un proyecto conjunto, surgió una idea que iluminó sus mentes. Se dieron cuenta de que muchas comunidades rurales cercanas carecían de acceso adecuado a servicios de salud, y esto les preocupaba profundamente. Decidieron unir fuerzas y crear una solución que pudiera marcar la diferencia en la vida de las personas en estas áreas.</p>
-      <p>Así nació <strong>SaludRural</strong>, una organización sin fines de lucro con una visión clara: facilitar las donaciones a hospitales y centros médicos en zonas rurales a través de una plataforma web. Los cinco estudiantes se dedicaron por completo a este proyecto, invirtiendo su tiempo, esfuerzo y conocimientos en su desarrollo.</p>
-      <p>Trabajaron arduamente para diseñar y construir una plataforma intuitiva y segura donde las personas pudieran realizar donaciones de manera fácil y transparente. Sabían que la confianza de los donantes era fundamental, por lo que se aseguraron de establecer medidas de seguridad robustas para proteger la privacidad y la integridad de las transacciones.</p>
-      <p>La historia de SaludRural se convirtió en un ejemplo de cómo una simple idea, impulsada por la pasión y el deseo de ayudar, puede transformarse en una fuerza poderosa para el cambio. Los cinco estudiantes demostraron que no importa cuán jóvenes sean, si tienen una visión y trabajan juntos, pueden marcar una diferencia significativa en la sociedad.</p>
-      <p>Hasta el día de hoy, SaludRural continúa su labor, creciendo y expandiéndose para llevar esperanza y mejorar la calidad de vida de las comunidades rurales a través de la solidaridad y la generosidad de aquellos que creen en su misión.</p>
-    </body>
 
     <!-- Código del footer -->
-    <footer>
-      <div class="footer-content">
-        <h3>SaludRural</h3>
-        <p>Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
-
-        <!-- Íconos de las redes sociales -->
-        <ul class="socials">
-          <li><a href="" class="fab fa-facebook"></a></li>
-          <li><a href="" class="fab fa-instagram"></a></li>
-          <li><a href="" class="fab fa-twitter"></a></li>
-          <li><a href="" class="fab fa-youtube"></a></li>
-        </ul>
-        
-        <!-- Menú en el footer -->
-        <div class="footer-menu">
-          <ul class="f-menu">
-            <li><a href="../HTML/Index.php"><strong>Inicio</strong></a></li>
-            <li><a href="../HTML/donaciones-reali.php">Donaciones</a></li>
-            <li><a href="../HTML/blog.php">Blog</a></li>
-            <li><a href="">Acerca de</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Footer sub-alterno -->
-      <div class="footer-bottom">
+    <footer class="bg-gray-800 text-center text-white py-8">
+  <div class="container mx-auto">
+    <p class="text-lg font-bold">SaludRural</p>
+    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <ul class="flex items-center justify-center space-x-4">
+      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+    </ul>
+  </div>
+  <div class="footer-bottom">
         <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
       </div>
     </footer>

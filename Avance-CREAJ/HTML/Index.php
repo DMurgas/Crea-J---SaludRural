@@ -141,11 +141,24 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
     });
 </script>
-<footer class="bg-white text-black py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2023 Mi Blog. Todos los derechos reservados.</p>
+<footer class="bg-gray-800 text-center text-white py-8">
+  <div class="container mx-auto">
+    <p class="text-lg font-bold">SaludRural</p>
+    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
     </div>
-  </footer>
+    <ul class="flex items-center justify-center space-x-4">
+      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+    </ul>
+  </div>
+</footer>
 
   </body>
 </html>

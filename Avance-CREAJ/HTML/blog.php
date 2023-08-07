@@ -145,33 +145,24 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
 </body>
 
  <!-- Código del footer -->
- <footer>
-      <div class="footer-content">
-        <h3>SaludRural</h3>
-        <p>Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+ <footer class="bg-gray-800 text-center text-white py-8">
+  <div class="container mx-auto">
+    <p class="text-lg font-bold">SaludRural</p>
+    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <ul class="flex items-center justify-center space-x-4">
+      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+    </ul>
+  </div>
+</footer>
 
-        <!-- Íconos de las redes sociales -->
-        <ul class="socials">
-          <li><a href="" class="fab fa-facebook"></a></li>
-          <li><a href="" class="fab fa-instagram"></a></li>
-          <li><a href="" class="fab fa-twitter"></a></li>
-          <li><a href="" class="fab fa-youtube"></a></li>
-        </ul>
-        
-        <!-- Menú en el footer -->
-        <div class="footer-menu">
-          <ul class="f-menu">
-            <li><a href="../HTML/Index.php"><strong>Inicio</strong></a></li>
-            <li><a href="../HTML/donaciones-reali.php">Donaciones</a></li>
-            <li><a href="">Blog</a></li>
-            <li><a href="../HTML/AcercaDe.php">Acerca de</a></li>
-          </ul>
-        </div>
-      </div>
 
-      <!-- Footer sub-alterno -->
-      <div class="footer-bottom">
-        <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
-      </div>
-    </footer>
 </html>
