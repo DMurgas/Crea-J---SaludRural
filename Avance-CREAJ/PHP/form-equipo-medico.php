@@ -1,30 +1,45 @@
 <?php
+session_start();
 
-    // Establecer la conexión con la base de datos
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "crea-J";
+// Verificar si el usuario ha iniciado sesión y tiene un usuario_id válido
+if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
+    // Obtener el id_hospital seleccionado del formulario
+    if (isset($_POST['hospital'])) {
+        $id_hospital = $_POST['hospital'];
+        $usuarioId = $_SESSION['usuario_id'];
+        $nombre = $_POST['nombre'];
+        $correo = $_POST['correo'];
+        $telefono = $_POST['telefono'];
+        $fecha = $_POST['fecha'];
+        $medicamento = $_POST['medicamento'];
+        $cantidad = $_POST ['cantidad'];
+        $descripcion = $_POST['descripcion'];
 
-$conn = mysqli_connect($servername, $username, $password, $dbname);
-if (!$conn) {
-  die("Error al conectar a la base de datos: " . mysqli_connect_error());
-}
+        // Realizar la conexión a la base de datos
+        $db_host = 'localhost';
+        $db_username = 'root';
+        $db_password = '';
+        $db_name = 'saludrural';
+        $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
-// Recuperar los datos enviados por el formulario
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
+        }
 
-$correo = $_POST['correo'];
-$telefono = $_POST['telefono'];
-$equipo = $_POST['equipo'];
-$cantidad = $_POST['cantidad'];
+        // Preparar la consulta para insertar la donación en la tabla 'donaciones'
+        $sql = "INSERT INTO medicamentos (id_hospital, id_usuario,`nombre`, `correo`, `telefono`, `fecha`, `medicamento`, `cantidad`, `descripcion`) VALUES ('$id_hospital', '$usuarioId', '$nombre','$correo','$telefono','$fecha','$medicamento','$cantidad', '$descripcion')";
 
-    $sql = "INSERT INTO (correo, telefono, equipo, cantidad) VALUES ('$correo', '$telefono','$equipo','$cantidad')";
-    if (mysqli_query($conn, $sql)) {
-      echo "<script>alert('La donacion ha sido realizada correctamente'); window.location.href='#';</script>";
-    } else {
-      echo "<script>alert('Se ha producido un error durante la donacion vuelve a intentarlo'); window.location.href='#';</script> " . mysqli_error($conn);
+        if ($conn->query($sql) === TRUE) {
+            echo "Donación realizada con éxito.";
+        } else {
+            echo "Error al realizar la donación: " . $conn->error;
+        }
+
+        // Cerrar la conexión
+        $conn->close();
     }
-
-// Cerrar la conexión con la base de datos
-mysqli_close($conn);
-    ?>
+} else {
+    echo "Debe iniciar sesión para realizar una donación.";
+}
+?>

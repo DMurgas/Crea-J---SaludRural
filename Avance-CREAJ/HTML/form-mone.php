@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="form-outer">
-        <form action="../PHP/registrar_donacion_2.php" method="post">
+        <form action="../PHP/form-donacion-monetaria.php" method="post">
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
@@ -62,7 +62,6 @@
               <div class="label">Número de Telefono</div>
               <input type="Number" name="telefono" required>
             </div>
-            <div class="field">
             <div class="field">
               <div class="label" >Nombre del hospital </div>
               <input type="text" placeholder="Donde sera entregada la donacion" name="hospital" required>

@@ -77,71 +77,100 @@ if ($correo == null || $correo == '') {
 
     <div class="w-full max-w-mn p-8  rounded-lg shadow-lg  mx-auto">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>
-
         <?php
 
-        // Datos de conexión a la base de datos
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "saludrural";
-    
-        // Establecer conexión
-        $conn = new mysqli($servername, $username, $password, $dbname);
-    
-        // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Error de conexión: " . $conn->connect_error);
-        }
-    
-        // Verificar si el usuario ha iniciado sesión
-        if (!isset($_SESSION['usuario_id'])) {
-            // Redirigir al usuario a la página de inicio de sesión o mostrar un mensaje de error
-            header('Location: login.php');
-            exit();
-        }
-    
-        // Obtener el ID del usuario actual
-        $usuarioId = $_SESSION['usuario_id'];
-    
-        // Consulta SQL para obtener las citas del usuario actual
-        $sql = "SELECT * FROM donacion WHERE usuario_id = '$usuarioId'";
-        $resultado = $conn->query($sql);
-    
-
-        // Mostrar citas del usuario actual
-        if ($resultado->num_rows > 0) {
-            $donaciones = $resultado->fetch_all(MYSQLI_ASSOC);
-            $donaciones_pares = array_chunk($donaciones, 2);
-
-            foreach ($donaciones_pares as $donaciones_columna) {
-                echo '<div class="grid grid-cols-2 gap-8">';
-                foreach ($donaciones_columna as $donacion) {
-                    echo '<div class="bg-white p-4 rounded-lg shadow-md">';
-                    echo '<div class="font-bold text-xl">' . $donacion['nombre'] . '</div>';
-                    echo '<div><span class="font-semibold">Correo:</span> ' . $donacion['correo'] . '</div>';
-                    echo '<div><span class="font-semibold">Teléfono:</span> ' . $donacion['telefono'] . '</div>';
-                    echo '<div><span class="font-semibold">Género:</span> ' . $donacion['genero'] . '</div>';
-                    echo '<div><span class="font-semibold">Fecha:</span> ' . $donacion['fecha'] . '</div>';
-
-                    // Formulario para editar el día de la cita
-                    echo '<form action="editar_donacion.php" method="post" class="mt-4">';
-                    echo '<input type="hidden" name="cita_id" value="' . $donacion['ID'] . '">';
-                    echo '<label class="font-semibold">Nuevo día de la cita:</label>';
-                    echo '<input type="date" name="nuevo_dia" value="' . $donacion['fecha'] . '" class="border rounded-lg p-2">';
-                    echo '<button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded mt-2">Editar</button>';
-                    echo '</form>';
-                    echo '</div>';
-                }
-                echo '</div>';
+            // Verificar si el usuario ha iniciado sesión
+            if (!isset($_SESSION['usuario_id'])) {
+                // Redirigir al usuario a la página de inicio de sesión o mostrar un mensaje de error
+                header('Location: login.php');
+                exit();
             }
-        } else {
-            echo '<div class="text-center mt-4">No se encontraron donaciones para este usuario.</div>';
-        }
 
-        // Cerrar la conexión
-        $conn->close();
+            // Verificar si el usuario ha iniciado sesión y tiene un usuario_id válido
+            if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
+                // Obtener el usuario_id de la sesión
+                $usuarioId = $_SESSION['usuario_id'];
+
+                // Realizar la conexión a la base de datos
+                $servername = 'localhost';
+                $username = "root";
+                $password = "";
+                $dbname = "saludrural";
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Verificar la conexión
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+
+                // Realizar la consulta para obtener las donaciones del usuario
+                $sql = "SELECT * FROM medicamentos WHERE id_usuario = $usuarioId";
+                $resultado = $conn->query($sql);
+
+                // Verificar si hubo algún error en la consulta
+                if ($resultado === false) {
+                    // Manejo de errores
+                    echo "Error en la consulta: " . $conn->error;
+                } else {
+                    if ($resultado->num_rows > 0) {
+                        echo '<h1>Donaciones Realizadas</h1>';
+                        echo '<div class="grid grid-cols-2 gap-8">';
+                        while ($donacion = $resultado->fetch_assoc()) {
+                            echo '<div class="bg-white p-4 rounded-lg shadow-md">';
+                            echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
+                            echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($donacion['nombre']) . '</div>';
+                            echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['nombre'] . '</div>';
+                            echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['medicamento'] . '</div>';
+                            echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
+                            echo '</div>';
+                        }
+                        echo '</div>';
+                    } else {
+                        echo '<div class="text-center mt-4">No se encontraron donaciones para este usuario.</div>';
+                    }
+                }
+
+                // Cerrar la conexión
+                $conn->close();
+            } else {
+                echo "Debe iniciar sesión para ver las donaciones realizadas.";
+            }
+
+            // Función para obtener el nombre del hospital por su ID
+            function obtenerNombreHospital($id_hospital) {
+                // Realizar la conexión a la base de datos (puedes reutilizar la conexión anterior)
+                $servername = 'localhost';
+                $username = "root";
+                $password = "";
+                $dbname = "saludrural";
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                // Verificar la conexión
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+
+                // Realizar la consulta para obtener el nombre del hospital por su ID
+                $sql = "SELECT nombre FROM hospitales WHERE id = $id_hospital";
+                $resultado = $conn->query($sql);
+
+                // Verificar si hubo algún error en la consulta
+                if ($resultado === false) {
+                    // Manejo de errores
+                    return "Hospital Desconocido";
+                } else {
+                    if ($resultado->num_rows > 0) {
+                        $nombre_hospital = $resultado->fetch_assoc()['nombre'];
+                        // Cerrar la conexión (esto puede ser opcional dependiendo de cómo manejes las conexiones)
+                        $conn->close();
+                        return $nombre_hospital;
+                    } else {
+                        return "Hospital Desconocido";
+                    }
+                }
+            }
         ?>
+
     </div>
 
     <script>
