@@ -1,3 +1,27 @@
+<?php
+// Realizar la consulta para obtener los nombres de los hospitales
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "saludrural";
+
+// Crear conexión
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar la conexión
+if ($conn->connect_error) {
+    die("Conexión fallida: " . $conn->connect_error);
+}
+
+// Consulta para obtener los nombres de los hospitales
+$sql = "SELECT nombre FROM hospitales";
+$result = $conn->query($sql);
+
+// Cerrar la conexión
+$conn->close();
+?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
@@ -41,7 +65,7 @@
         </div>
       </div>
       <div class="form-outer">
-        <form action="../PHP/registrar_donacion_2.php" method="post">
+        <form action="../PHP/form-equipo-medico.php" method="post">
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
@@ -88,10 +112,38 @@
           </div>
 
           <div class="page">
-            <div class="field">
-              <div class="label" >Nombre del hospital </div>
-              <input type="text" placeholder="Donde sera entregada la donacion" name="hospital" required>
-            </div>
+          <div class="field">
+            <div class="label">Nombre del hospital</div>
+            <select name="hospital" required>
+            <?php
+                // Realizar la conexión a la base de datos
+                $db_host = 'localhost';
+                $db_username = 'root';
+                $db_password = '';
+                $db_name = 'saludrural';
+                $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+
+                // Verificar la conexión
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+
+                // Consulta para obtener los hospitales desde la tabla 'tabla_hospitales'
+                $sql = "SELECT id, nombre FROM hospitales";
+                $result = $conn->query($sql);
+
+                // Mostrar los nombres de los hospitales en el dropdown
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<option value="' . $row["id"] . '">' . $row["nombre"] . '</option>';
+                    }
+                }
+
+                // Cerrar la conexión
+                $conn->close();
+                ?>
+            </select>
+        </div>
             <div class="field">
               <div class="label">Descripcion del medicamento</div>
               <input type="text" placeholder="Fercha de vencimiento, etc.." name="descripcion" required>
