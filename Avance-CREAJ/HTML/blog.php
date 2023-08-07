@@ -140,11 +140,38 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         hospitalesMenuItems.classList.toggle('hidden');
     });
 </script>
-    <script src="../JS/blog.js"></script>
-    <footer class="bg-white text-black py-6">
-    <div class="container mx-auto text-center">
-      <p>&copy; 2023 Mi Blog. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+
+<script src="../JS/blog.js"></script>
 </body>
+
+ <!-- Código del footer -->
+ <footer>
+      <div class="footer-content">
+        <h3>SaludRural</h3>
+        <p>Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+
+        <!-- Íconos de las redes sociales -->
+        <ul class="socials">
+          <li><a href="" class="fab fa-facebook"></a></li>
+          <li><a href="" class="fab fa-instagram"></a></li>
+          <li><a href="" class="fab fa-twitter"></a></li>
+          <li><a href="" class="fab fa-youtube"></a></li>
+        </ul>
+        
+        <!-- Menú en el footer -->
+        <div class="footer-menu">
+          <ul class="f-menu">
+            <li><a href="../HTML/Index.php"><strong>Inicio</strong></a></li>
+            <li><a href="../HTML/donaciones-reali.php">Donaciones</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="../HTML/AcercaDe.php">Acerca de</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer sub-alterno -->
+      <div class="footer-bottom">
+        <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
+      </div>
+    </footer>
 </html>

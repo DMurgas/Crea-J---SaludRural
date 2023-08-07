@@ -175,9 +175,9 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         <!-- Menú en el footer -->
         <div class="footer-menu">
           <ul class="f-menu">
-            <li><a href=""><strong>Inicio</strong></a></li>
-            <li><a href="">Donaciones</a></li>
-            <li><a href="">Blog</a></li>
+            <li><a href="../HTML/Index.php"><strong>Inicio</strong></a></li>
+            <li><a href="../HTML/donaciones-reali.php">Donaciones</a></li>
+            <li><a href="../HTML/blog.php">Blog</a></li>
             <li><a href="">Acerca de</a></li>
           </ul>
         </div>
