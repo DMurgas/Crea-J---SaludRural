@@ -160,47 +160,18 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
 
     <!-- Código del footer -->
     <footer>
-      <!--<section class="footer">
-        <div class="social">
-          <a href="#"><i class="fab fa-facebook"></i></a>
-          <a href="#"><i class="fab fa-instagram"></i></a>
-          <a href="#"><i class="fab fa-twitter"></i></a>
-          <a href="#"><i class="fab fa-whatsapp"></i></a>
-        </div>
-
-        <ul class="list">
-          <li>
-            <a href="#">Inicio</a>
-          </li>
-          <li>
-            <a href="#">Donaciones</a>
-          </li>
-          <li>
-            <a href="#">Blog</a>
-          </li>
-          <li>
-            <a href="#">Acerca de</a>
-          </li>
-        </ul>
-
-        <hr class="line1">
-
-        <p class="copyright">
-          <small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small>
-        </p>
-      </section>-->
-
       <div class="footer-content">
         <h3>SaludRural</h3>
-        <p>Si deseas saber más inform.</p>
+        <p>Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
 
         <!-- Íconos de las redes sociales -->
         <ul class="socials">
           <li><a href="" class="fab fa-facebook"></a></li>
           <li><a href="" class="fab fa-instagram"></a></li>
           <li><a href="" class="fab fa-twitter"></a></li>
-          <li><a href="" class="fab fa-whatsapp"></a></li>
+          <li><a href="" class="fab fa-youtube"></a></li>
         </ul>
+        
         <!-- Menú en el footer -->
         <div class="footer-menu">
           <ul class="f-menu">
