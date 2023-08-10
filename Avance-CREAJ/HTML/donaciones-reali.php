@@ -24,7 +24,7 @@ if ($correo == null || $correo == '') {
 <head>
     <title>Donaciones realizadas</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-gray-100">
@@ -142,7 +142,7 @@ if ($correo == null || $correo == '') {
                 echo "Error en la consulta: " . $conn->error;
             } else {
                 if ($resultado->num_rows > 0) {
-                    echo '<div class="grid grid-cols-2 gap-8">';
+                    echo '<div class="flex-grow grid grid-cols-2 gap-8">';
                     while ($donacion = $resultado->fetch_assoc()) {
                         echo '<div class="bg-white p-4 rounded-lg shadow-md">';
                         echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
@@ -183,6 +183,24 @@ if ($correo == null || $correo == '') {
             ?>
 
     </div>
+    <footer class=" flex-grow bg-gray-800 text-center text-white py-8">
+    <div class="container mx-auto">
+      <p class="text-lg font-bold">SaludRural</p>
+      <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+      <div class="flex justify-center space-x-4 mb-4">
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <ul class="flex items-center justify-center space-x-4">
+        <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+      </ul>
+    </div>
+  </footer>
 
     <script>
         // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
@@ -213,24 +231,6 @@ if ($correo == null || $correo == '') {
         });
     </script>
 </body>
-<footer class="bg-gray-800 text-center text-white py-8">
-  <div class="container mx-auto">
-    <p class="text-lg font-bold">SaludRural</p>
-    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
-    <div class="flex justify-center space-x-4 mb-4">
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-    <ul class="flex items-center justify-center space-x-4">
-      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
-    </ul>
-  </div>
-</footer>
 </html>
  
 

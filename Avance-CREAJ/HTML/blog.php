@@ -156,7 +156,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <ul class="flex items-center justify-center space-x-4">
-      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
       <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
       <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
       <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>

@@ -24,7 +24,7 @@ if ($correo == null || $correo == '') {
 <head>
     <title>Donaciones realizadas</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-gray-100">
@@ -213,6 +213,7 @@ if ($correo == null || $correo == '') {
         });
     </script>
 </body>
+<!-- Código del footer -->
 <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">
     <p class="text-lg font-bold">SaludRural</p>

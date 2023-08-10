@@ -24,7 +24,7 @@ if ($correo == null || $correo == '') {
 <head>
     <title>Donaciones realizadas</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body class="bg-gray-100">
@@ -211,25 +211,27 @@ if ($correo == null || $correo == '') {
             hospitalesMenuItems.classList.toggle('hidden');
         });
     </script>
-</body>
-<footer class="bg-gray-800 text-center text-white py-8">
-  <div class="container mx-auto">
-    <p class="text-lg font-bold">SaludRural</p>
-    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
-    <div class="flex justify-center space-x-4 mb-4">
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+  <footer class="bg-gray-800 text-center text-white py-8">
+    <div class="container mx-auto">
+      <p class="text-lg font-bold">SaludRural</p>
+      <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+      <div class="flex justify-center space-x-4 mb-4">
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <ul class="flex items-center justify-center space-x-4">
+        <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
+        <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+      </ul>
     </div>
-    <ul class="flex items-center justify-center space-x-4">
-      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
-    </ul>
-  </div>
-</footer>
+  </footer>
+</body>
+<!-- Código del footer -->
+
 </html>
  
 
