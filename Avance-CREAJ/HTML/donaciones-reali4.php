@@ -103,7 +103,8 @@ if ($correo == null || $correo == '') {
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-cate-items">
                         <li><a href="donaciones-reali2.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Medicamentos</a></li>
                         <li><a href="donaciones-reali3.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Equipos medicos</a></li>
-                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Insumos medicos</a></li>
+                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Isumos medicos</a></li>
+                        <li><a href="donaciones-reali5.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Monetaria</a></li>
                     </ul>
                 </li>
         </ul>
@@ -132,7 +133,7 @@ if ($correo == null || $correo == '') {
             $usuarioId = $_SESSION['usuario_id'];
             
             // Realizar la consulta para obtener las donaciones del usuario
-            $sql = "SELECT id_donacion, id_hospital, fecha, medicamento, descripcion FROM medicamentos WHERE id_usuario = $usuarioId";
+            $sql = "SELECT id_donacion, id_hospital, fecha, insumo, descripcion FROM insumos WHERE id_usuario = $usuarioId";
             $resultado = $conn->query($sql);
             
             // Verificar si hubo algún error en la consulta
@@ -147,7 +148,7 @@ if ($correo == null || $correo == '') {
                         echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
                         echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
-                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['medicamento'] . '</div>';
+                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['insumo'] . '</div>';
                         echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
                         echo '</div>';
                     }

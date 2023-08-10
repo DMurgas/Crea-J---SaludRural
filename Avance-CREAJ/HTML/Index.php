@@ -35,13 +35,13 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
   </head>
   <body>
   <nav class="bg-white p-4">
-      <div class="flex justify-between items-center">
+        <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio -->
             <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
 
             <!-- Menú de navegación -->
             <ul class="flex space-x-4">
-                <li><a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -55,11 +55,24 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
                         <li><a href="form-equipo.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Equipos medicos</a></li>
                         <li><a href="form-insumo.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Isumos medicos</a></li>
                         <li><a href="form-mone.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Monetaria</a></li>
-                        <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizados</a></li>
+                        <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.html" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
+                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Nosotros</a></li>
+                <li class="relative">
+                    <!-- Enlace con menú desplegable -->
+                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="hospitales-menu">
+                        <span>Hospitales</span>
+                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                    </a>
+
+                    <!-- Menú desplegable -->
+                    <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="hospitales-menu-items">
+                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+                        <!-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Historias de exito</a></li> -->
+                    </ul>
+                </li>
             </ul>
 
             <div class="relative">
@@ -69,7 +82,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
                     <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
                 </button>
                 <!-- Menú desplegable del usuario -->
-            <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
+                <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
                 <?php
                 // Mostrar nombre del usuario si está disponible en la sesión
                 if (isset($_SESSION['correo']) && !empty($_SESSION['correo'])) {
@@ -79,18 +92,13 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
                 <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
-    </div>
-    <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
-    <div class="space-y-1 px-2 pb-3 pt-2">
-      <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-      <a href="#" class="bg-gray-900 text-white block rounded-md px-3 py-2 text-base font-medium" aria-current="page">Dashboard</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Team</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Projects</a>
-      <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white block rounded-md px-3 py-2 text-base font-medium">Calendar</a>
-    </div>
-  </div>
+            </div>
     </nav>
+
+
+
+
+
     <main>
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
@@ -140,6 +148,12 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       mobileMenu.classList.toggle('hidden');
       header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
     });
+        // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+        const hospitalesMenuButton = document.getElementById('hospitales-menu');
+        const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
+        hospitalesMenuButton.addEventListener('click', () => {
+            hospitalesMenuItems.classList.toggle('hidden');
+        });
 </script>
 <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">

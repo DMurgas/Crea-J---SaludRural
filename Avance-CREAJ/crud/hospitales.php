@@ -83,11 +83,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <div class="form-group">
                 <label for="edad" class="col-form-label">Lugar:</label>
                 <input type="text" class="form-control" id="lugar">
-                </div> 
-                <div class="form-group">
-                <label for="edad" class="col-form-label">Contraseña:</label>
-                <input type="text" class="form-control" id="lugar">
-                </div>            
+                </div>             
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>

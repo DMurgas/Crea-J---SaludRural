@@ -41,7 +41,7 @@
         </div>
       </div>
       <div class="form-outer">
-        <form action="../PHP/registrar_donacion_2.php" method="post">
+        <form action="../PHP/form-donacion-insumos.php" method="post">
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
@@ -88,10 +88,38 @@
           </div>
 
           <div class="page">
-            <div class="field">
-              <div class="label" >Nombre del hospital </div>
-              <input type="text" placeholder="Donde sera entregada la donacion" name="hospital" required>
-            </div>
+          <div class="field">
+            <div class="label">Nombre del hospital</div>
+            <select name="hospital" required>
+            <?php
+                // Realizar la conexión a la base de datos
+                $db_host = 'localhost';
+                $db_username = 'root';
+                $db_password = '';
+                $db_name = 'saludrural';
+                $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+
+                // Verificar la conexión
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+
+                // Consulta para obtener los hospitales desde la tabla 'tabla_hospitales'
+                $sql = "SELECT id, nombre FROM hospitales";
+                $result = $conn->query($sql);
+
+                // Mostrar los nombres de los hospitales en el dropdown
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<option value="' . $row["id"] . '">' . $row["nombre"] . '</option>';
+                    }
+                }
+
+                // Cerrar la conexión
+                $conn->close();
+                ?>
+            </select>
+        </div>
             <div class="field">
               <div class="label">Descripcion del insumo</div>
               <input type="text" placeholder="Informacion del insumo" name="descripcion" required>

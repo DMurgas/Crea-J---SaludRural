@@ -81,7 +81,6 @@ $("#formHospitales").submit(function(e){
     nombre = $.trim($("#nombre").val());
     descripcion = $.trim($("#descripcion").val());
     lugar = $.trim($("#lugar").val()); 
-    lugar = $.trim($("#contra").val());    
     $.ajax({
         url: "bd/crud_hospitales.php",
         type: "POST",
@@ -93,8 +92,8 @@ $("#formHospitales").submit(function(e){
             nombre = data[0].nombre;
             descripcion = data[0].descripcion;
             lugar = data[0].lugar;
-            if(opcion == 1){tablahospitales.row.add([id,nombre,descripcion,lugar,contra]).draw();}
-            else{tablahospitales.row(fila).data([id,nombre,descripcion,lugar,contra]).draw();}  
+            if(opcion == 1){tablahospitales.row.add([id,nombre,descripcion,lugar]).draw();}
+            else{tablahospitales.row(fila).data([id,nombre,descripcion,lugar]).draw();}  
             location.reload();          
         }        
     });

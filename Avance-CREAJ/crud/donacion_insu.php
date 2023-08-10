@@ -11,7 +11,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id, `nombre`, `correo`, `telefono`, `fecha`, `monto` FROM donaciones_insumos";
+$consulta = "SELECT id_donacion, `nombre`, `correo`, `telefono`, `fecha`, `insumo` FROM insumos";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -36,7 +36,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Correo</th>                                
-                                <th>Monto</th>  
+                                <th>Nombre del insumo</th>  
                                 <th>Acciones</th>
                             </tr>
                         </thead>
@@ -45,10 +45,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
-                                <td><?php echo $dat['id'] ?></td>
+                                <td><?php echo $dat['id_donacion'] ?></td>
                                 <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['fecha'] ?></td>    
-                                <td><?php echo $dat['monto'] ?></td>    
+                                <td><?php echo $dat['insumo'] ?></td>    
                                 <td></td>
                             </tr>
                             <?php

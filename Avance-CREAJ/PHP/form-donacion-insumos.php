@@ -1,47 +1,45 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+session_start();
 
-$db_host = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'saludrural';
-$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+// Verificar si el usuario ha iniciado sesión y tiene un usuario_id válido
+if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
+    // Obtener el id_hospital seleccionado del formulario
+    if (isset($_POST['hospital'])) {
+        $id_hospital = $_POST['hospital'];
+        $usuarioId = $_SESSION['usuario_id'];
+        $nombre = $_POST['nombre'];
+        $correo = $_POST['correo'];
+        $telefono = $_POST['telefono'];
+        $fecha = $_POST['fecha'];
+        $insumo = $_POST['insumo'];
+        $cantidad = $_POST ['cantidad'];
+        $descripcion = $_POST['descripcion'];
 
-if (!$conn) {
-    die("Error de la conexion a la base de datos: " . mysqli_connect_error());
-}
+        // Realizar la conexión a la base de datos
+        $db_host = 'localhost';
+        $db_username = 'root';
+        $db_password = '';
+        $db_name = 'saludrural';
+        $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
 
-if(!empty($_POST["correo"])){
-    session_start();
-    $usuarioId = $_SESSION['usuario_id'];
-    if (!empty($_POST["nombre"]) && !empty($_POST["correo"])  && !empty($_POST["telefono"])  && !empty($_POST["fecha"]) && !empty($_POST["monto"]) && !empty($_POST["tarjeta"]) && !empty($_POST["cvv"])) {
-        $nombre = $_POST["nombre"];
-        #$correo = $_POST["correo"];
-        #$contacto = $_POST["info"];
-        $telefono = $_POST["telefono"];
-        $genero = $_POST["genero"];
-        $fecha = $_POST["fecha"];
-        $monto = $_POST["monto"];
-        $tarjeta = $_POST["tarjeta"];
-        $cvv = $_POST["cvv"];
-    
-        // Insertar la donación asociada al usuario ID
-        $sql = $conn->query ("INSERT INTO `donacion_insumos`(`ID`, `usuario_id`, `nombre`, `correo`, `telefono`, `genero`, `fecha`, `monto`, `tarjeta`, `cvv`) VALUES (NULL, '$usuarioId', '$nombre', '$genero', '$fecha', '$monto', '$tarjeta', '$cvv')");
-    
-        // Ejecutar la consulta
-        if ($sql) {
-            echo '<script language="javascript">alert("Donación registrada correctamente"); window.location.href="../HTML/Index.php";</script>';
-            exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
-        } else {
-            echo '<script language="javascript">alert("Error en el registro de la donación: ' . mysqli_error($conn) . '");</script>';
+        // Verificar la conexión
+        if ($conn->connect_error) {
+            die("Conexión fallida: " . $conn->connect_error);
         }
+
+        // Preparar la consulta para insertar la donación en la tabla 'donaciones'
+        $sql = "INSERT INTO insumos (id_hospital, id_usuario,`nombre`, `correo`, `telefono`, `fecha`, `insumo`, `cantidad`, `descripcion`) VALUES ('$id_hospital', '$usuarioId', '$nombre','$correo','$telefono','$fecha','$insumo','$cantidad', '$descripcion')";
+
+        if ($conn->query($sql) === TRUE) {
+            echo "Donación realizada con éxito.";
+        } else {
+            echo "Error al realizar la donación: " . $conn->error;
+        }
+
+        // Cerrar la conexión
+        $conn->close();
     }
+} else {
+    echo "Debe iniciar sesión para realizar una donación.";
 }
-
-//}else{
-    #echo '<script language="javascript">alert("Donacion no registrada"); window.location.href="../HTML/form-prueba.php";</script>';
-    exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
-
 ?>

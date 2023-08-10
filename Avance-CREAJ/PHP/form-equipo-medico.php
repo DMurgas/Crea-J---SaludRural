@@ -11,7 +11,7 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         $correo = $_POST['correo'];
         $telefono = $_POST['telefono'];
         $fecha = $_POST['fecha'];
-        $medicamento = $_POST['medicamento'];
+        $equipo = $_POST['equipo'];
         $cantidad = $_POST ['cantidad'];
         $descripcion = $_POST['descripcion'];
 
@@ -28,7 +28,7 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         }
 
         // Preparar la consulta para insertar la donación en la tabla 'donaciones'
-        $sql = "INSERT INTO medicamentos (id_hospital, id_usuario,`nombre`, `correo`, `telefono`, `fecha`, `medicamento`, `cantidad`, `descripcion`) VALUES ('$id_hospital', '$usuarioId', '$nombre','$correo','$telefono','$fecha','$medicamento','$cantidad', '$descripcion')";
+        $sql = "INSERT INTO equipo (id_hospital, id_usuario,`nombre`, `correo`, `telefono`, `fecha`, `equipo`, `cantidad`, `descripcion`) VALUES ('$id_hospital', '$usuarioId', '$nombre','$correo','$telefono','$fecha','$equipo','$cantidad', '$descripcion')";
 
         if ($conn->query($sql) === TRUE) {
             echo "Donación realizada con éxito.";

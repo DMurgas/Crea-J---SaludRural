@@ -7,13 +7,12 @@ $conexion = $objeto->Conectar();
 $nombre = (isset($_POST['nombre'])) ? $_POST['nombre'] : '';
 $descripcion = (isset($_POST['descripcion'])) ? $_POST['descripcion'] : '';
 $lugar = (isset($_POST['lugar'])) ? $_POST['lugar'] : '';
-$lugar = (isset($_POST['contra'])) ? $_POST['contra'] : '';
 $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $id = (isset($_POST['id'])) ? $_POST['id'] : '';
 
 switch($opcion){
     case 1: //alta
-        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar, contraseña) VALUES('$nombre','$descripcion', '$lugar', $cont) ";			
+        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar) VALUES('$nombre','$descripcion', '$lugar') ";			
         $resultado = $conexion->prepare($consulta);
         $resultado->execute(); 
 

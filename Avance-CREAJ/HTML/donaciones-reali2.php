@@ -103,7 +103,8 @@ if ($correo == null || $correo == '') {
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-cate-items">
                         <li><a href="donaciones-reali2.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Medicamentos</a></li>
                         <li><a href="donaciones-reali3.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Equipos medicos</a></li>
-                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Insumos medicos</a></li>
+                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Isumos medicos</a></li>
+                        <li><a href="donaciones-reali5.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Monetaria</a></li>
                     </ul>
                 </li>
         </ul>
@@ -147,7 +148,7 @@ if ($correo == null || $correo == '') {
                         echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
                         echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
-                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['medicamento'] . '</div>';
+                        echo '<div><span class="font-semibold">Nombre del medicamento:</span> ' . $donacion['medicamento'] . '</div>';
                         echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
                         echo '</div>';
                     }
@@ -204,8 +205,8 @@ if ($correo == null || $correo == '') {
         userMenuButton.addEventListener('click', () => {
             userMenu.classList.toggle('hidden');
         });
-        // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-        const hospitalesMenuButton = document.getElementById('hospitales-menu');
+                // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+                const hospitalesMenuButton = document.getElementById('hospitales-menu');
         const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
         hospitalesMenuButton.addEventListener('click', () => {
             hospitalesMenuItems.classList.toggle('hidden');

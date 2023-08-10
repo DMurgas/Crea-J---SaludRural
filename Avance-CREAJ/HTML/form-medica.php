@@ -65,7 +65,7 @@ $conn->close();
         </div>
       </div>
       <div class="form-outer">
-        <form action="../PHP/form-equipo-medico.php" method="post">
+        <form action="../PHP/form-donacion-medicamentos.php" method="post">
           <div class="page slide-page">
             <div class="field">
               <div class="label">Nombre Completo</div>
