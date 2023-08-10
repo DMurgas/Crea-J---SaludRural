@@ -123,16 +123,42 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       </div>
     </section>
 
-    </main>
-    <main>
-      <section id="hero">
-        <h1>¡Bienvenido a SaludRural!</h1>
-        <p>
-          Ayudanos a apoyar a los mas necesitados
-        </p></br>
-        </p>
-      </section>
-    </main>
+    <div class="flex min-h-screen items-center justify-center p-10 bg-white">
+  <div class="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
+    <div class="row-span-2 flex flex-col rounded-md border border-slate-200">
+      <div class="h-1/2 flex-1"><img src="../Imagenes/3.jpeg" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
+      <div class="p-10">
+        <h3 class="text-xl font-medium text-gray-700">Respuesta a Emergencias:</h3>
+        <p class="mt-2 text-slate-500">En situaciones de emergencia, como desastres naturales o epidemias, los hospitales pueden verse abrumados por la demanda de atención médica. Las donaciones permiten a los hospitales estar mejor preparados para responder a estas situaciones críticas al proporcionar los recursos necesarios para manejar un aumento repentino en la demanda de atención médica.</p>
+      </div>
+    </div>
+    <div class="flex rounded-md border border-slate-200">
+      <div class="flex-1 p-10">
+        <h3 class="text-xl font-medium text-gray-700">Atención a Grupos Vulnerables:</h3>
+        <p class="mt-2 text-slate-500">Los hospitales que atienden a poblaciones desfavorecidas o marginadas a menudo enfrentan desafíos adicionales para proporcionar atención médica adecuada. Las donaciones pueden ayudar a abordar estas disparidades al proporcionar recursos adicionales para garantizar que todos tengan acceso a atención médica de calidad.</p>
+      </div>
+
+      <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
+        <div class="absolute inset-0">
+          <img src="../Imagenes/2.png" class="h-full w-full object-cover object-left-top" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="flex rounded-md border border-slate-200">
+      <div class="flex-1 p-10">
+        <h3 class="text-xl font-medium text-gray-700">Mejora de la Infraestructura:</h3>
+        <p class="mt-2 text-slate-500">Los hospitales a menudo necesitan actualizar su infraestructura, como la renovación de instalaciones obsoletas, la compra de equipos médicos modernos y la mejora de la capacidad de atención. Las donaciones pueden permitir que los hospitales realicen estas mejoras, lo que a su vez beneficia a los pacientes al ofrecer un entorno más seguro y cómodo para recibir atención médica.</p>
+      </div>
+
+      <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
+        <div class="absolute inset-0">
+          <img src="../Imagenes/4.jpg" class="h-full w-full object-cover object-left-top" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</main>
     <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
