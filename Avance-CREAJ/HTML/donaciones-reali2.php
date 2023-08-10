@@ -95,7 +95,7 @@ if ($correo == null || $correo == '') {
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="bg-white text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu-cate">
-                        <span>Donaciones Monetarias</span>
+                        <span>Donaciones de Medicamentos</span>
                         <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 

@@ -95,7 +95,7 @@ if ($correo == null || $correo == '') {
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="bg-white text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu-cate">
-                        <span>Donaciones Monetarias</span>
+                        <span>Donaciones Equipos medicos</span>
                         <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
@@ -103,7 +103,7 @@ if ($correo == null || $correo == '') {
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-cate-items">
                         <li><a href="donaciones-reali2.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Medicamentos</a></li>
                         <li><a href="donaciones-reali3.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Equipos medicos</a></li>
-                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Isumos medicos</a></li>
+                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Insumos medicos</a></li>
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Monetaria</a></li>
                     </ul>
                 </li>

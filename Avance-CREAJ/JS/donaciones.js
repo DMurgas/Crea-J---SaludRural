@@ -41,7 +41,7 @@ submitBtn.addEventListener("click", function(){
   progressText[current - 1].classList.add("active");
   current += 1;
   setTimeout(function(){
-    alert("Su formulario no fue enviado correctamente, complete los campos solicitados");
+    alert("su formulario fue enviado exitosamente");
     location.reload();
   },800);
 });
