@@ -69,7 +69,7 @@
     </nav>
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡yúdanos a llevar la salud a zonas rurales!</h1>
+        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a llevar la salud a zonas rurales!</h1>
         <p class="text-lg mb-8">¿Que tipo de donacion quieres hacer?</p>
         
       </div>
