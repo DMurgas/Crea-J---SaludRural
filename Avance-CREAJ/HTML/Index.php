@@ -106,8 +106,8 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     </section>
     <section class="bg-white py-24">
       <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">Acerca de SaludRural</h2>
-        <p class="text-lg mb-8">Recursos Limitados: Muchos centros hospitalarios, especialmente en áreas de bajos recursos o en momentos de crisis, pueden enfrentar limitaciones financieras y carecer de los recursos necesarios para proporcionar atención médica de calidad. Las donaciones monetarias pueden ayudar a compensar estas limitaciones y garantizar que los hospitales tengan acceso a los equipos, suministros y personal necesarios para brindar atención médica adecuada.
+        <h2 class="text-2xl font-bold mb-4">¿Como tu donacion ayudara a las pesonas?</h2>
+        <p class="text-lg mb-8">Muchos centros hospitalarios, especialmente en áreas de bajos recursos o en momentos de crisis, pueden enfrentar limitaciones financieras y carecer de los recursos necesarios para proporcionar atención médica de calidad. Las donaciones pueden ayudar a compensar estas limitaciones y garantizar que los hospitales tengan acceso a los equipos, suministros y personal necesarios para brindar atención médica adecuada.
           
 
         <!--Respuesta a Emergencias: En situaciones de emergencia, como desastres naturales o epidemias, los hospitales pueden verse abrumados por la demanda de atención médica. Las donaciones permiten a los hospitales estar mejor preparados para responder a estas situaciones críticas al proporcionar los recursos necesarios para manejar un aumento repentino en la demanda de atención médica.
