@@ -154,10 +154,14 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     </div>
     <ul class="flex items-center justify-center space-x-4">
       <li><a href="Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+      <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="../HTML/blog.php
+" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
     </ul>
+    <div class="footer-bottom">
+        <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
+      </div>
   </div>
 </footer>
 

@@ -101,12 +101,12 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a llevar la salud a zonas rurales!</h1>
         <p class="text-lg mb-8">Tu generosa donación marca la diferencia en la vida de quienes más lo necesitan.</p>
-        <a href="#" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar Donación</a>
+        <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar Donación</a>
       </div>
     </section>
     <section class="bg-white py-24">
       <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">¿Como tu donacion ayudara a las pesonas?</h2>
+        <h2 class="text-2xl font-bold mb-4">¿Como tu donación ayudara a las pesonas?</h2>
         <p class="text-lg mb-8">Muchos centros hospitalarios, especialmente en áreas de bajos recursos o en momentos de crisis, pueden enfrentar limitaciones financieras y carecer de los recursos necesarios para proporcionar atención médica de calidad. Las donaciones pueden ayudar a compensar estas limitaciones y garantizar que los hospitales tengan acceso a los equipos, suministros y personal necesarios para brindar atención médica adecuada.
           
 
@@ -197,12 +197,14 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <ul class="flex items-center justify-center space-x-4">
-      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
     </ul>
-  </div>
+    <div class="footer-bottom">
+     <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
+ </div>
 </footer>
 
   </body>

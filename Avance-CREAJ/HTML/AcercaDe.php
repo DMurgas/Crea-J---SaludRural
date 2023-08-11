@@ -145,10 +145,10 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <ul class="flex items-center justify-center space-x-4">
-      <li><a href="#" class="text-gray-400 hover:text-white">Inicio</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="#" class="text-gray-400 hover:text-white">Acerca de</a></li>
+      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
     </ul>
   </div>
   <div class="footer-bottom">
