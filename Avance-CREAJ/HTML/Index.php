@@ -37,7 +37,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
   <nav class="bg-white p-4">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio -->
-            <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
+            <a href="../HTML/boton-donaciones.html" class="text-green text-2xl font-bold">SaludRural</a>
 
             <!-- Menú de navegación -->
             <ul class="flex space-x-4">
