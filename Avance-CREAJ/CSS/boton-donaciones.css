@@ -24,7 +24,7 @@
 
 .btn{
     position: relative;
-    padding: 20px 50px;
+    padding: 10px 30px;
     text-decoration: none;
     color: #fff;
     letter-spacing: 10px;
@@ -36,7 +36,7 @@
 
 .btn-1{
     overflow: hidden;
-    border: 3px solid #03cc57;
+    border: 3px solid #17a2ff;
     z-index: 2;
 }
 
@@ -48,7 +48,7 @@
     height: 200%;
     left: 0;
     top: -200%;
-    background-color: #03cc57;
+    background-color: #17a2ff;
     border-radius: 50%;
     transition: all 0.6s ease;
     z-index: -1;
