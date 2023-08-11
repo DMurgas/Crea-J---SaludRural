@@ -2,7 +2,7 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Donaciones Monetarias</h1>
+    <h1>Donaciones Insumos medicos</h1>
     
     
     
@@ -11,7 +11,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id_donacion, `nombre`, `correo`, `telefono`, `fecha`, `insumo` FROM insumos";
+$consulta = "SELECT id_donacion,  `correo`, `telefono`, `fecha`, `insumo` FROM insumos";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -34,7 +34,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <thead class="text-center">
                             <tr>
                                 <th>Id</th>
-                                <th>Nombre</th>
+                               <th>fecha</th>
                                 <th>Correo</th>                                
                                 <th>Nombre del insumo</th>  
                                 <th>Acciones</th>
@@ -46,8 +46,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             ?>
                             <tr>
                                 <td><?php echo $dat['id_donacion'] ?></td>
-                                <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['fecha'] ?></td>    
+                                <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['insumo'] ?></td>    
                                 <td></td>
                             </tr>

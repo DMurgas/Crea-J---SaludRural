@@ -2,7 +2,7 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Donaciones Monetarias</h1>
+    <h1>Donaciones Equipo Medicos</h1>
     
     
     
@@ -34,8 +34,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <thead class="text-center">
                             <tr>
                                 <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Correo</th>                                
+                                <th>Correo</th>  
+                                <th>fecha</th>                              
                                 <th>Equipo</th>  
                                 <th>Acciones</th>
                             </tr>

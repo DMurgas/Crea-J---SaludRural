@@ -130,7 +130,7 @@ if ($correo == null || $correo == '') {
             $usuarioId = $_SESSION['usuario_id'];
             
             // Realizar la consulta para obtener las donaciones del usuario
-            $sql = "SELECT id_donacion, id_hospital, fecha, medicamento, descripcion FROM medicamentos WHERE id_usuario = $usuarioId";
+            $sql = "SELECT id_donacion, id_hospital, fecha, monto FROM monetaria WHERE id_usuario = $usuarioId";
             $resultado = $conn->query($sql);
             
             // Verificar si hubo algún error en la consulta
@@ -145,8 +145,7 @@ if ($correo == null || $correo == '') {
                         echo '<div><span class="font-semibold">ID:</span> ' . $donacion['id_donacion'] . '</div>';
                         echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
-                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['medicamento'] . '</div>';
-                        echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
+                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['monto'] . '</div>';
                         echo '</div>';
                     }
                     echo '</div>';
@@ -180,7 +179,7 @@ if ($correo == null || $correo == '') {
             ?>
 
     </div>
-    <footer class=" flex-grow bg-gray-800 text-center text-white py-8">
+    <!--<footer class=" flex-grow bg-gray-800 text-center text-white py-8">
     <div class="container mx-auto">
       <p class="text-lg font-bold">SaludRural</p>
       <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
@@ -200,7 +199,7 @@ if ($correo == null || $correo == '') {
      <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
       </div>
     </div>
-  </footer>
+  </footer>-->
 
     <script>
         // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"

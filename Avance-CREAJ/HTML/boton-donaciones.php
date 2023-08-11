@@ -103,17 +103,8 @@
     </button>
 </a>
   </div>
-<<<<<<< Updated upstream
-  
+  </body>
     <script>
-=======
-    </section>
-      
-
-    
-</body>
-<script>
->>>>>>> Stashed changes
         // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
         const donacionesMenu = document.getElementById('donaciones-menu');
         const donacionesMenuItems = document.getElementById('donaciones-menu-items');

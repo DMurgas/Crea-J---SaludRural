@@ -210,7 +210,7 @@ if ($correo == null || $correo == '') {
         });
     </script>
 </body>
-<!-- Código del footer -->
+<!-- Código del footer 
 <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">
     <p class="text-lg font-bold">SaludRural</p>
@@ -231,7 +231,7 @@ if ($correo == null || $correo == '') {
      <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
     </div>
   </div>
-</footer>
+</footer>-->
 </html>
  
 

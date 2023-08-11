@@ -209,7 +209,7 @@ if ($correo == null || $correo == '') {
             hospitalesMenuItems.classList.toggle('hidden');
         });
     </script>
-  <footer class="bg-gray-800 text-center text-white py-8">
+  <!--<footer class="bg-gray-800 text-center text-white py-8">
     <div class="container mx-auto">
       <p class="text-lg font-bold">SaludRural</p>
       <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
@@ -226,7 +226,7 @@ if ($correo == null || $correo == '') {
         <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
       </ul>
     </div>
-  </footer>
+  </footer>-->
 </body>
 <!-- Código del footer -->
 

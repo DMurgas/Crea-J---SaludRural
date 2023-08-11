@@ -36,8 +36,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <th>Id</th>
                                 <th>Nombre</th>
                                 <th>Correo</th>                                
-                                <th>Monto</th>  
-                                <th>Acciones</th>
+                                <th>Fecha</th>  
+                                <th>Monto</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,6 +46,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             ?>
                             <tr>
                                 <td><?php echo $dat['id_donacion'] ?></td>
+                                <td><?php echo $dat['nombre'] ?></td>
                                 <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['fecha'] ?></td>  
                                 <td><?php echo $dat['monto'] ?></td>  
