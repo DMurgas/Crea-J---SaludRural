@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Hacer donacion</title>
 </head>
 <body class="bg-gray-100">
-    <nav class="bg-white p-4">
+<nav class="bg-white p-4">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio -->
             <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
@@ -65,36 +67,53 @@
             </ul>
             </div>
     </nav>
-    <div class="flex h-screen flex-col items-center justify-center gap-10 ">
+    <section class="bg-blue-600 text-white py-24">
+      <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a llevar la salud a zonas rurales!</h1>
+        <p class="text-lg mb-8">¿Que tipo de donacion quieres hacer?</p>
+        
+      </div>
+    </section>
+    <section class="bg-white py-24">
+    <div class="flex justify-center items-center ">
   <div class="flex gap-4">
   <a href="../HTML/form-mone.php">
-    <button class="relative h-12 w-40 overflow-hidden border border-indigo-600 text-indigo-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-indigo-600 before:duration-300 before:ease-out hover:text-white hover:shadow-indigo-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
-        <span class="relative z-10">Monetaria</span>
+    <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
+        <span class="relative z-9">Monetaria</span>
     </button>
     </a>
 
     <a href="../HTML/form-insumo.php">
-    <button class="relative h-12 w-40 overflow-hidden border border-indigo-600 text-indigo-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-indigo-600 before:duration-300 before:ease-out hover:text-white hover:shadow-indigo-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
+    <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
         <span class="relative z-10">Insumos</span>
     </button>
 </a>
 
     
 <a href="../HTML/form-medica.php">
-    <button class="relative h-12 w-40 overflow-hidden border border-indigo-600 text-indigo-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-indigo-600 before:duration-300 before:ease-out hover:text-white hover:shadow-indigo-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
+    <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
         <span class="relative z-10">Medicamentos</span>
     </button>
 </a>
     
 
 <a href="../HTML/form-equipo.php">
-    <button class="relative h-12 w-40 overflow-hidden border border-indigo-600 text-indigo-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-indigo-600 before:duration-300 before:ease-out hover:text-white hover:shadow-indigo-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
+    <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
         <span class="relative z-10">Equipo medicos</span>
     </button>
 </a>
   </div>
+<<<<<<< Updated upstream
   
     <script>
+=======
+    </section>
+      
+
+    
+</body>
+<script>
+>>>>>>> Stashed changes
         // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
         const donacionesMenu = document.getElementById('donaciones-menu');
         const donacionesMenuItems = document.getElementById('donaciones-menu-items');
@@ -122,5 +141,4 @@
             hospitalesMenuItems.classList.toggle('hidden');
         });
     </script>
-</body>
 </html>
