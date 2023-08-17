@@ -1,5 +1,7 @@
-function googleTranslateElement (){
-    new google.Translate.TranslateElement({pageLanguage: 'en'},
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement(
+    { pageLanguage: 'en,', includedLanguages: 'es,en' },
     'google_translate_element'
-    );
+  );
 }
