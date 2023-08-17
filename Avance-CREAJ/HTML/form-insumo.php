@@ -7,6 +7,9 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
 <body>
+    <div id="google_translate_element"></div>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script src="../JS/traductor.js"></script>
 
     <div class="container">
       <header>Donacion de insumos</header>

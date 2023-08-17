@@ -38,6 +38,9 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
 <nav class="bg-white p-4">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio -->
+            <div id="google_translate_element"></div>
+            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="../JS/traductor.js"></script>
             <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
 
             <!-- Menú de navegación -->

@@ -181,3 +181,8 @@ form .page .btns button.next{
   display: block;
   color: #fff;
 }
+#google_translate_element {
+  position: fixed;
+  top: 40px; 
+  left: 20px; 
+}
