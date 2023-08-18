@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    tablaregistro = $("#tablanecesidades").DataTable({
+    tablaregistro = $("#tablaNecesidades").DataTable({
        "columnDefs":[{
         "targets": -1,
         "data":null,
@@ -24,7 +24,7 @@ $(document).ready(function(){
     });
     
 $("#btnNuevo").click(function(){
-    $("#formnecesidades").trigger("reset");
+    $("#formNecesidades").trigger("reset");
     $(".modal-header").css("background-color", "#1cc88a");
     $(".modal-header").css("color", "white");
     $(".modal-title").text("Nuevo Hospital");            
@@ -76,7 +76,7 @@ $(document).on("click", ".btnBorrar", function(){
     }   
 });
     
-$("#formnecesidades").submit(function(e){
+$("#formNecesidades").submit(function(e){
     e.preventDefault();    
     titulo = $.trim($("#titulo").val());
     contenido = $.trim($("#contenido").val());
@@ -90,10 +90,10 @@ $("#formnecesidades").submit(function(e){
             console.log(data);
             id = data[0].id;            
             titulo = data[0].titulo;
-            contenido = data[0].contenido; 
+            contenido = data[0].contenido;
             lugar = data[0].lugar;
-            if(opcion == 1){tablanecesidades.row.add([id,titulo,contenido,lugar]).draw();}
-            else{tablanecesidades.row(fila).data([id,titulo,contenido,lugar]).draw();}  
+            if(opcion == 1){tablaNecesidades.row.add([id,titulo,contenido,lugar]).draw();}
+            else{tablaNecesidades.row(fila).data([id,titulo,contenido,lugar]).draw();}  
             location.reload();          
         }        
     });
