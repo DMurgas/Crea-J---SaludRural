@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Donacion monetaria</title>
+    
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
@@ -11,8 +12,13 @@
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
 
+    <a href="boton-donaciones.php">
+    <button class="back-button" >
+    <i class="fas fa-arrow-left"></i> Volver atras
+    </button></a>
+    
     <div class="container">
-      
+    
       <header>Donacion monetaria</header>
       <div class="progress-bar">
         <div class="step">

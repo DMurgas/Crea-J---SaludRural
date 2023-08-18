@@ -10,6 +10,11 @@
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
+
+    <a href="boton-donaciones.php">
+    <button class="back-button" >
+    <i class="fas fa-arrow-left"></i> Volver atras
+    </button></a>
     
     <div class="container">
       <header>Donacion de equipo medico</header>
