@@ -30,7 +30,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         <div class="row">
                 <div class="col-lg-12">
                     <div class="table-responsive">         
-                        <table id="tablaHospitales" class="table table-striped table-bordered table-condensed" style="width:100%">
+                        <table id="tablaNecesidades" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
                                 <th>Id</th>
@@ -70,7 +70,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
                 </button>
             </div>
-        <form id="formnecesidades">    
+        <form id="formNecesidades">    
             <div class="modal-body">
                 <div class="form-group">
                 <label for="nombre" class="col-form-label">Titulo:</label>
@@ -98,4 +98,4 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
     
 </div>
 <!--FIN del cont principal-->
-<?php require_once "vistas/parte_inferior2.php"?>
+<?php require_once "vistas/parte_necesidades_2.php"?>

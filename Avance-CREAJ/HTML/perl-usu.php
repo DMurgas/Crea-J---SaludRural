@@ -123,7 +123,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </nav>
     <div class="flex items-center justify-center min-h-screen">
     <div class="container mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
-    <h1 class="text-2xl font-bold mb-4">Perfil de Usuario</h1>
+    <h1 class="text-2xl font-bold mb-4 text-center">Perfil de Usuario</h1>
     
     <?php
     include_once 'db_connection.php';
@@ -137,35 +137,33 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
     ?>
    <div class="flex items-center justify-center">
-        <div class="w-1/3">
-            <form action="../hace_cambios/cambiar_imagen.php" method="post" enctype="multipart/form-data">
-                <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover">
-                <input type="file" name="nueva_imagen">
-                <button type="submit" class="mt-2 bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
+        <div class="w-1/3 text-center">
+            <!-- Imagen de perfil -->
+            <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover mx-auto mb-2">
+            
+            <!-- Formulario para cambiar la imagen -->
+            <form action="cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
+                <input type="file" name="nueva_imagen" class="mb-1">
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
             </form>
-        </div>
-        <div class="w-2/3 pl-8">
-            <h2 class="text-xl font-semibold">
-                <?php echo $usuario['nombre']; ?>
-            </h2>
             
-            <p>
-                <form action="../hace_cambios/cambiar_correo.php" method="post">
-                    <input type="email" name="nuevo_correo" value="<?php echo $usuario['correo']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
-                    <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
-                </form>
-            </p>
+            <!-- Nombre del usuario -->
+            <h2 class="text-xl font-semibold mb-2"><?php echo $usuario['nombre']; ?></h2>
             
-            <p>
-                <form action="../hace_cambios/cambiar_telefono.php" method="post">
+            <!-- Formulario para cambiar el correo -->
+            <form action="../hace_cambios/cambiar_correo.php" method="post" class="mb-2">
+                <input type="email" name="nuevo_correo" value="<?php echo $usuario['correo']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
+            </form>
+            
+            <!-- Formulario para cambiar el teléfono -->
+            <form action="../hace_cambios/cambiar_telefono.php" method="post" class="mb-2">
                 <input type="text" name="nuevo_telefono" value="<?php echo $usuario['telefono']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
-                    <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
-                </form>
-            </p>
-            <p>
-            <?php echo $usuario['dui']; ?>
-            </p>
-        </div>
+                <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
+            </form>
+            
+            <!-- DUI del usuario -->
+            <p><?php echo $usuario['dui']; ?></p>
         </div>
     </div>
     <?php
