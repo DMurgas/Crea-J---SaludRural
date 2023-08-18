@@ -144,6 +144,47 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </div>
     </nav>
 
+    <!-- Apartado de aclaración sobre enviar un correo por cualquier duda o corrección -->
+    <div class="cuadro">
+        <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
+        <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
+    </div>
+    <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
+    <style>
+        body {
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .cuadro {
+            border: 2px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+            max-width: 80%;
+            padding: 15px;
+            margin: 0 auto;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+        .mensaje {
+            font-size: 16.7px;
+            color: #333;
+            margin-bottom: 3.8px;
+        }
+
+        .correo {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .correo:hover {
+            text-decoration: underline;
+            font-weight: bold; 
+        }
+    </style>
+
     <div class="w-full max-w-mn p-8  rounded-lg   mx-auto p-4">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>
         <ul class="flex space-x-4 ">
