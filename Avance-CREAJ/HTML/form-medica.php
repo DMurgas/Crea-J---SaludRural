@@ -26,7 +26,7 @@ $conn->close();
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Donacion monetaria</title>
+    <title>Donacion medicamentos</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>

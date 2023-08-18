@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Donacion monetaria</title>
+    <title>Donacion insumo medico</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <style>
@@ -70,7 +70,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </button></a>
 
     <div class="container">
-      <header>Donacion de insumos</header>
+      <header>Donacion de insumos medicos</header>
       <div class="progress-bar">
         <div class="step">
           <p>Paso 1</p>
