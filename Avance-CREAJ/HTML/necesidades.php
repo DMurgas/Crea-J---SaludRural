@@ -100,7 +100,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <?php
         include("../PHP/conex.php");
-        $sql = "SELECT id, titulo, contenido, imagen FROM nombre de la tabla";
+        $sql = "SELECT id, titulo, contenido, imagen FROM hospitales";
         $result = $conn->query($sql);
         // Genera el contenido HTML de los blogs a partir de los datos de la base de datos
         if ($result->num_rows > 0) {
@@ -109,8 +109,8 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
                 echo '<div>';
                 echo '<img src="' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
                 echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">' . $row['titulo'] . '</h2>';
-                echo '<p class="text-gray-700 mb-4">' . $row['direccion'] . '</p>';
                 echo '<p class="text-gray-700 mb-4">' . $row['contenido'] . '</p>';
+                echo '<p class="text-gray-700 mb-4">' . $row['lugar'] . '</p>';
                 echo '</div>';
                 echo '<a href="#" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 text-center">Leer más</a>';
                 echo '</article>';
