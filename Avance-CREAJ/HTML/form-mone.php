@@ -3,16 +3,75 @@
   <head>
     <meta charset="utf-8">
     <title>Donacion monetaria</title>
+    
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
+  <style>
+      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+
+/* Quita el texto (Con la tecnologia de) */
+div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+    font-size: 0%;
+  }
+  
+  /* Quita el texto (Traductor de google) */
+  div .skiptranslate.goog-te-gadget span a{
+    font-size: 0;
+  }
+  
+  /* Cambia el estilo del boton para seleccionar el idioma */
+  div .goog-te-combo{
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px 20px;
+            transition: background-color 0.1s, color 0.1s;
+  }
+  div .goog-te-combo:hover{
+    background-color: blue;
+    color: #ffffff;
+  }
+  /* Cambia el tamaño y mueve la parte azul del traductor*/
+  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
+    width: 55%;
+    top: 1.3%;
+    left: -52.9%;
+  }
+  
+  /* Cambia el estilo de la lista de idiomas del menú del traductor */
+  .goog-te-combo option{
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #000000;
+    -webkit-o-border-radius: 10px;
+    -moz-o-border-radius: 10px;
+    -ms-o-border-radius: 10px;
+  }
+  
+  /* Hace invisible la imagen de "Google" */
+  a img{
+    width: 0;
+  }
+  
+  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+    </style>
 <body>
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
 
+    <a href="boton-donaciones.php">
+    <button class="back-button" >
+    <i class="fas fa-arrow-left"></i> Volver atras
+    </button></a>
+    
     <div class="container">
-      
+    
       <header>Donacion monetaria</header>
       <div class="progress-bar">
         <div class="step">
