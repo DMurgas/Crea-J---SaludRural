@@ -6,6 +6,7 @@
     
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    
   </head>
   <style>
       /* INICIO DE EL ESTILO DE EL TRADUCTOR */
@@ -164,10 +165,13 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
 
           <div class="page">
-            <div class="field">
-              <div class="label">Fecha de la donacion</div>
-              <input type="datetime-local" name="fecha" required>
-            </div>
+          <div class="field">
+          <div class="label">Fecha de la donación</div>
+            <input type="datetime-local" id="fecha" name="fecha" required>
+            <script src="../JS/validar-fechas.js"></script>
+          </div>
+
+
             <div class="field">
               <div class="label">Monto a donar</div>
               <input type="number"name="monto" required>

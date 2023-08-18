@@ -124,8 +124,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
               <input type="Number" name="telefono" required>
             </div>
             <div class="field">
-              <div class="label">Fecha de la donacion</div>
-              <input type="datetime-local" name="fecha" required>
+              <div class="label">Fecha de la donación</div>
+              <input type="datetime-local" id="fecha" name="fecha" required>
+              <script src="../JS/validar-fechas.js"></script>
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>
