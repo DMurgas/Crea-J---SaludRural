@@ -73,7 +73,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     
     <div class="container">
     
-      <header>Donacion monetaria</header>
+      <header>Donación monetaria</header>
       <div class="progress-bar">
         <div class="step">
           <p>Paso 1</p>
@@ -108,11 +108,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         <form action="../PHP/form-donacion-monetaria.php" method="post">
           <div class="page slide-page">
             <div class="field">
-              <div class="label">Nombre Completo</div>
+              <div class="label">Nombre completo</div>
               <input type="text" name="nombre" required>
             </div>
             <div class="field">
-              <div class="label">Correo Electronico</div>
+              <div class="label">Correo electrónico</div>
               <input type="text" name="correo" required>
             </div>
             <div class="field">
@@ -121,9 +121,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
 
           <div class="page">
-            <div class="title">Información de Contacto</div>
+            <div class="title">Información de contacto</div>
             <div class="field">
-              <div class="label">Número de Telefono</div>
+              <div class="label">Número de teléfono</div>
               <input type="Number" name="telefono" required>
             </div>
             <div class="field">
