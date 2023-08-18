@@ -76,16 +76,15 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   a img{
     width: 0;
   }
-  
-  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
-    </style>
+</style>
+<!-- FIN DE EL DISEÑO DEL TRADUCTOR -->
+
 </head>
 <body class="bg-gray-100">
-<nav class="bg-white p-4  w-full z-10 fixed">
+    <nav class="bg-white p-4  w-full z-10 fixed">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
-
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
             <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
@@ -141,7 +140,49 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
             </div>
-    </nav>
+    </nav></br></br></br></br>
+
+    <!-- Apartado de aclaración sobre enviar un correo por cualquier duda o corrección -->
+    <div class="cuadro">
+        <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
+        <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
+    </div>
+    <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
+    <style>
+        body {
+            
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .cuadro {
+            border: 2px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+            max-width: 80%;
+            padding: 15px;
+            margin: 0 auto;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+        .mensaje {
+            font-size: 16.7px;
+            color: #333;
+            margin-bottom: 5.3px;
+        }
+
+        .correo {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .correo:hover {
+            text-decoration: underline;
+            font-weight: bold; 
+        }
+    </style>
 
     <div class="w-full max-w-mn p-8  rounded-lg   mx-auto p-4">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>
@@ -149,7 +190,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="bg-white text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu-cate">
-                        <span>Donaciones Monetarias</span>
+                        <span>Donaciones monetarias</span>
                         <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
