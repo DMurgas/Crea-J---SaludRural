@@ -32,9 +32,62 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+
+/* Quita el texto (Con la tecnologia de) */
+div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+    font-size: 0%;
+  }
+  
+  /* Quita el texto (Traductor de google) */
+  div .skiptranslate.goog-te-gadget span a{
+    font-size: 0;
+  }
+  
+  /* Cambia el estilo del boton para seleccionar el idioma */
+  div .goog-te-combo{
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px 20px;
+            transition: background-color 0.1s, color 0.1s;
+  }
+  div .goog-te-combo:hover{
+    background-color: blue;
+    color: #ffffff;
+  }
+  /* Cambia el tamaño y mueve la parte azul del traductor*/
+  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
+    width: 55%;
+    top: 1.3%;
+    left: -52.9%;
+  }
+  
+  /* Cambia el estilo de la lista de idiomas del menú del traductor */
+  .goog-te-combo option{
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #000000;
+    -webkit-o-border-radius: 10px;
+    -moz-o-border-radius: 10px;
+    -ms-o-border-radius: 10px;
+  }
+  
+  /* Hace invisible la imagen de "Google" */
+  a img{
+    width: 0;
+  }
+  
+  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+    </style>
   </head>
   <body>
-  <nav class="bg-white p-4">
+  <nav class="bg-white p-4  w-full z-10 fixed">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
@@ -90,7 +143,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
                     echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
                 }
                 ?>
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+                <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
             </div>

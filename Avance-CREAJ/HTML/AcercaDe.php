@@ -38,8 +38,63 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
     </head>
-    
-    <nav class="bg-white p-4">
+    <style>
+      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+
+/* Quita el texto (Con la tecnologia de) */
+div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+    font-size: 0%;
+  }
+  
+  /* Quita el texto (Traductor de google) */
+  div .skiptranslate.goog-te-gadget span a{
+    font-size: 0;
+  }
+  
+  /* Cambia el estilo del boton para seleccionar el idioma */
+  div .goog-te-combo{
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px 20px;
+            transition: background-color 0.1s, color 0.1s;
+  }
+  div .goog-te-combo:hover{
+    background-color: blue;
+    color: #ffffff;
+  }
+  /* Cambia el tamaño y mueve la parte azul del traductor*/
+  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
+    width: 55%;
+    top: 1.3%;
+    left: -52.9%;
+  }
+  
+  /* Cambia el estilo de la lista de idiomas del menú del traductor */
+  .goog-te-combo option{
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #000000;
+    -webkit-o-border-radius: 10px;
+    -moz-o-border-radius: 10px;
+    -ms-o-border-radius: 10px;
+  }
+  
+  /* Hace invisible la imagen de "Google" */
+  a img{
+    width: 0;
+  }
+  
+  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+    </style> 
+   
+
+  <body class="bg-gray-100">
+  <nav class="bg-white p-4">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio -->
             <div id="google_translate_element"></div>
@@ -99,8 +154,6 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
             </ul>
             </div>
     </nav>
-
-  <body class="bg-gray-100">
   <div class="container mx-auto p-8">
     <div class="text-center">
       <h1 class="text-4xl font-bold text-black mb-4">¡Bienvenido a SaludRural!</h1>
