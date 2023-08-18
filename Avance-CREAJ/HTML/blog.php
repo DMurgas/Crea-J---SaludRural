@@ -33,8 +33,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <link rel="stylesheet" href="../CSS/css-blog.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  </head>
-  <style>
+    <style>
       /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
 /* Quita el texto (Con la tecnologia de) */
@@ -86,7 +85,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   }
   
   /* FIN DE EL DISEÑO DE EL TRADUCTOR */
-    </style>
+    </style> 
+  </head>
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
 <nav class="bg-white p-4">
         <div class="flex justify-between items-center">
@@ -164,7 +164,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">' . $row['titulo'] . '</h2>';
                 echo '<p class="text-gray-700 mb-4">' . $row['contenido'] . '</p>';
                 echo '</div>';
-                echo '<a href="#" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 text-center">Leer más</a>';
+                echo '<a href="get-blogs.php?id=' . $row['id'] . '" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 text-center">Leer más</a>';
                 echo '</article>';
             }
         }
