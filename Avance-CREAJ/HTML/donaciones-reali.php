@@ -168,7 +168,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         .mensaje {
             font-size: 16.7px;
             color: #333;
-            margin-bottom: 5.3px;
+            margin-bottom: 3.8px;
         }
 
         .correo {
