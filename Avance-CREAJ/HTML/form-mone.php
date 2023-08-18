@@ -68,7 +68,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
     <a href="boton-donaciones.php">
     <button class="back-button" >
-    <i class="fas fa-arrow-left"></i> Volver atras
+    <i class="fas fa-arrow-left"></i> Volver atrás
     </button></a>
     
     <div class="container">

@@ -143,7 +143,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
     <a href="../HTML/form-insumo.php">
     <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
-        <span class="relative z-10">Insumos</span>
+        <span class="relative z-10">Insumos médicos</span>
     </button>
 </a>
 
@@ -157,7 +157,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
 <a href="../HTML/form-equipo.php">
     <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
-        <span class="relative z-10">Equipo medicos</span>
+        <span class="relative z-10">Equipos médicos</span>
     </button>
 </a>
   </div>
