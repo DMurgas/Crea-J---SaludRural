@@ -70,6 +70,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <button class="back-button" >
     <i class="fas fa-arrow-left"></i> Volver atrás
     </button></a>
+
+    
     
     <div class="container">
     
@@ -174,8 +176,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
             <div class="field">
               <div class="label">Monto a donar</div>
-              <input type="number"name="monto" required>
-            </div>
+              <input type="number" name="monto" required max="19000">
+              </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
               <button class="next-2 next">Siguiente</button>
