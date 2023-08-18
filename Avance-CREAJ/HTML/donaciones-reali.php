@@ -150,7 +150,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
     <style>
         body {
-            
             justify-content: center;
             min-height: 100vh;
         }
