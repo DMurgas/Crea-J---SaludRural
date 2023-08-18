@@ -5,7 +5,8 @@
     <title>Donacion equipo medico</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-    <style>
+  </head>
+  <style>
       /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
 /* Quita el texto (Con la tecnologia de) */
@@ -58,7 +59,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   
   /* FIN DE EL DISEÑO DE EL TRADUCTOR */
     </style>
-  </head>
 <body>
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>

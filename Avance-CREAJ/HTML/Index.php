@@ -32,7 +32,8 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
+  </head>
+  <style>
       /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
 /* Quita el texto (Con la tecnologia de) */
@@ -85,7 +86,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   
   /* FIN DE EL DISEÑO DE EL TRADUCTOR */
     </style>
-  </head>
   <body>
   <nav class="bg-white p-4  w-full z-10 fixed">
         <div class="flex justify-between items-center">
