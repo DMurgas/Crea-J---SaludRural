@@ -106,7 +106,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="h-8 w-8 rounded-full">
+                    <!--  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">-->
                 </button>
                 <!-- Menú desplegable del usuario -->
                 <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
@@ -124,25 +125,32 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <div class="flex items-center justify-center min-h-screen">
     <div class="container mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
     <h1 class="text-2xl font-bold mb-4 text-center">Perfil de Usuario</h1>
-    
-    <?php
-    include_once 'db_connection.php';
-    $consulta = "SELECT * FROM registro WHERE id = 1"; // Cambia el ID según tu caso
-    $resultado = $conn->query($consulta);
-    
-    if ($resultado->num_rows > 0) {
-        $usuario = $resultado->fetch_assoc();
-        
-        // Definir la URL de la imagen predeterminada
-        $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
-    ?>
+
+<?php
+include_once 'db_connection.php'; // Incluye la conexión a la base de datos
+
+$consulta = "SELECT * FROM registro WHERE id = 1"; // Cambia el ID según tu caso
+$resultado = $conn->query($consulta);
+$ruta_imagen = "../imagen-usu/"; // Cambia esto a la ruta real de la imagen
+
+// Si la ruta de la imagen está vacía, utiliza una imagen predeterminada
+if (empty($ruta_imagen)) {
+    $ruta_imagen = "../imagen-usu/"; // Cambia esto a la ruta de la imagen predeterminada
+}
+if ($resultado->num_rows > 0) {
+    $usuario = $resultado->fetch_assoc();
+    $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+
+
+
+?>
    <div class="flex items-center justify-center">
         <div class="w-1/3 text-center">
             <!-- Imagen de perfil -->
-            <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover mx-auto mb-2">
+            <img src="<?php echo $ruta_imagen; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover mx-auto mb-2">
             
             <!-- Formulario para cambiar la imagen -->
-            <form action="cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
+            <form action="../hace_cambios/cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
                 <input type="file" name="nueva_imagen" class="mb-1">
                 <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
             </form>
