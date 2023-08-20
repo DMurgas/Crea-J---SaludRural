@@ -27,8 +27,8 @@ if ($correo == null || $correo == '') {
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
+/* INICIO DE EL ESTILO DE EL TRADUCTOR */
 /* Quita el texto (Con la tecnologia de) */
 div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     font-size: 0%;
@@ -91,7 +91,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
             <!-- Menú de navegación -->
             <ul class="flex space-x-4">
-                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
