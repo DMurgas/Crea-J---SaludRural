@@ -99,8 +99,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="flex space-x-4">
-            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
-                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">SaludRural</a></li>
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -159,7 +159,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <main>
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a llevar la salud a zonas rurales!</h1>
+        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
         <p class="text-lg mb-8">Tu generosa donación marca la diferencia en la vida de quienes más lo necesitan.</p>
         <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar Donación</a>
       </div>
@@ -257,7 +257,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
     </div>
     <ul class="flex items-center justify-center space-x-4">
-      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white"><strong>Inicio</strong></a></li>
       <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
       <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
       <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
