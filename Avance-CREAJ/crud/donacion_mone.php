@@ -21,7 +21,8 @@
                                 <th>Para</th>
                                <th>fecha</th>
                                 <th>Correo</th>                                
-                                <th>Monto</th>  
+                                <th>Monto</th> 
+                                <th>Estado</th> 
                                 <th>Acciones</th>
                             </tr>
                         </thead>

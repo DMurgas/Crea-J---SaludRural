@@ -39,6 +39,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['medicamento'] ?></td>   
                                 <td><?php echo $dat['cantidad'] ?></td>  
+                                <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado -->
                                 <td></td>
                             </tr>
                             <?php

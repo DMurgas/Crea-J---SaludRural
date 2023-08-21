@@ -23,6 +23,7 @@
                                 <th>Correo</th>                                
                                 <th>Nombre del insumo</th> 
                                 <th>Cantidad</th> 
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>

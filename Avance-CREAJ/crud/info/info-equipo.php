@@ -1,19 +1,18 @@
 <?php
-include_once 'bd/conexion.php';
-$objeto = new Conexion();
-$conexion = $objeto->Conectar();
+                        include_once 'bd/conexion.php';
+                        $objeto = new Conexion();
+                        $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id_donacion,id_usuario,id_hospital,correo, `telefono`, `fecha`, equipo, cantidad FROM equipo";
-$resultado = $conexion->prepare($consulta);
-$resultado->execute();
-$data=$resultado->fetchAll(PDO::FETCH_ASSOC);
-?>
-<tbody>
+                        $consulta = "SELECT id_donacion,id_usuario,id_hospital,correo, `telefono`, `fecha`, equipo, cantidad, estado FROM equipo";
+                        $resultado = $conexion->prepare($consulta);
+                        $resultado->execute();
+                        $data = $resultado->fetchAll(PDO::FETCH_ASSOC);
+                        ?>
+                        <tbody>
                             <?php                            
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
-                                
                                 <td><?php echo $dat['id_donacion'] ?></td>
                                 <td>
                                     <?php
@@ -39,9 +38,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['equipo'] ?></td>   
                                 <td><?php echo $dat['cantidad'] ?></td>  
+                                <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado -->
                                 <td></td>
                             </tr>
                             <?php
                                 }
                             ?>                                
-                        </tbody>   
+                        </tbody>  

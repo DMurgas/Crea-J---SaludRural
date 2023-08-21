@@ -163,7 +163,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             echo '<p class="text-gray-600 mb-4">' . $blog['contenido'] . '</p>';
             echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-50 h-50 mx-auto mb-4">';
             echo '<a href="editar_blog.php?id=' . $blog['id'] . '" class="text-blue-500 hover:underline mr-4">Editar</a>';
-            echo '<a href="eliminar_blog.php?id=' . $blog['id'] . '" class="text-red-500 hover:underline">Eliminar</a>';
+            echo '<a href="cambios/eliminar_blog.php?id=' . $blog['id'] . '" class="text-red-500 hover:underline">Eliminar</a>';
             echo '<a href="ver_comentarios.php?id=' . $blog['id'] . '" class="text-green-500 hover:underline ml-4">Ver Comentarios</a>';
             echo '</div>';
         }

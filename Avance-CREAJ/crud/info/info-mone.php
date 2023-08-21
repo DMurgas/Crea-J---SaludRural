@@ -37,7 +37,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 </td>
                                 <td><?php echo $dat['fecha'] ?></td>    
                                 <td><?php echo $dat['correo'] ?></td>
-                                <td><?php echo $dat['monto'] ?></td>   
+                                <td><?php echo $dat['monto'] ?></td>  
+                                <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado --> 
                                 <td></td>
                             </tr>
                             <?php
