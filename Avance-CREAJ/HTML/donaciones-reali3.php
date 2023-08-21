@@ -85,13 +85,15 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
-
+            
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
-            <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
+            
 
             <!-- Menú de navegación -->
+            
             <ul class="flex space-x-4">
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -118,6 +120,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="hospitales-menu-items">
                         <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+                        
                         <!-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Historias de exito</a></li> -->
                     </ul>
                 </li>
@@ -127,7 +130,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <?php include 'mostra-imagen.php'; ?>
+                    <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil"  class="rounded-full h-8 w-8">
                 </button>
                 <!-- Menú desplegable del usuario -->
                 <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
@@ -141,7 +145,47 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
             </div>
-    </nav>
+    </nav></br></br></br></br></br>
+    <div class="cuadro">
+        <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
+        <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
+    </div>
+    <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
+    <style>
+        body {
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .cuadro {
+            border: 2px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+            max-width: 80%;
+            padding: 15px;
+            margin: 0 auto;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+        .mensaje {
+            font-size: 16.7px;
+            color: #333;
+            margin-bottom: 3.8px;
+        }
+
+        .correo {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .correo:hover {
+            text-decoration: underline;
+            font-weight: bold; 
+        }
+    </style>
+
 
     <div class="w-full max-w-mn p-8  rounded-lg shadow-lg  mx-auto p-4">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>

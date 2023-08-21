@@ -88,16 +88,19 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </style> 
   </head>
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
-<nav class="bg-white p-4">
+<nav class="bg-white p-4  w-full z-10 fixed">
         <div class="flex justify-between items-center">
-            <!-- Logo o nombre del sitio -->
+            <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
+            
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
-            <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
+            
 
             <!-- Menú de navegación -->
+            
             <ul class="flex space-x-4">
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -123,7 +126,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="hospitales-menu-items">
-                        <li><a href="necesidades_hospitales.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+                        
                         <!-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Historias de exito</a></li> -->
                     </ul>
                 </li>
@@ -133,7 +137,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                    <?php include 'mostra-imagen.php'; ?>
+                    <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil"  class="rounded-full h-8 w-8">
                 </button>
                 <!-- Menú desplegable del usuario -->
                 <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
@@ -143,11 +148,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
                 }
                 ?>
-                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+                <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
             </div>
-    </nav>
+    </nav><br><br><br>
     <main class="container mx-auto mt-8 flex-grow mb-8">
     <section class="flex justify-center">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

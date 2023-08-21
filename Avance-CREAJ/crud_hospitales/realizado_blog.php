@@ -1,86 +1,10 @@
-<?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-
-$db_host = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'saludrural';
-$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
-
-if (!$conn) {
-    die("Error de la conexión a la base de datos: " . mysqli_connect_error());
-}
-
-if (isset($_POST["submit"])) {
-    // Verificar si se envió el formulario del blog
-    session_start();
-    $hospital_id = $_SESSION['hospital_id'];
-
-    if (!empty($_POST["titulo"]) && !empty($_POST["contenido"]) && !empty($_FILES["imagen"]["name"])) {
-        // Recuperar los datos del formulario del blog
-        $titulo = $_POST['titulo'];
-        $contenido = $_POST['contenido'];
-
-        // Procesar la imagen
-        $target_dir = "../imagen/";
-        $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        $check = getimagesize($_FILES["imagen"]["tmp_name"]);
-        if ($check === false) {
-            echo "El archivo no es una imagen";
-            $uploadOk = 0;
-        }
-
-        if (file_exists($target_file)) {
-            echo "El archivo ya existe";
-            $uploadOk = 0;
-        }
-
-        if ($_FILES["imagen"]["size"] > 5000000) {
-            echo "El archivo es demasiado grande";
-            $uploadOk = 0;
-        }
-
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-            echo "Solo se permiten archivos JPG, JPEG, PNG y GIF.";
-            $uploadOk = 0;
-        }
-
-        if ($uploadOk == 0) {
-            echo "Error al subir la imagen";
-        } else {
-            if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
-                // Preparar y ejecutar la consulta SQL para insertar el blog
-                $sql = "INSERT INTO blogs (hospital_id, titulo, contenido, imagen) VALUES ('$hospital_id', '$titulo', '$contenido', '$target_file')";
-                if (mysqli_query($conn, $sql)) {
-                    header("index.php");
-                } else {
-                    echo "Error al agregar el blog: " . mysqli_error($conn);
-                }
-            } else {
-                echo "Error al subir la imagen.";
-            }
-        }
-    }
-}
-?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SaludRural</title>
-    <link rel="shortcut icon" href="../Imagenes/favicon.png" />
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+    <title>Lista de Blogs</title>
     <style>
     /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
@@ -134,7 +58,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   
   </style>
 </head>
-<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+<body class="bg-gray-100">
+
 <nav class="bg-white p-4  w-full z-10 ">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
@@ -197,64 +122,35 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </div>
     </nav>
 
-    <main class="container mx-auto mt-8 flex-grow mb-8">
-    <section class="flex justify-center">
-        <div class="w-full md:w-2/3 lg:w-1/2">
-            <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-md shadow-lg">
-                <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Agregar Blog</h2>
+<div class="container mx-auto mt-8 p-4 ">
+    <h1 class="text-2xl font-bold mb-4 text-center">Blogs Realizados</h1>
+    
+    <!-- Lista de blogs desde la base de datos -->
+    <?php
+    include_once 'db_connection.php'; // Incluye la conexión a la base de datos
+    
+    $consulta = "SELECT * FROM blogs"; // Cambia esto a tu consulta SQL
+    
+    $resultado = $conn->query($consulta);
+    
+    if ($resultado->num_rows > 0) {
+        while ($blog = $resultado->fetch_assoc()) {
+            echo '<div class="bg-white p-4 rounded-lg shadow-md mb-4">';
+            echo '<h2 class="text-lg font-semibold mb-2">' . $blog['titulo'] . '</h2>';
+            echo '<p class="text-gray-600 mb-4">' . $blog['contenido'] . '</p>';
+            echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-50 h-50 mx-auto mb-4">';
+            echo '<a href="editar_blog.php?id=' . $blog['id'] . '" class="text-blue-500 hover:underline mr-4">Editar</a>';
+            echo '<a href="eliminar_blog.php?id=' . $blog['id'] . '" class="text-red-500 hover:underline">Eliminar</a>';
+            echo '<a href="ver_comentarios.php?id=' . $blog['id'] . '" class="text-green-500 hover:underline ml-4">Ver Comentarios</a>';
+            echo '</div>';
+        }
+    } else {
+        echo '<p>No se encontraron blogs.</p>';
+    }
+    
+    $conn->close();
+    ?>
+</div>
 
-                <label class="block mb-2">Título:</label>
-                <input type="text" name="titulo" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4">
-
-                <label class="block mb-2">Contenido:</label>
-                <textarea name="contenido" rows="4" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4"></textarea>
-
-                <label class="block mb-2">Imagen:</label>
-                <input type="file" name="imagen" class="mb-4">
-
-                <button type="submit" name="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full w-full">Publicar</button>
-            </form>
-        </div>
-    </section>
-</main>
-
-
-  <!-- Pie de página -->
-<script>
-    // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
-    const userMenuButton = document.getElementById('user-menu-button');
-    const userMenu = document.getElementById('user-menu');
-    userMenuButton.addEventListener('click', () => {
-        userMenu.classList.toggle('hidden');
-    });
-
-    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-    const donacionesMenuButton = document.getElementById('donaciones-menu');
-    const donacionesMenuItems = document.getElementById('donaciones-menu-items');
-    donacionesMenuButton.addEventListener('click', () => {
-        donacionesMenuItems.classList.toggle('hidden');
-    });
-
-    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-    const exitoMenuButton = document.getElementById('exito-menu');
-    const exitoMenuItems = document.getElementById('exito-menu-items');
-    exitoMenuButton.addEventListener('click', () => {
-        exitoMenuItems.classList.toggle('hidden');
-    });
-
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const header = document.querySelector('.flex'); // Cambia esto al selector correcto de tu encabezado
-
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
-    });
-</script>
 </body>
 </html>
-
-<?php
-// Cierra la conexión a la base de datos
-$conn->close();
-?>

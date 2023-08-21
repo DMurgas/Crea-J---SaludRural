@@ -1,3 +1,26 @@
+<?php
+session_start();
+include_once 'db_connection.php'; // Incluye la conexión a la base de datos
+
+if (isset($_SESSION['id'])) {
+    $idUsuario = $_SESSION['id'];
+    
+    $consulta = "SELECT * FROM registro WHERE id = $idUsuario"; // Cambia el ID según tu caso
+    $resultado = $conn->query($consulta);
+    $ruta_imagen = "../imagen-usu/"; // Cambia esto a la ruta real de la imagen
+    
+    // Si la ruta de la imagen está vacía, utiliza una imagen predeterminada
+    if (empty($ruta_imagen)) {
+        $ruta_imagen = "../imagen-usu/"; // Cambia esto a la ruta de la imagen predeterminada
+    }
+    
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,13 +87,15 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
-
+            
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
-            <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
+            
 
             <!-- Menú de navegación -->
+            
             <ul class="flex space-x-4">
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -97,6 +122,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="hospitales-menu-items">
                         <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+                        
                         <!-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Historias de exito</a></li> -->
                     </ul>
                 </li>
@@ -106,8 +132,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="h-8 w-8 rounded-full">
-                    <!--  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">-->
+                    <?php include 'mostra-imagen.php'; ?>
+                    <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil"  class="rounded-full h-8 w-8">
                 </button>
                 <!-- Menú desplegable del usuario -->
                 <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
@@ -124,39 +150,22 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </nav>
     <div class="flex items-center justify-center min-h-screen">
     <div class="container mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
-    <h1 class="text-2xl font-bold mb-4 text-center">Perfil de Usuario</h1>
+        <h1 class="text-2xl font-bold mb-4 text-center">Perfil de Usuario</h1>
+        
 
-<?php
-include_once 'db_connection.php'; // Incluye la conexión a la base de datos
-
-$consulta = "SELECT * FROM registro WHERE id = 1"; // Cambia el ID según tu caso
-$resultado = $conn->query($consulta);
-$ruta_imagen = "../imagen-usu/"; // Cambia esto a la ruta real de la imagen
-
-// Si la ruta de la imagen está vacía, utiliza una imagen predeterminada
-if (empty($ruta_imagen)) {
-    $ruta_imagen = "../imagen-usu/"; // Cambia esto a la ruta de la imagen predeterminada
-}
-if ($resultado->num_rows > 0) {
-    $usuario = $resultado->fetch_assoc();
-    $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
-
-
-
-?>
-   <div class="flex items-center justify-center">
-        <div class="w-1/3 text-center">
-            <!-- Imagen de perfil -->
-            <img src="<?php echo $ruta_imagen; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover mx-auto mb-2">
-            
-            <!-- Formulario para cambiar la imagen -->
-            <form action="../hace_cambios/cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
-                <input type="file" name="nueva_imagen" class="mb-1">
-                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
-            </form>
-            
-            <!-- Nombre del usuario -->
-            <h2 class="text-xl font-semibold mb-2"><?php echo $usuario['nombre']; ?></h2>
+        <div class="flex items-center justify-center">
+            <div class="w-1/3 text-center">
+                <!-- Imagen de perfil -->
+                <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover mx-auto mb-2">
+                
+                <!-- Formulario para cambiar la imagen -->
+                <form action="../hace_cambios/cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
+                    <input type="file" name="nueva_imagen" class="mb-1" required>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
+                </form>
+                
+                <!-- Nombre del usuario -->
+                <h2 class="text-xl font-semibold mb-2"><?php echo $usuario['nombre']; ?></h2>
             
             <!-- Formulario para cambiar el correo -->
             <form action="../hace_cambios/cambiar_correo.php" method="post" class="mb-2">
@@ -180,6 +189,34 @@ if ($resultado->num_rows > 0) {
     }
     ?>
 </div>
+<script>
+        // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
+        const donacionesMenu = document.getElementById('donaciones-menu');
+        const donacionesMenuItems = document.getElementById('donaciones-menu-items');
+        donacionesMenu.addEventListener('click', () => {
+            donacionesMenuItems.classList.toggle('hidden');
+        });
 
+        // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
+        const donacionesMenuCate = document.getElementById('donaciones-menu-cate');
+        const donacionesMenuItemsCate = document.getElementById('donaciones-cate-items');
+        donacionesMenuCate.addEventListener('click', () => {
+            donacionesMenuItemsCate.classList.toggle('hidden');
+        });
+
+        // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
+        const userMenuButton = document.getElementById('user-menu-button');
+        const userMenu = document.getElementById('user-menu');
+        userMenuButton.addEventListener('click', () => {
+            userMenu.classList.toggle('hidden');
+        });
+        // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+        const hospitalesMenuButton = document.getElementById('hospitales-menu');
+        const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
+        hospitalesMenuButton.addEventListener('click', () => {
+            hospitalesMenuItems.classList.toggle('hidden');
+        });
+    </script>
 </body>
+
 </html>

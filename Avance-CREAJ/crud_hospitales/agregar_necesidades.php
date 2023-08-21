@@ -1,3 +1,5 @@
+
+
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -22,9 +24,11 @@ if (isset($_POST["submit"])) {
         // Recuperar los datos del formulario del blog
         $titulo = $_POST['titulo'];
         $contenido = $_POST['contenido'];
+        $donacion = $_POST['donacion'];
+        $lugar = $_POST['lugar'];
 
         // Procesar la imagen
-        $target_dir = "../imagen/";
+        $target_dir = "../imagen-ne/";
         $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
         $uploadOk = 1;
         $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
@@ -55,7 +59,7 @@ if (isset($_POST["submit"])) {
         } else {
             if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
                 // Preparar y ejecutar la consulta SQL para insertar el blog
-                $sql = "INSERT INTO blogs (hospital_id, titulo, contenido, imagen) VALUES ('$hospital_id', '$titulo', '$contenido', '$target_file')";
+                $sql = "INSERT INTO necesidades (id_hospital,id_donacion, nombre, descripcion, lugar, imagen) VALUES ('$hospital_id','$donacion', '$titulo', '$contenido','$lugar', '$target_file')";
                 if (mysqli_query($conn, $sql)) {
                     header("index.php");
                 } else {
@@ -68,8 +72,6 @@ if (isset($_POST["submit"])) {
     }
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -200,8 +202,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <main class="container mx-auto mt-8 flex-grow mb-8">
     <section class="flex justify-center">
         <div class="w-full md:w-2/3 lg:w-1/2">
-            <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-md shadow-lg">
-                <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Agregar Blog</h2>
+            <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-md shadow-lg" >
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Agregar Necesidad</h2>
 
                 <label class="block mb-2">Título:</label>
                 <input type="text" name="titulo" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4">
@@ -211,6 +213,38 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
                 <label class="block mb-2">Imagen:</label>
                 <input type="file" name="imagen" class="mb-4">
+
+                <label class="block mb-2">Lugar:</label>
+                <input type="text" name="lugar" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4">
+
+                <label class="block mb-2">Donacion:</label>
+                <select class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4 " name="donacion" required>
+            <?php
+                // Realizar la conexión a la base de datos
+                $db_host = 'localhost';
+                $db_username = 'root';
+                $db_password = '';
+                $db_name = 'saludrural';
+                $conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+
+                // Verificar la conexión
+                if ($conn->connect_error) {
+                    die("Conexión fallida: " . $conn->connect_error);
+                }
+
+                // Consulta para obtener los hospitales desde la tabla 'tabla_hospitales'
+                $sql = "SELECT id_donacion, tipo FROM tipo_donacion";
+                $result = $conn->query($sql);
+
+                // Mostrar los nombres de los hospitales en el dropdown
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo '<option value="' . $row["id_donacion"] . '">' . $row["tipo"] . '</option>';
+                    }
+                }
+
+                ?>
+            </select>
 
                 <button type="submit" name="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full w-full">Publicar</button>
             </form>

@@ -8,6 +8,7 @@
 </head>
 <body>
 <?php
+session_start();
 include("../PHP/conex.php");
 
 if (isset($_GET['id'])) {
@@ -25,6 +26,42 @@ if (isset($_GET['id'])) {
         echo '<a href="../HTML/blog.php" class="block text-center text-indigo-600 mt-4 hover:underline">Volver a la lista de blogs</a>';
         echo '</div>';
         echo '</div>';
+        
+        // Mostrar formulario de comentarios si el usuario está registrado
+        if (isset($_SESSION['id']) && !empty($_SESSION['id'])) {
+            echo '<div class="max-w-md mx-auto mt-4 bg-white rounded-md p-4 shadow-md">';
+            echo '<h3 class="text-lg font-semibold mb-2">Añadir Comentario:</h3>';
+            echo '<form action="agregar_comentario.php" method="post">';
+            echo '<input type="hidden" name="blog_id" value="' . $blogId . '">';
+            echo '<textarea name="comentario" id="comentario" rows="4" class="border rounded-md px-2 py-1 focus:outline-none focus:border-blue-500" required></textarea>';
+            echo '<button type="submit" class="mt-2 bg-blue-500 text-white px-2 py-1 rounded">Agregar Comentario</button>';
+            echo '</form>';
+            echo '</div>';
+        } else {
+            echo '<p>Inicia sesión para agregar comentarios.</p>';
+        }
+        
+        // Mostrar comentarios
+        $comentariosSql = "SELECT id, contenido, user_id
+                          FROM comentarios
+                          WHERE blog_id = $blogId";
+        $comentariosResult = $conn->query($comentariosSql);
+        
+        if ($comentariosResult !== false && $comentariosResult->num_rows > 0) {
+            echo '<div class="max-w-md mx-auto mt-4 bg-white rounded-md p-4 shadow-md">';
+            echo '<h3 class="text-lg font-semibold mb-2">Comentarios:</h3>';
+            
+            while ($comentario = $comentariosResult->fetch_assoc()) {
+                echo '<div class="bg-gray-100 p-2 rounded-md mb-2">';
+                echo '<p>' . $comentario['contenido'] . '</p>';
+                echo '</div>';
+            }
+            
+            echo '</div>';
+        } else {
+            echo '<p>No hay comentarios para este blog.</p>';
+        }
+        
     } else {
         echo 'No se encontró el blog.';
     }
@@ -34,4 +71,3 @@ if (isset($_GET['id'])) {
 ?>
 </body>
 </html>
-
