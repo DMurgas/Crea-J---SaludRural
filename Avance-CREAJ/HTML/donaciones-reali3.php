@@ -230,7 +230,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             $usuarioId = $_SESSION['usuario_id'];
             
             // Realizar la consulta para obtener las donaciones del usuario
-            $sql = "SELECT id_donacion, id_hospital, fecha, equipo, descripcion FROM equipo WHERE id_usuario = $usuarioId";
+            $sql = "SELECT * FROM equipo WHERE id_usuario = $usuarioId";
             $resultado = $conn->query($sql);
             
             // Verificar si hubo algún error en la consulta
@@ -247,6 +247,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
                         echo '<div><span class="font-semibold">Equipo:</span> ' . $donacion['equipo'] . '</div>';
                         echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
+                        echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['estado'] . '</div>';
                         echo '</div>';
                     }
                     echo '</div>';

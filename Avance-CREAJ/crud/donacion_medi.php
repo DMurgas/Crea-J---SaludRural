@@ -21,6 +21,7 @@
                                 <th>Correo</th>                                
                                 <th>Medicamento</th>  
                                 <th>cantidad</th>  
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>

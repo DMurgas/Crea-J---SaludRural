@@ -232,7 +232,7 @@ if ($correo == null || $correo == '') {
             $usuarioId = $_SESSION['usuario_id'];
             
             // Realizar la consulta para obtener las donaciones del usuario
-            $sql = "SELECT id_donacion, id_hospital, fecha, medicamento, descripcion FROM medicamentos WHERE id_usuario = $usuarioId";
+            $sql = "SELECT id_donacion, id_hospital, fecha, medicamento, descripcion, estado FROM medicamentos WHERE id_usuario = $usuarioId";
             $resultado = $conn->query($sql);
             
             // Verificar si hubo algún error en la consulta
@@ -249,6 +249,7 @@ if ($correo == null || $correo == '') {
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
                         echo '<div><span class="font-semibold">Nombre del medicamento:</span> ' . $donacion['medicamento'] . '</div>';
                         echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
+                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['estado'] . '</div>';
                         echo '</div>';
                     }
                     echo '</div>';

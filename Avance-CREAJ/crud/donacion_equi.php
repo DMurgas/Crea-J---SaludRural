@@ -21,6 +21,7 @@
                                 <th>Correo</th>                                
                                 <th>Equipo</th>  
                                 <th>cantidad</th>  
+                                <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
