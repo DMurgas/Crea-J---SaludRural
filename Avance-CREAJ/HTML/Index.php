@@ -99,7 +99,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -110,7 +110,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Hacer donacion </a></li>
+                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
@@ -148,21 +148,17 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
-                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
-    </nav>
-
-
-
-
+    </nav><br><br><br>
 
     <main>
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
-        <p class="text-lg mb-8">Tu generosa donación marca la diferencia en la vida de quienes más lo necesitan.</p>
-        <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar Donación</a>
+        <p class="text-lg mb-8">Tu generosa donación, marca la diferencia en la vida de quiénes más lo necesitan.</p>
+        <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar donación</a>
       </div>
     </section>
     <section class="bg-white py-24">
