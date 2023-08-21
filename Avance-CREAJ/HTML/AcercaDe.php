@@ -161,7 +161,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   <div class="container mx-auto p-8">
     <div class="text-center">
       <h1 class="text-4xl font-bold text-black mb-4">¡Bienvenid@ a SaludRural!</h1>
-      <p class="text-xl text-black">Ayudando a mejorar la salud en las comunidades rurales de El Salvador</p>
+      <p class="text-xl text-black">"Sembrando Bienestar en Cada Rincón. Únete a Nuestro Camino de Salud y Comunidad".</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
@@ -196,23 +196,26 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
     <!-- Código del footer -->
     <footer class="bg-gray-800 text-center text-white py-8">
-  <div class="container mx-auto">
-    <p class="text-lg font-bold">SaludRural</p>
-    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
-    <div class="flex justify-center space-x-4 mb-4">
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
-    </div>
-    <ul class="flex items-center justify-center space-x-4">
-      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white"><strong>Inicio</strong></a></li>
-      <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
-    </ul>
-  </div>
-  <div class="footer-bottom">
+      <div class="container mx-auto">
+        <p class="text-lg font-bold">SaludRural</p>
+        <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+
+        <div class="flex justify-center space-x-4 mb-4">
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
+        </div>
+
+        <ul class="flex items-center justify-center space-x-4">
+          <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white"><strong>Inicio</strong></a></li>
+          <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
+          <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
+          <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-bottom">
         <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
       </div>
     </footer>
