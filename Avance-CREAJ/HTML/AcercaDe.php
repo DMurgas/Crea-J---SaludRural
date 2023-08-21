@@ -106,8 +106,12 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="flex space-x-4">
+<<<<<<< HEAD
             <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+=======
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
+>>>>>>> d7df9a69c02bb7536285f04824eef88ba6bdc1e2
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -117,12 +121,12 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Hacer donacion </a></li>
+                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Nosotros</a></li>
+                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="hospitales-menu">
@@ -154,40 +158,46 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
                 }
                 ?>
+<<<<<<< HEAD
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+=======
+                <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
+>>>>>>> d7df9a69c02bb7536285f04824eef88ba6bdc1e2
             </ul>
             </div>
     </nav><br><br><br><br>
   <div class="container mx-auto p-8">
     <div class="text-center">
-      <h1 class="text-4xl font-bold text-black mb-4">¡Bienvenido a SaludRural!</h1>
+      <h1 class="text-4xl font-bold text-black mb-4">¡Bienvenid@ a SaludRural!</h1>
       <p class="text-xl text-black">Ayudando a mejorar la salud en las comunidades rurales de El Salvador</p>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sobre Nosotros</h2>
-        <p class="text-gray-600">Somos una organización que busca marcar la diferencia en las comunidades más necesitadas de El Salvador, especialmente aquellas ubicadas en zonas rurales. Nuestra misión es proporcionar apoyo a hospitales y centros médicos para mejorar la atención médica y el bienestar de la población en estas áreas marginadas.</p>
-        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-6 rounded-lg" width="250" height="200" alt="imagen">
+        <p class="text-gray-600 text-justify">Somos una organización que busca ayudar a la sociedad más necesitada de nuestro país <span class="bolded1">"El Salvador"</span>, a través de donaciones para hospitales y centros médicos que se encuentran en las zonas rurales del país, es decir, las comunidades marginadas y abandonadas que existen en todo el territorio nacional.</p><br>
+        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-1 rounded-lg" width="335" height="315" alt="imagen">
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestra Visión</h2>
-        <p class="text-gray-600">En SaludRural, creemos en un futuro donde todas las comunidades rurales tengan acceso a una atención médica de calidad. Nos esforzamos por establecer alianzas sólidas y transparentes con donantes comprometidos para marcar un cambio significativo en la salud y el bienestar de las personas que más lo necesitan.</p>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center"></h2>
+        <p class="text-gray-600 text-justify">Nuestro equipo está conformado por profesionales apasionados y comprometidos con la salud pública y la equidad en la atención médica. Trabajamos en estrecha colaboración con hospitales y centros médicos en áreas rurales para comprender sus necesidades y brindarles el apoyo necesario. Valoramos la transparencia y la responsabilidad en nuestro trabajo. Nos esforzamos por mantener una comunicación clara con nuestros donantes y socios, proporcionándoles actualizaciones sobre cómo se utilizan sus contribuciones y el impacto que están generando.</p><br>
+        <p class="text-gray-600 text-justify">En <span class="bolded">SaludRural</span>, creemos firmemente en el poder de la solidaridad y la generosidad. A través de nuestra plataforma, permitimos a personas y organizaciones donar de manera segura y directa a proyectos y necesidades específicas de los hospitales y centros médicos rurales. Facilitamos la conexión entre donantes y receptores, asegurando que cada donación tenga un impacto significativo y positivo en la vida de las personas. Estamos emocionados de ser parte del cambio y el progreso en la atención médica de las zonas rurales. <a href="../HTML/login.php"><span class="negra">Únete a nosotros en SaludRural</span></a> y juntos hagamos la diferencia en la salud y el bienestar de las comunidades rurales de nuestro país.</p>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestra Misión</h2>
-        <p class="text-gray-600">Facilitar donaciones seguras y directas a hospitales y centros médicos en zonas rurales de El Salvador, canalizando recursos para mejorar la atención médica y el bienestar de las comunidades más vulnerables.</p>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Misión</h2>
+        <p class="text-gray-600 text-justify">Ser una organización que promueva y facilite las donaciones a hospitales y centros médicos ubicados en zonas rurales del país. <strong class="strongT">SaludRural</strong> se compromete a conectar de manera efectiva a los donantes con estas instituciones, brindando una plataforma segura y transparente para canalizar recursos y apoyar la atención médica en las comunidades más remotas y marginadas de todo el territorio nacional. Por último, impulsar un cambio significativo en la salud, promoviendo la equidad y la mejora de la calidad de vida de quienes más lo necesitan.</p>
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestros Valores</h2>
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Visión</h2>
+        <p class="text-gray-600 text-justify">Queremos lograr ser una organización líder en el ámbito de las donaciones a hospitales y centros médicos en zonas rurales del país. Nos esforzamos por ser el referente principal para aquellos que deseen contribuir al bienestar de las comunidades rurales a través de donaciones significativas y de impacto. Buscamos establecer alianzas sólidas con hospitales y centros médicos, así como con donantes comprometidos, para construir en un futuro una cultura de equidad, y que el acceso a la atención médica sea una realidad para todos, sin importar su ubicación geográfica. Aspiramos a ser reconocidos como un agente de cambio en la atención médica rural, mejorando la calidad de vida de las personas y generando un impacto duradero en la salud de la población salvadoreña.</p>
+      </div>
+      <div class="p-4 bg-white rounded-lg shadow-md">
+        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestros valores</h2>
         <p class="text-gray-600">Transparencia, compromiso, solidaridad y equidad son los valores fundamentales que guían nuestro trabajo en SaludRural.</p>
-      </div>
-      <div class="p-4 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Únete a Nosotros</h2>
-        <p class="text-gray-600">Si compartes nuestra visión y deseas ser parte del cambio en la atención médica de las comunidades rurales, únete a SaludRural y hagamos la diferencia juntos.</p>
       </div>
     </div>
   </div>
@@ -200,13 +210,13 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <p class="text-lg font-bold">SaludRural</p>
     <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
     <div class="flex justify-center space-x-4 mb-4">
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook"></i></a>
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i></a>
     </div>
     <ul class="flex items-center justify-center space-x-4">
-      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="../HTML/Index.php" class="text-gray-400 hover:text-white"><strong>Inicio</strong></a></li>
       <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
       <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
       <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
