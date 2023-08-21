@@ -70,12 +70,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div id="google_translate_element"></div>
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
-            <a href="#" class="text-green text-2xl font-bold">SaludRural</a>
+            <a href="" class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;">SaludRural</a>
             
-
             <!-- Menú de navegación -->
             <ul class="flex space-x-4">
-                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -85,12 +84,12 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Hacer donacion </a></li>
+                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Nosotros</a></li>
+                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="hospitales-menu">
@@ -127,7 +126,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </nav>
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a llevar la salud a zonas rurales!</h1>
+        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
         <p class="text-lg mb-8">¿Que tipo de donacion quieres hacer?</p>
         
       </div>
