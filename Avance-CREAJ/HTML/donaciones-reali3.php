@@ -93,12 +93,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="flex space-x-4">
-<<<<<<< HEAD
             <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
-=======
-                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
->>>>>>> d7df9a69c02bb7536285f04824eef88ba6bdc1e2
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -149,13 +145,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
-<<<<<<< HEAD
     </nav></br></br></br></br></br>
-=======
-    </nav></br></br></br></br>
-
-    <!-- Apartado de aclaración sobre enviar un correo por cualquier duda o corrección -->
->>>>>>> d7df9a69c02bb7536285f04824eef88ba6bdc1e2
     <div class="cuadro">
         <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
         <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
@@ -195,12 +185,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             font-weight: bold; 
         }
     </style>
-<<<<<<< HEAD
 
-=======
->>>>>>> d7df9a69c02bb7536285f04824eef88ba6bdc1e2
-
-    <div class="w-full max-w-mn p-8  rounded-lg shadow-lg  mx-auto p-4">
+    <div class="w-full max-w-mn p-8  mx-auto p-4">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>
         <ul class="flex space-x-4 ">
                 <li class="relative">

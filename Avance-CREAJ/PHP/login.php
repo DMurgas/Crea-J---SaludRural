@@ -26,7 +26,7 @@ $sql_user = "SELECT * FROM registro WHERE correo = '$correo' and contra = '$cont
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
-$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' and password = '$contra'";
+$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' ";
 $result_hospital = mysqli_query($conn, $sql_hospital);
 $existe3 = mysqli_num_rows($result_hospital);
 
@@ -46,12 +46,13 @@ if ($existe1 > 0) {
             echo '<script language="javascript">window.location.href="../HTML/index.php";alert("Bienvenido!!!!");</script>';
         }
     }
-} else if($existe3 > 0){
+} else if ($existe3 > 0) {
     while ($row = mysqli_fetch_array($result_hospital)) {
-        if ($correo == $row['nombre'] && $contra == $row['password']) {
+        if ($correo == $row['nombre']) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../crud_hospitales/index.php";alert("Bienvenido!!!!");</script>';
+            echo '<script language="javascript">alert("Bienvenido!!!!"); window.location.href="../crud_hospitales/index.php";</script>';
+            exit(); // Agrega esta línea para asegurarte de que el script se detiene después de la redirección
         }
     }
 } else {
