@@ -52,7 +52,7 @@ if ($existe1 > 0) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
             echo '<script language="javascript">alert("Bienvenido!!!!"); window.location.href="../crud_hospitales/index.php";</script>';
-            exit(); // Agrega esta línea para asegurarte de que el script se detiene después de la redirección
+             // Agrega esta línea para asegurarte de que el script se detiene después de la redirección
         }
     }
 } else {

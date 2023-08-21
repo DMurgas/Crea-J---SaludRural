@@ -11,7 +11,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id, titulo, contenido, lugar FROM necesidades";
+$consulta = "SELECT id_necesidad, nombre, descripcion, lugar FROM necesidades";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -45,9 +45,9 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                             foreach($data as $dat) {                                                        
                             ?>
                             <tr>
-                                <td><?php echo $dat['id'] ?></td>
-                                <td><?php echo $dat['titulo'] ?></td>
-                                <td><?php echo $dat['contenido'] ?></td>
+                                <td><?php echo $dat['id_necesidad'] ?></td>
+                                <td><?php echo $dat['nombre'] ?></td>
+                                <td><?php echo $dat['descripcion'] ?></td>
                                 <td><?php echo $dat['lugar'] ?></td> 
                                 <td></td>
                             </tr>

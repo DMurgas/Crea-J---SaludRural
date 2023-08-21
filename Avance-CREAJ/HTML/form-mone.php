@@ -39,7 +39,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   /* Cambia el tamaño y mueve la parte azul del traductor*/
   .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
     width: 55%;
-    top: 1.3%;
+    top: 1.5%;
     left: -52.9%;
   }
   
@@ -70,8 +70,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <button class="back-button" >
     <i class="fas fa-arrow-left"></i> Volver atrás
     </button></a>
-
-    
     
     <div class="container">
     

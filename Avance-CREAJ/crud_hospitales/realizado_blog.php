@@ -1,9 +1,32 @@
+<?php
+session_start();
+error_reporting(0);
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
+    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+    die();
+} else {
+    include("../PHP/conex.php");
+
+    // Consulta SQL para obtener el ID del usuario según el correo electrónico
+    $nombre = $_SESSION['nombre'];
+    $query = "SELECT id FROM hospitales WHERE nombre = '$nombre'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['hospital_id'] = $row['id'];
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Lista de Blogs</title>
     <style>
     /* INICIO DE EL ESTILO DE EL TRADUCTOR */
@@ -151,6 +174,36 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     $conn->close();
     ?>
 </div>
+<script>
+    // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
+    const userMenuButton = document.getElementById('user-menu-button');
+    const userMenu = document.getElementById('user-menu');
+    userMenuButton.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+    });
 
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const donacionesMenuButton = document.getElementById('donaciones-menu');
+    const donacionesMenuItems = document.getElementById('donaciones-menu-items');
+    donacionesMenuButton.addEventListener('click', () => {
+        donacionesMenuItems.classList.toggle('hidden');
+    });
+
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const exitoMenuButton = document.getElementById('exito-menu');
+    const exitoMenuItems = document.getElementById('exito-menu-items');
+    exitoMenuButton.addEventListener('click', () => {
+        exitoMenuItems.classList.toggle('hidden');
+    });
+
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const header = document.querySelector('.flex'); // Cambia esto al selector correcto de tu encabezado
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
+    });
+</script>
 </body>
 </html>

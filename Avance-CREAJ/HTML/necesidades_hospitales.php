@@ -82,7 +82,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   </style>
 </head>
 <body class="bg-gray-100">
-<nav class="bg-white p-4  w-full z-10 fixed">
+<nav class="bg-white p-4  w-full z-10 ">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>

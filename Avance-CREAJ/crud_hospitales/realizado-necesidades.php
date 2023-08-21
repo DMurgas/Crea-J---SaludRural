@@ -26,6 +26,7 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Lista de Necesidades</title>
     <style>
     /* INICIO DE EL ESTILO DE EL TRADUCTOR */
