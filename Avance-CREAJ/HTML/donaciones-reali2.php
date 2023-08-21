@@ -80,7 +80,7 @@ if ($correo == null || $correo == '') {
   
     /* FIN DE EL DISEÑO DE EL TRADUCTOR */
     </style>
-    
+
 </head>
 <body class="bg-gray-100">
 <nav class="bg-white p-4  w-full z-10 fixed">
@@ -94,7 +94,7 @@ if ($correo == null || $correo == '') {
 
             <!-- Menú de navegación -->
             <ul class="flex space-x-4">
-                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -109,7 +109,7 @@ if ($correo == null || $correo == '') {
                     </ul>
                 </li>
                 <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Nosotros</a></li>
+                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="hospitales-menu">
@@ -140,10 +140,51 @@ if ($correo == null || $correo == '') {
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
-                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
-    </nav>
+    </nav></br></br></br></br>
+
+    <!-- Apartado de aclaración sobre enviar un correo por cualquier duda o corrección -->
+    <div class="cuadro">
+        <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
+        <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
+    </div>
+    <!-- Estilo CSS del apartado de aclaración sobre enviar un correo... -->
+    <style>
+        body {
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .cuadro {
+            border: 2px solid #ccc;
+            background-color: #fff;
+            text-align: center;
+            max-width: 80%;
+            padding: 15px;
+            margin: 0 auto;
+            width: 300px;
+            border-radius: 6px;
+        }
+
+        .mensaje {
+            font-size: 16.7px;
+            color: #333;
+            margin-bottom: 3.8px;
+        }
+
+        .correo {
+            font-size: 16px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .correo:hover {
+            text-decoration: underline;
+            font-weight: bold; 
+        }
+    </style>
 
     <div class="w-full max-w-mn p-8  rounded-lg   mx-auto p-4">
         <h1 class="text-4xl font-bold mb-4 text-center">Donaciones realizadas</h1>
@@ -151,16 +192,16 @@ if ($correo == null || $correo == '') {
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="bg-white text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu-cate">
-                        <span>Donaciones de Medicamentos</span>
+                        <span>Donaciones de medicamentos</span>
                         <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-cate-items">
-                        <li><a href="donaciones-reali2.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Medicamentos</a></li>
-                        <li><a href="donaciones-reali3.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Equipos medicos</a></li>
-                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Isumos medicos</a></li>
-                        <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones Monetaria</a></li>
+                        <li><a href="donaciones-reali2.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones de medicamentos</a></li>
+                        <li><a href="donaciones-reali3.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones de equipos médicos</a></li>
+                        <li><a href="donaciones-reali4.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones de insumos médicos</a></li>
+                        <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Donaciones monetarias</a></li>
                     </ul>
                 </li>
         </ul>
