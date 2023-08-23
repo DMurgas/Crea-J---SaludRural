@@ -145,7 +145,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
-    </nav></br></br></br></br></br>
+    </nav></br></br></br></br>
 
     <!-- Apartado de aclaración sobre enviar un correo por cualquier duda o corrección -->
     <div class="cuadro">
