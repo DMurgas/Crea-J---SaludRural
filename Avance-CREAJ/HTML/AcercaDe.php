@@ -167,7 +167,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       <div class=" p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sobre Nosotros</h2>
         <p class="text-gray-600 text-justify">Somos una organización que busca ayudar a la sociedad más necesitada de nuestro país <span class="font-bold">"El Salvador"</span>, a través de donaciones para hospitales y centros médicos que se encuentran en las zonas rurales del país, es decir, las comunidades marginadas y abandonadas que existen en todo el territorio nacional.</p>
-        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-5 rounded-lg" width="335" height="315" alt="imagen">
+        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-7 rounded-lg" width="335" height="315" alt="imagen">
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center"></h2>
