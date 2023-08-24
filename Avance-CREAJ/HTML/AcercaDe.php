@@ -109,9 +109,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
-                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
+                    <a class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium cursor-default" id="donaciones-menu">
                         <span>Donaciones</span>
-                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                        <i href="#" class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
@@ -124,9 +124,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
-                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="hospitales-menu">
+                    <a class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium cursor-default" id="hospitales-menu">
                         <span>Hospitales</span>
-                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                        <i href="#" class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
@@ -187,7 +187,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestros valores</h2>
-        <p class="text-gray-600">Transparencia, compromiso, solidaridad y equidad son los valores fundamentales que guían nuestro trabajo en SaludRural.</p>
+        <h3 class="mb-2 text-justify px-3">A continuación, se presentan los valores fundamentales que guían nuestro trabajo en SaludRural.</h3>
+        <p class="text-gray-600 font-bold px-4 text-justify">Transparencia: hyhthbtybhvyhyb</p>
+        <p><span class="text-gray-600 font-bold px-4 text-justify">Compromiso:</span> saghfdjyjtdcgf</p>
+        <p class=""><span class="text-gray-600 font-bold px-4 text-justify">Solidaridad:</span> tgjtjxgjjhgjtffgj</p>
+        <p class="text-gray-600 font-bold px-4 text-justify">Equidad:</p>
       </div>
     </div>
   </div>
