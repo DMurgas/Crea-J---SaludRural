@@ -174,7 +174,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
             <div class="field">
               <div class="label">Monto a donar</div>
-              <input type="number" name="monto" required max="19000">
+              <input type="number" name="monto" required min="5" max="1700">
               </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
