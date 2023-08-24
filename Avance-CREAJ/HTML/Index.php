@@ -213,7 +213,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   </div>
 </div>
 </main>
-    <script>
+<script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenu = document.getElementById('user-menu');
@@ -227,22 +227,14 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     donacionesMenuButton.addEventListener('click', () => {
         donacionesMenuItems.classList.toggle('hidden');
     });
-
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const header = document.querySelector('.flex'); // Cambia esto al selector correcto de tu encabezado
-
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const hospitalesMenuButton = document.getElementById('hospitales-menu');
+    const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
+    hospitalesMenuButton.addEventListener('click', () => {
+        hospitalesMenuItems.classList.toggle('hidden');
     });
-        // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-        const hospitalesMenuButton = document.getElementById('hospitales-menu');
-        const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
-        hospitalesMenuButton.addEventListener('click', () => {
-            hospitalesMenuItems.classList.toggle('hidden');
-        });
-</Script>
+</script>
+
 <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">
     <p class="text-lg font-bold">SaludRural</p>

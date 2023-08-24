@@ -187,11 +187,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestros valores</h2>
-        <h3 class="mb-2 text-justify px-3">A continuación, se presentan los valores fundamentales que guían nuestro trabajo en SaludRural.</h3>
-        <p class="text-gray-600 font-bold px-4 text-justify">Transparencia: hyhthbtybhvyhyb</p>
-        <p><span class="text-gray-600 font-bold px-4 text-justify">Compromiso:</span> saghfdjyjtdcgf</p>
-        <p class=""><span class="text-gray-600 font-bold px-4 text-justify">Solidaridad:</span> tgjtjxgjjhgjtffgj</p>
-        <p class="text-gray-600 font-bold px-4 text-justify">Equidad:</p>
+        <h3 class="mb-3 text-justify px-2">A continuación, se presentan los valores fundamentales que guían nuestro trabajo en SaludRural.</h3>
+        <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Transparencia:</span> En SaludRural poseemos una confianza cultivada a través de la apertura y honestidad.</p>
+        <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Compromiso:</span> Tenemos una dedicación inquebrantable para empoderar comunidades, asegurando su bienestar y salud a través de acciones sólidas y continuas.</p>
+        <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Solidaridad:</span> Extendemos una mano amiga para fortalecer y apoyar a nuestras comunidades en su camino hacia una vida más saludable y plena.</p>
+        <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Equidad:</span> Garantizamos que cada individuo tenga acceso igualitario a oportunidades de salud y bienestar.</p>
       </div>
     </div>
   </div>
