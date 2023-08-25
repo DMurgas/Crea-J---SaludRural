@@ -248,7 +248,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                         echo '<div><span class="font-semibold">Hospital:</span> ' . obtenerNombreHospital($conn, $donacion['id_hospital']) . '</div>';
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
                         echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['monto'] . '</div>';
-                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['estado'] . '</div>';
+                        echo '<div><span class="font-semibold">Estado de la donación:</span> ' . $donacion['estado'] . '</div>';
                         echo '</div>';
                     }
                     echo '</div>';

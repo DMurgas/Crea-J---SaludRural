@@ -249,7 +249,7 @@ if ($correo == null || $correo == '') {
                         echo '<div><span class="font-semibold">Fecha de Donación:</span> ' . $donacion['fecha'] . '</div>';
                         echo '<div><span class="font-semibold">Nombre del medicamento:</span> ' . $donacion['medicamento'] . '</div>';
                         echo '<div><span class="font-semibold">Descripción:</span> ' . $donacion['descripcion'] . '</div>';
-                        echo '<div><span class="font-semibold">Monto:</span> ' . $donacion['estado'] . '</div>';
+                        echo '<div><span class="font-semibold">Estado de la donación:</span> ' . $donacion['estado'] . '</div>';
                         echo '</div>';
                     }
                     echo '</div>';
