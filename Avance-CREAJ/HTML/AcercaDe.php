@@ -104,8 +104,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             
 
             <!-- Menú de navegación -->
-            <ul class="flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-4 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            
+            <ul class="hidden sm:flex space-x-4">
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -138,7 +139,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 </li>
             </ul>
 
-            <div class="relative">
+            <div class="hidden sm:block">
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
@@ -229,8 +230,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
       </div>
     </footer>
-    
-    <script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+<script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenu = document.getElementById('user-menu');
@@ -250,5 +251,30 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     hospitalesMenuButton.addEventListener('click', () => {
         hospitalesMenuItems.classList.toggle('hidden');
     });
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
+
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+        });
+
+        const donacionesMenu = document.getElementById("donaciones-menu-cel");
+        const donacionesMenuItems = document.getElementById("donaciones-menu-items-cel");
+
+        donacionesMenu.addEventListener("click", function (event) {
+            event.preventDefault();
+            donacionesMenuItems.classList.toggle("hidden");
+        });
+
+        const hospitalesMenu = document.getElementById("hospitales-menu-cel");
+        const hospitalesMenuItems = document.getElementById("hospitales-menu-items-cel");
+
+        hospitalesMenu.addEventListener("click", function (event) {
+            event.preventDefault();
+            hospitalesMenuItems.classList.toggle("hidden");
+        });
+    });
+      
 </script>
 </html>

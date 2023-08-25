@@ -27,6 +27,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Necesidades actuales</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
     /* INICIO DE EL ESTILO DE EL TRADUCTOR */
@@ -82,7 +83,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   </style>
 </head>
 <body class="bg-gray-100">
-<nav class="bg-white p-4  w-full z-10 ">
+<nav class="bg-white p-4  w-full z-10 fixed">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
@@ -93,41 +94,41 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
             <!-- Menú de navegación -->
             
-            <ul class="flex space-x-4">
-            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
-                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+            <ul class="hidden sm:flex space-x-4">
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
+                <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
-                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
+                    <a class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium cursor-default" id="donaciones-menu">
                         <span>Donaciones</span>
-                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                        <i href="#" class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Hacer donacion </a></li>
+                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
                 <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
-                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Nosotros</a></li>
+                <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
-                    <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="hospitales-menu">
+                    <a class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium cursor-default" id="hospitales-menu">
                         <span>Hospitales</span>
-                        <i class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
+                        <i href="#" class="fas fa-chevron-down ml-1"></i> <!-- Flecha hacia abajo -->
                     </a>
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="hospitales-menu-items">
-                        <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+                        <li><a href="necesidades_hospitales.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
                         
                         <!-- <li><a href="#" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Historias de exito</a></li> -->
                     </ul>
                 </li>
             </ul>
 
-            <div class="relative">
+            <div class="hidden sm:block">
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
@@ -143,10 +144,39 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
-                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
+            <button id="menu-toggle" class="block sm:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
+    <ul class="mobile-menu hidden sm:hidden bg-white p-4 mt-12 rounded-md shadow-md absolute right-0 w-40">
+    <li><a href="Index.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Inicio</a></li>
+    <li>
+        <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="donaciones-menu-cel">
+            Donar <i class="fas fa-chevron-down ml-1"></i>
+        </a>
+        <ul class="mt-2"  id="donaciones-menu-items-cel">
+            <li><a href="boton-donaciones.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
+            <li><a href="donaciones-reali.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
+        </ul>
+    </li>
+    <li><a href="blog.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Blog</a></li>
+    <li><a href="AcercaDe.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Acerca de</a></li>
+    <li>
+        <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="hospitales-menu-cel">
+            Hospitales <i class="fas fa-chevron-down ml-1"></i>
+        </a>
+        <ul class="mt-2" id="hospitales-menu-items-cel">
+            <li><a href="necesidades_hospitales.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+            <!-- Agrega más elementos de menú aquí si es necesario -->
+        </ul>
+    </li>
+    <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+    <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
+    <!-- Agrega más elementos de menú aquí si es necesario -->
+</ul><br><br><br>
 
 <main class="container mx-auto mt-8 flex-grow mb-8">
     <section class="flex justify-center">
@@ -201,7 +231,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 </div>
 </section>
 </main>
-</body>
+
 <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">
     <p class="text-lg font-bold">SaludRural</p>
@@ -223,7 +253,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
   </div>
 </footer>
- <script>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenu = document.getElementById('user-menu');
@@ -237,21 +268,36 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     donacionesMenuButton.addEventListener('click', () => {
         donacionesMenuItems.classList.toggle('hidden');
     });
-
     // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-    const exitoMenuButton = document.getElementById('exito-menu');
-    const exitoMenuItems = document.getElementById('exito-menu-items');
-    exitoMenuButton.addEventListener('click', () => {
-        exitoMenuItems.classList.toggle('hidden');
+    const hospitalesMenuButton = document.getElementById('hospitales-menu');
+    const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
+    hospitalesMenuButton.addEventListener('click', () => {
+        hospitalesMenuItems.classList.toggle('hidden');
     });
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
 
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const header = document.querySelector('.flex'); // Cambia esto al selector correcto de tu encabezado
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+        });
 
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
+        const donacionesMenu = document.getElementById("donaciones-menu-cel");
+        const donacionesMenuItems = document.getElementById("donaciones-menu-items-cel");
+
+        donacionesMenu.addEventListener("click", function (event) {
+            event.preventDefault();
+            donacionesMenuItems.classList.toggle("hidden");
+        });
+
+        const hospitalesMenu = document.getElementById("hospitales-menu-cel");
+        const hospitalesMenuItems = document.getElementById("hospitales-menu-items-cel");
+
+        hospitalesMenu.addEventListener("click", function (event) {
+            event.preventDefault();
+            hospitalesMenuItems.classList.toggle("hidden");
+        });
     });
 </script>
+</body>
 </html>
