@@ -27,6 +27,7 @@ if (isset($_SESSION['id'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
     <title>Perfil de Usuario</title>
     <style>
       /* INICIO DE EL ESTILO DE EL TRADUCTOR */
@@ -176,7 +177,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
-</ul>
+</ul><br><br><br><br>
     <div class="flex items-center justify-center min-h-screen">
     <div class="container mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
         <h1 class="text-2xl font-bold mb-4 text-center">Perfil de Usuario</h1>
@@ -220,33 +221,26 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 </div>
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script>
-        // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
-        const donacionesMenu = document.getElementById('donaciones-menu');
-        const donacionesMenuItems = document.getElementById('donaciones-menu-items');
-        donacionesMenu.addEventListener('click', () => {
-            donacionesMenuItems.classList.toggle('hidden');
-        });
+    // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
+    const userMenuButton = document.getElementById('user-menu-button');
+    const userMenu = document.getElementById('user-menu');
+    userMenuButton.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+    });
 
-        // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
-        const donacionesMenuCate = document.getElementById('donaciones-menu-cate');
-        const donacionesMenuItemsCate = document.getElementById('donaciones-cate-items');
-        donacionesMenuCate.addEventListener('click', () => {
-            donacionesMenuItemsCate.classList.toggle('hidden');
-        });
-
-        // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
-        const userMenuButton = document.getElementById('user-menu-button');
-        const userMenu = document.getElementById('user-menu');
-        userMenuButton.addEventListener('click', () => {
-            userMenu.classList.toggle('hidden');
-        });
-        // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-        const hospitalesMenuButton = document.getElementById('hospitales-menu');
-        const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
-        hospitalesMenuButton.addEventListener('click', () => {
-            hospitalesMenuItems.classList.toggle('hidden');
-        });
-        document.addEventListener("DOMContentLoaded", function () {
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const donacionesMenuButton = document.getElementById('donaciones-menu');
+    const donacionesMenuItems = document.getElementById('donaciones-menu-items');
+    donacionesMenuButton.addEventListener('click', () => {
+        donacionesMenuItems.classList.toggle('hidden');
+    });
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const hospitalesMenuButton = document.getElementById('hospitales-menu');
+    const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
+    hospitalesMenuButton.addEventListener('click', () => {
+        hospitalesMenuItems.classList.toggle('hidden');
+    });
+    document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.getElementById("menu-toggle");
         const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -270,7 +264,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             hospitalesMenuItems.classList.toggle("hidden");
         });
     });
-    </script>
+      
+</script>
 </body>
-
 </html>
