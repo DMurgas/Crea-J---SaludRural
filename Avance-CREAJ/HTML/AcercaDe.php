@@ -159,17 +159,17 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </div>
     </nav><br><br><br>
 
-    <!-- Código del slider (portada) -->
-    <section class="bg-blue-600 text-white py-24">
-      <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
-        <p class="text-lg mb-8">Tu generosa donación, marca la diferencia en la vida de quiénes más lo necesitan.</p>
-        <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar donación</a>
-      </div>
-    </section>
+  <!-- Código del slider (portada) -->
+  <section class="bg-blue-600 text-white py-24">
+    <div class="container mx-auto text-center">
+      <h1 class="text-4xl font-bold mb-4" style="font-size: 950;">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
+      <p class="text-lg mb-8" style="font-size: larger;">Tu generosa donación, marca la diferencia en la vida de quiénes más lo necesitan.</p>
+      <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar donación</a>
+    </div>
+  </section>
 
   <!-- Código del cuerpo (información) de la página -->
-  <div class="container mx-auto p-8">
+  <div class="container mx-auto p-8 pt-4">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sobre Nosotros</h2>
