@@ -154,10 +154,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </nav><br><br><br>
 
     <main>
+    <!-- Código del slider (portada) -->
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
-        <p class="text-lg mb-8">Tu generosa donación, marca la diferencia en la vida de quiénes más lo necesitan.</p>
+        <h1 class="text-4xl font-bold mb-4">¡Bienvenid@ a SaludRural!</h1>
+        <p class="text-lg mb-8">"Sembrando Bienestar en Cada Rincón. Únete a Nuestro Camino de Salud y Comunidad".</p>
         <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar donación</a>
       </div>
     </section>
