@@ -168,7 +168,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
     </section>
 
-  <!--  -->  
+  <!-- Código del cuerpo (información) de la página -->
   <div class="container mx-auto p-8">
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
