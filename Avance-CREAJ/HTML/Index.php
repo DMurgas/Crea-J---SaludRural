@@ -180,9 +180,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
-</ul>
-
-    <br><br><br>
+</ul><br><br><br>
 
     <main>
     <!-- Código del slider (portada) -->
@@ -197,7 +195,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <!-- Código del cuerpo (información) de la página -->
     <section class="bg-white py-24 pt-12 pb-4">
       <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">¿Cómo tu donación ayuda a las personas más necesitadas?</h2>
+        <h2 class="text-2xl font-bold mb-3">¿Cómo tu donación ayuda a las personas más necesitadas?</h2>
         <p class="text-lg mb-8">Muchos centros hospitalarios, especialmente en áreas de bajos recursos o en momentos de crisis, pueden enfrentar limitaciones financieras y carecer de los recursos necesarios para proporcionar atención médica de calidad. Las donaciones pueden ayudar a compensar estas limitaciones y garantizar que los hospitales tengan acceso a los equipos, suministros y personal necesario para brindar atención médica adecuada.
           
         <!--Respuesta a Emergencias: En situaciones de emergencia, como desastres naturales o epidemias, los hospitales pueden verse abrumados por la demanda de atención médica. Las donaciones permiten a los hospitales estar mejor preparados para responder a estas situaciones críticas al proporcionar los recursos necesarios para manejar un aumento repentino en la demanda de atención médica.
