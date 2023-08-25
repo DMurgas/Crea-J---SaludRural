@@ -189,10 +189,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <!-- Agrega más elementos de menú aquí si es necesario -->
 </ul><br><br><br><br>
   <div class="container mx-auto p-8">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold text-black mb-4">¡Bienvenid@ a SaludRural!</h1>
-      <p class="text-xl text-black">"Sembrando Bienestar en Cada Rincón. Únete a Nuestro Camino de Salud y Comunidad".</p>
-    </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sobre Nosotros</h2>
@@ -200,7 +196,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-7 rounded-lg" width="335" height="315" alt="imagen">
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center"></h2>
         <p class="text-gray-600 text-justify">Nuestro equipo está conformado por profesionales apasionados y comprometidos con la salud pública y la equidad en la atención médica. Trabajamos en estrecha colaboración con hospitales y centros médicos en áreas rurales para comprender sus necesidades y brindarles el apoyo necesario. Valoramos la transparencia y la responsabilidad en nuestro trabajo. Nos esforzamos por mantener una comunicación clara con nuestros donantes y socios, proporcionándoles actualizaciones sobre cómo se utilizan sus contribuciones y el impacto que están generando.</p><br>
         <p class="text-gray-600 text-justify">En <span class="font-bold">SaludRural</span>, creemos firmemente en el poder de la solidaridad y la generosidad. A través de nuestra plataforma, permitimos a personas y organizaciones donar de manera segura y directa a proyectos y necesidades específicas de los hospitales y centros médicos rurales. Facilitamos la conexión entre donantes y receptores, asegurando que cada donación tenga un impacto significativo y positivo en la vida de las personas. Estamos emocionados de ser parte del cambio y el progreso en la atención médica de las zonas rurales. <a href="../HTML/login.php"><span class="negra">Únete a nosotros en SaludRural</span></a> y juntos hagamos la diferencia en la salud y el bienestar de las comunidades rurales de nuestro país.</p>
       </div>

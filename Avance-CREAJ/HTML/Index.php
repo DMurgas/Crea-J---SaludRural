@@ -185,54 +185,56 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <br><br><br>
 
     <main>
+    <!-- Código del slider (portada) -->
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
-        <p class="text-lg mb-8">Tu generosa donación, marca la diferencia en la vida de quiénes más lo necesitan.</p>
+        <h1 class="text-4xl font-bold mb-4" style="font-size: 950;">¡Bienvenid@ a SaludRural!</h1>
+        <p class="text-lg mb-8" style="font-size: larger;">"Sembrando Bienestar en Cada Rincón. Únete a Nuestro Camino de Salud y Comunidad".</p>
         <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar donación</a>
       </div>
     </section>
-    <section class="bg-white py-24">
-      <div class="container mx-auto text-center">
-        <h2 class="text-2xl font-bold mb-4">¿Como tu donación ayudara a las pesonas?</h2>
-        <p class="text-lg mb-8">Muchos centros hospitalarios, especialmente en áreas de bajos recursos o en momentos de crisis, pueden enfrentar limitaciones financieras y carecer de los recursos necesarios para proporcionar atención médica de calidad. Las donaciones pueden ayudar a compensar estas limitaciones y garantizar que los hospitales tengan acceso a los equipos, suministros y personal necesarios para brindar atención médica adecuada.
-          
 
+    <!-- Código del cuerpo (información) de la página -->
+    <section class="bg-white py-24 pt-16 pb-7">
+      <div class="container mx-auto text-center">
+        <h2 class="text-2xl font-bold mb-4">¿Cómo tu donación ayuda a las personas más necesitadas?</h2>
+        <p class="text-lg mb-8">Muchos centros hospitalarios, especialmente en áreas de bajos recursos o en momentos de crisis, pueden enfrentar limitaciones financieras y carecer de los recursos necesarios para proporcionar atención médica de calidad. Las donaciones pueden ayudar a compensar estas limitaciones y garantizar que los hospitales tengan acceso a los equipos, suministros y personal necesario para brindar atención médica adecuada.
+          
         <!--Respuesta a Emergencias: En situaciones de emergencia, como desastres naturales o epidemias, los hospitales pueden verse abrumados por la demanda de atención médica. Las donaciones permiten a los hospitales estar mejor preparados para responder a estas situaciones críticas al proporcionar los recursos necesarios para manejar un aumento repentino en la demanda de atención médica.
 
         Atención a Grupos Vulnerables: Los hospitales que atienden a poblaciones desfavorecidas o marginadas a menudo enfrentan desafíos adicionales para proporcionar atención médica adecuada. Las donaciones pueden ayudar a abordar estas disparidades al proporcionar recursos adicionales para garantizar que todos tengan acceso a atención médica de calidad.
 
         Mejora de la Infraestructura: Los hospitales a menudo necesitan actualizar su infraestructura, como la renovación de instalaciones obsoletas, la compra de equipos médicos modernos y la mejora de la capacidad de atención. Las donaciones pueden permitir que los hospitales realicen estas mejoras, lo que a su vez beneficia a los pacientes al ofrecer un entorno más seguro y cómodo para recibir atención médica. -->
         </p>
-        <a href="../HTML/AcercaDe.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Leer más sobre nuestra misión</a>
+        <a href="../HTML/AcercaDe.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Leer Más Sobre Nosotros</a>
       </div>
     </section>
 
-    <div class="flex min-h-screen items-center justify-center p-10 bg-white">
+  <div class="flex min-h-screen items-center justify-center p-10 bg-white">
   <div class="container grid max-w-screen-xl gap-8 lg:grid-cols-2 lg:grid-rows-2">
     <div class="row-span-2 flex flex-col rounded-md border border-slate-200">
-      <div class="h-1/2 flex-1"><img src="../Imagenes/3.jpeg" class="w-full object-cover object-right-top" alt="omnichannel" /></div>
+      <div class="h-1/2 flex-1"><img src="../Imagenes/3.jpeg" class="w-full object-cover object-right-top" alt="omnichannel" style="padding-top: 0; height: 356px;"></div>
       <div class="p-10">
-        <h3 class="text-xl font-medium text-gray-700">Respuesta a Emergencias:</h3>
-        <p class="mt-2 text-slate-500">En situaciones de emergencia, como desastres naturales o epidemias, los hospitales pueden verse abrumados por la demanda de atención médica. Las donaciones permiten a los hospitales estar mejor preparados para responder a estas situaciones críticas al proporcionar los recursos necesarios para manejar un aumento repentino en la demanda de atención médica.</p>
+        <h3 class="text-xl font-medium text-gray-700">Respuesta a emergencias:</h3>
+        <p class="mt-2 text-slate-500 text-justify" style="padding-bottom: 50px;">En situaciones de emergencia, como desastres naturales o epidemias, los hospitales pueden verse abrumados por la demanda de atención médica. Las donaciones permiten a los hospitales estar mejor preparados para responder a estas situaciones críticas al proporcionar los recursos necesarios para manejar un aumento repentino en la demanda de atención médica.</p>
       </div>
     </div>
     <div class="flex rounded-md border border-slate-200">
       <div class="flex-1 p-10">
-        <h3 class="text-xl font-medium text-gray-700">Atención a Grupos Vulnerables:</h3>
-        <p class="mt-2 text-slate-500">Los hospitales que atienden a poblaciones desfavorecidas o marginadas a menudo enfrentan desafíos adicionales para proporcionar atención médica adecuada. Las donaciones pueden ayudar a abordar estas disparidades al proporcionar recursos adicionales para garantizar que todos tengan acceso a atención médica de calidad.</p>
+        <h3 class="text-xl font-medium text-gray-700">Atención a grupos vulnerables:</h3>
+        <p class="mt-2 text-slate-500 text-justify">Los hospitales que atienden a poblaciones desfavorecidas o marginadas a menudo enfrentan desafíos adicionales para proporcionar atención médica adecuada. Las donaciones pueden ayudar a abordar estas disparidades al proporcionar recursos adicionales para garantizar que todos tengan acceso a atención médica de calidad.</p>
       </div>
 
       <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
         <div class="absolute inset-0">
-          <img src="../Imagenes/2.png" class="h-full w-full object-cover object-left-top" alt="" />
+          <img src="../Imagenes/2.png" class="h-full w-full object-cover object-left-top" alt=""/>
         </div>
       </div>
     </div>
     <div class="flex rounded-md border border-slate-200">
       <div class="flex-1 p-10">
-        <h3 class="text-xl font-medium text-gray-700">Mejora de la Infraestructura:</h3>
-        <p class="mt-2 text-slate-500">Los hospitales a menudo necesitan actualizar su infraestructura, como la renovación de instalaciones obsoletas, la compra de equipos médicos modernos y la mejora de la capacidad de atención. Las donaciones pueden permitir que los hospitales realicen estas mejoras, lo que a su vez beneficia a los pacientes al ofrecer un entorno más seguro y cómodo para recibir atención médica.</p>
+        <h3 class="text-xl font-medium text-gray-700">Mejora de la infraestructura:</h3>
+        <p class="mt-2 text-slate-500 text-justify">Los hospitales a menudo necesitan actualizar su infraestructura, como la renovación de instalaciones obsoletas, la compra de equipos médicos modernos y la mejora de la capacidad de atención. Las donaciones pueden permitir que los hospitales realicen estas mejoras, lo que a su vez beneficia a los pacientes al ofrecer un entorno más seguro y cómodo para recibir atención médica.</p>
       </div>
 
       <div class="relative hidden h-full w-1/3 overflow-hidden lg:block">
