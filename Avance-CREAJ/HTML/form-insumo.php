@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title>Donacion insumo medico</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <style>
@@ -63,11 +65,20 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
-
     <a href="boton-donaciones.php">
     <button class="back-button" >
     <i class="fas fa-arrow-left"></i> Volver atras
     </button></a>
+
+    <button class="mas-info">
+        <i class="fas fa-arrow-left"></i> Más información
+    </button>
+
+    <script>
+        document.querySelector('.mas-info').addEventListener('click', function() {
+            alert('Aquí está la información adicional que deseas mostrar.');
+        });
+    </script>
 
     <div class="container">
       <header>Donacion de insumos medicos</header>
@@ -149,10 +160,10 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
 
           <div class="page">
-            <div class="field">
-              <div class="label">Nombre del insumo medico</div>
-              <input type="text" name="insumo" required>
-            </div>
+          <div class="field">
+            <div class="label">Nombre del insumo medico</div>
+            <input type="text" name="insumo" id="insumo-field" required>
+          </div>
             <div class="field">
               <div class="label">Cantidad de insumo medico</div>
               <input type="number"name="cantidad" required>
@@ -208,6 +219,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </form>
       </div>
     </div>
+   
     <script src="../JS/donaciones.JS"></script>
+    
   </body>
 </html>
