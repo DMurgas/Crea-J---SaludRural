@@ -118,15 +118,29 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
 
           <div class="page">
-            <div class="title">Información de Contacto</div>
+            <div class="title">Información extra</div>
             <div class="field">
               <div class="label">Número de Telefono</div>
               <input type="Number" name="telefono" required>
             </div>
             <div class="field">
-              <div class="label">Fecha de la donación</div>
-              <input type="datetime-local" id="fecha" name="fecha" required>
-              <script src="../JS/validar-fechas.js"></script>
+             <div class="label">Fecha de la donación</div>
+             <input type="datetime-local" id="fecha" name="fecha" required>
+             
+              <script>
+              document.getElementById("fecha").addEventListener("input", function() {
+                  var fechaIngresada = document.getElementById("fecha").value;
+                  var fechaActual = new Date();
+                  
+                  // Asegurarse de que el formato de fecha sea 'YYYY-MM-DDTHH:mm'
+                  fechaActual.setSeconds(0, 0); // Establecer segundos y milisegundos en cero
+                  
+                  if (new Date(fechaIngresada) < fechaActual) {
+                      alert("La fecha debe ser presente o futura.");
+                      document.getElementById("fecha").value = ""; // Limpiar el campo de fecha
+                  }
+              });
+              </script>
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>
