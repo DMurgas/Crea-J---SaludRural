@@ -71,12 +71,12 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </button></a>
 
     <button class="mas-info">
-        <i class="fas fa-arrow-left"></i> Más información
+        <i class="fas fa-arrow-left"></i> ¿Que tipo de insumos medicos puedo donar?
     </button>
 
     <script>
         document.querySelector('.mas-info').addEventListener('click', function() {
-            alert('Aquí está la información adicional que deseas mostrar.');
+            alert('Equipo de protección personal: Esto puede incluir mascarillas quirúrgicas, guantes, batas, protectores faciales y gafas de seguridad.\n\n Suministros de desinfección: Desinfectantes de manos, desinfectantes para superficies, toallitas desinfectantes y otros productos similares.\n\n Material quirúrgico: Instrumentos médicos desechables o esterilizables, como guantes quirúrgicos, campos quirúrgicos, jeringas y agujas.  \n\n Suministros para curación: Vendajes, gasas, algodón, cintas médicas, antisépticos y otros suministros utilizados en el cuidado de heridas. \n\n Suministros para atención a largo plazo: Pañales para adultos, toallitas húmedas, suministros para cuidado de heridas crónicas, entre otros.');
         });
     </script>
 
@@ -166,7 +166,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
             <div class="field">
               <div class="label">Cantidad de insumo medico</div>
-              <input type="number"name="cantidad" required>
+              <input type="number"name="cantidad" placeholder="Cantidad de cajas a donar" required>
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
@@ -209,7 +209,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
             <div class="field">
               <div class="label">Descripcion del insumo</div>
-              <input type="text" placeholder="Informacion del insumo" name="descripcion" required>
+              <input type="text" placeholder="Informacion del insumo y cantidad total" name="descripcion" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>
