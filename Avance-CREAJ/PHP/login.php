@@ -35,7 +35,7 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contraseña']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../crud/index.php";alert("Bienvenido!!!!");</script>';
+            echo '<script language="javascript">window.location.href="../crud/index.php";alert("¡Bienvenid@ a SaludRural!");</script>';
         }
     }
 } else if ($existe2 > 0) {
@@ -43,7 +43,7 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contra']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../HTML/index.php";alert("Bienvenido!!!!");</script>';
+            echo '<script language="javascript">window.location.href="../HTML/index.php";alert("¡Bienvenid@ a SaludRural!");</script>';
         }
     }
 } else if ($existe3 > 0) {
@@ -51,12 +51,12 @@ if ($existe1 > 0) {
         if ($correo == $row['nombre']) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">alert("Bienvenido!!!!"); window.location.href="../crud_hospitales/index.php";</script>';
+            echo '<script language="javascript">alert("¡Bienvenid@ a SaludRural!"); window.location.href="../crud_hospitales/index.php";</script>';
              // Agrega esta línea para asegurarte de que el script se detiene después de la redirección
         }
     }
 } else {
-   echo '<script language="javascript">alert("Usuario o contraseñas incorrectos");window.location.href="../HTML/login.php";</script>';
+   echo '<script language="javascript">alert("Su usuario o contraseña pueden estar incorrectos.");window.location.href="../HTML/login.php";</script>';
 }
 
 ?>

@@ -6,7 +6,7 @@
     <script
       src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
     </script>
-    <link rel="stylesheet" href="../CSS/login.css" >
+    <link rel="stylesheet" href="../CSS/login.css">
     <title>Formularios</title>
   </head>
   <body>
@@ -21,7 +21,7 @@
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Contraseña" name="contraseña"  >
+                <input type="password" placeholder="Contraseña" name="contraseña">
             </div>
             <input type="submit" value="INGRESAR" class="btn solid">
           </form>
@@ -55,7 +55,7 @@
           </form>
         </div>
       </div>
-
+      
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
@@ -67,7 +67,7 @@
               REGISTRARME
             </button>
           </div>
-          <img src="../IMAGENES/mano.png" class="image" alt="" >
+          <img src="../IMAGENES/mano.png" class="image" alt="">
         </div>
         <div class="panel right-panel">
           <div class="content">
@@ -79,7 +79,7 @@
               Iniciar sesión
             </button>
           </div>
-          <img src="../IMAGENES/mano-login.png" class="image" alt="" >
+          <img src="../IMAGENES/mano-login.png" class="image" alt="">
         </div>
       </div>
     </div>
