@@ -6,19 +6,7 @@ error_reporting(0);
 if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
     die();
-} else {
-    include("../PHP/conex.php");
-
-    // Consulta SQL para obtener el ID del usuario según el correo electrónico
-    $correo = $_SESSION['correo'];
-    $query = "SELECT id FROM registro WHERE correo = '$correo'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $_SESSION['usuario_id'] = $row['id'];
-    }
-}
+} 
 ?>
 
 <!DOCTYPE html>
