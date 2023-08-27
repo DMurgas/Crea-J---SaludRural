@@ -146,8 +146,13 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
             <!-- Menú de navegación -->
             
+<<<<<<< HEAD
             <ul class="flex space-x-4">
             <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">SaludRural</a></li>
+=======
+            <ul class="hidden sm:flex space-x-4">
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
+>>>>>>> 1f17ad5d513d35633d7c42c890806eda3f3dc4fe
             <li><a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -177,7 +182,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 </li>
             </ul>
 
-            <div class="relative">
+            <div class="hidden sm:block">
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
@@ -195,8 +200,35 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
             </ul>
             </div>
+            <button id="menu-toggle" class="block sm:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
-
+    <ul class="mobile-menu hidden sm:hidden bg-white p-2 mt-0 rounded-md shadow-md absolute right-0 w-40">
+    <li><a href="Index.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Inicio</a></li>
+    <li>
+        <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="donaciones-menu-cel">
+            Blog <i class="fas fa-chevron-down ml-1"></i>
+        </a>
+        <ul class="mt-2"  id="donaciones-menu-items-cel">
+            <li><a href="agregar-blog.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Agregar</a></li>
+            <li><a href="realizado_blog.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="hospitales-menu-cel">
+            Necesidades <i class="fas fa-chevron-down ml-1"></i>
+        </a>
+        <ul class="mt-2" id="hospitales-menu-items-cel">
+        <li><a href="agregar_necesidades.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Agregar</a></li>
+            <li><a href="realizado-necesidades.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
+            <!-- Agrega más elementos de menú aquí si es necesario -->
+        </ul>
+    </li>
+    <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+    <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
+    <!-- Agrega más elementos de menú aquí si es necesario -->
+</ul>
     <main class="container mx-auto mt-8 flex-grow mb-8">
     <section class="flex justify-center">
         <div class="w-full md:w-2/3 lg:w-1/2">
@@ -252,7 +284,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
 
   <!-- Pie de página -->
-<script>
+  <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenu = document.getElementById('user-menu');
@@ -273,14 +305,29 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     exitoMenuButton.addEventListener('click', () => {
         exitoMenuItems.classList.toggle('hidden');
     });
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.getElementById("menu-toggle");
+        const mobileMenu = document.querySelector(".mobile-menu");
 
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
-    const header = document.querySelector('.flex'); // Cambia esto al selector correcto de tu encabezado
+        menuToggle.addEventListener("click", function () {
+            mobileMenu.classList.toggle("hidden");
+        });
 
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      header.classList.toggle('h-16'); // Ajusta la altura del encabezado según tus necesidades
+        const donacionesMenu = document.getElementById("donaciones-menu-cel");
+        const donacionesMenuItems = document.getElementById("donaciones-menu-items-cel");
+
+        donacionesMenu.addEventListener("click", function (event) {
+            event.preventDefault();
+            donacionesMenuItems.classList.toggle("hidden");
+        });
+
+        const hospitalesMenu = document.getElementById("hospitales-menu-cel");
+        const hospitalesMenuItems = document.getElementById("hospitales-menu-items-cel");
+
+        hospitalesMenu.addEventListener("click", function (event) {
+            event.preventDefault();
+            hospitalesMenuItems.classList.toggle("hidden");
+        });
     });
 </script>
 </body>
