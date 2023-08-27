@@ -1,24 +1,25 @@
 <?php
 session_start();
-error_reporting(0);
+include_once 'db_connection.php'; // Incluye la conexión a la base de datos
 
-// Verificar si el usuario ha iniciado sesión
-if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
-    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
-    die();
-} else {
-    include("../PHP/conex.php");
-
-    // Consulta SQL para obtener el ID del usuario según el correo electrónico
-    $nombre = $_SESSION['nombre'];
-    $query = "SELECT id FROM hospitales WHERE nombre = '$nombre'";
-    $result = $conn->query($query);
-
-    if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $_SESSION['hospital_id'] = $row['id'];
+if (isset($_SESSION['id'])) {
+    $idUsuario = $_SESSION['id'];
+    
+    $consulta = "SELECT * FROM hospitales WHERE id = $idUsuario"; // Cambia el ID según tu caso
+    $resultado = $conn->query($consulta);
+    $ruta_imagen = "../imagen-hos/"; // Cambia esto a la ruta real de la imagen
+    
+    // Si la ruta de la imagen está vacía, utiliza una imagen predeterminada
+    if (empty($ruta_imagen)) {
+        $ruta_imagen = "../imagen-hos/"; // Cambia esto a la ruta de la imagen predeterminada
     }
-}
+    
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+    }
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,10 +27,10 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Lista de necesidades</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <title>Perfil</title>
     <style>
-    /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
 /* Quita el texto (Con la tecnologia de) */
 div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
@@ -79,15 +80,14 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     width: 0;
   }
   
-  </style>
+  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+    </style>
 </head>
 <body class="bg-gray-100">
-
-<nav class="bg-white p-4  w-full z-10 ">
+<nav class="bg-white p-4  w-full z-10 fixed ">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
-            
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
             
@@ -95,8 +95,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
-            <li><a href="index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
                     <a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" id="donaciones-menu">
@@ -129,7 +129,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
-                    <?php include 'mostra-imagen.php' ?>
                     <img src="<?php echo ($usuario['foto_hospital'] != '') ? $usuario['foto_hospital'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="h-8 w-8 rounded-full" >
                 </button>
                 <!-- Menú desplegable del usuario -->
@@ -172,37 +171,49 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
-</ul>
+</ul>    <div class="flex items-center justify-center min-h-screen">
+    <div class="container mx-auto mt-8 p-4 bg-white shadow-md rounded-lg">
+        <h1 class="text-2xl font-bold mb-4 text-center">Perfil de Usuario</h1>
+        
 
-<div class="container mx-auto mt-8 p-4 ">
-    <h1 class="text-2xl font-bold mb-4 text-center">Necesidades Realizados</h1>
-    
-    <!-- Lista de blogs desde la base de datos -->
+        <div class="flex items-center justify-center">
+            <div class="w-1/3 text-center">
+                <!-- Imagen de perfil -->
+                <img src="<?php echo ($usuario['foto_hospital'] != '') ? $usuario['foto_hospital'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="rounded-full h-32 w-32 object-cover mx-auto mb-2">
+                
+                <!-- Formulario para cambiar la imagen -->
+                <form action="cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
+                    <input type="file" name="nueva_imagen" class="mb-1" required>
+                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
+                </form>
+                
+                <!-- Nombre del usuario -->
+                <h2 class="text-xl font-semibold mb-2"><?php echo $usuario['nombre']; ?></h2>
+            
+            <!-- Formulario para cambiar el correo -->
+            <form action="cambiar_nombre.php" method="post" class="mb-2">
+            <label for="">Descripcion: </label>
+                <input type="text" name="nuevo_correo" value="<?php echo $usuario['descripcion']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
+            </form>
+            
+            <!-- Formulario para cambiar el teléfono -->
+            <form action="cambiar_correo.php" method="post" class="mb-2">
+                <label for="">Lugar: </label>
+                <input type="text" name="nuevo_correo" value="<?php echo $usuario['lugar']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+                <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
+            </form>
+            
+            <!-- DUI del usuario -->
+        </div>
+    </div>
     <?php
-    include_once 'db_connection.php'; // Incluye la conexión a la base de datos
-    
-    $consulta = "SELECT * FROM necesidades"; // Cambia esto a tu consulta SQL
-    
-    $resultado = $conn->query($consulta);
-    
-    if ($resultado->num_rows > 0) {
-        while ($blog = $resultado->fetch_assoc()) {
-            echo '<div class="bg-white p-4 rounded-lg shadow-md mb-4">';
-            echo '<h2 class="text-lg font-semibold mb-2">' . $blog['nombre'] . '</h2>';
-            echo '<p class="text-gray-600 mb-4">' . $blog['descripcion'] . '</p>';
-            echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-50 h-50 mx-auto mb-4">';
-            echo '<a href="editar_nece.php?id=' . $blog['id_necesidad'] . '" class="text-blue-500 hover:underline mr-4">Editar</a>';
-            echo '<a href="cambios/eliminar_nece.php?id=' . $blog['id_necesidad'] . '" class="text-red-500 hover:underline">Eliminar</a>';
-           
-            echo '</div>';
-        }
     } else {
-        echo '<p>No se encontraron necesidades.</p>';
+        echo "No se encontraron datos de usuario.";
     }
-    
-    $conn->close();
     ?>
 </div>
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
@@ -217,7 +228,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     donacionesMenuButton.addEventListener('click', () => {
         donacionesMenuItems.classList.toggle('hidden');
     });
-
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
     // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
     const exitoMenuButton = document.getElementById('exito-menu');
     const exitoMenuItems = document.getElementById('exito-menu-items');
@@ -248,6 +259,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             hospitalesMenuItems.classList.toggle("hidden");
         });
     });
+      
 </script>
 </body>
 </html>

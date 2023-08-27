@@ -6,7 +6,19 @@ error_reporting(0);
 if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
     die();
-} 
+} else {
+  include("../PHP/conex.php");
+
+  // Consulta SQL para obtener el ID del usuario según el correo electrónico
+  $correo = $_SESSION['correo'];
+  $query = "SELECT id FROM registro WHERE correo = '$correo'";
+  $result = $conn->query($query);
+
+  if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      $_SESSION['usuario_id'] = $row['id'];
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +106,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
