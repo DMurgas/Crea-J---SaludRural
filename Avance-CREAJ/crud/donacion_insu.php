@@ -2,7 +2,7 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Donaciones Insumos medicos</h1>
+    <h1>Donaciones de insumos médicos</h1>
     
     
     

@@ -8,7 +8,7 @@ if($_SESSION["correo"] === null){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
 
@@ -17,8 +17,8 @@ if($_SESSION["correo"] === null){
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-
-  <title>Salud Rural</title>
+  <link rel="shortcut icon" href="../Imagenes/favicon.png"/>
+  <title>Administrador</title>
   <!-- Custom fonts for this template-->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
   <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
@@ -47,8 +47,15 @@ if($_SESSION["correo"] === null){
         <div class="sidebar-brand-icon rotate-n-15">
           <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">Salud Rural</div>
+        <div class="sidebar-brand-text mx-3 lowercase font-bold text-lg natural-text"><strong>SaludRural</strong></div>
       </a>
+
+      <!-- CSS para que el texto se muestre en su estado natural -->
+      <style>
+        .natural-text {
+          text-transform: none;
+        }
+      </style>
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
@@ -57,7 +64,7 @@ if($_SESSION["correo"] === null){
       <li class="nav-item active">
         <a class="nav-link" href="index.php">
           <i class="fas fa-fw fa-tachometer-alt"></i>
-          <span>Registro de Usuarios</span></a>
+          <span>Registro de usuarios</span></a>
       </li>
 
       <!-- Divider -->
@@ -80,11 +87,11 @@ if($_SESSION["correo"] === null){
                 </a>
                 <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Donaciones:</h6>
-                        <a class="collapse-item" href="donacion_mone.php">Monetaria</a>
-                        <a class="collapse-item" href="donacion_insu.php">Insumos</a>
+                        <h6 class="collapse-header text-gray-600"><strong>Donaciones:</strong></h6>
+                        <a class="collapse-item" href="donacion_mone.php">Monetarias</a>
+                        <a class="collapse-item" href="donacion_insu.php">Insumos médicos</a>
                         <a class="collapse-item" href="donacion_medi.php">Medicamentos</a>
-                        <a class="collapse-item" href="donacion_equi.php">Equipo medico</a>
+                        <a class="collapse-item" href="donacion_equi.php">Equipos médicos</a>
                         <div class="collapse-divider"></div>
                     </div>
                 </div>
@@ -142,20 +149,20 @@ if($_SESSION["correo"] === null){
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Profile
+                  Perfil
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Settings
+                  Ajustes
                 </a>
                 <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Activity Log
+                  Actividades
                 </a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Cerrar Sesión
+                  Cerrar sesión
                 </a>
               </div>
             </li>

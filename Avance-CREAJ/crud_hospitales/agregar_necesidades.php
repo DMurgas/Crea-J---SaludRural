@@ -1,5 +1,3 @@
-
-
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -149,7 +147,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="flex space-x-4">
-            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">Salud Rural</a></li>
+            <li><a href="Index.php" class="text-green-600 hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" style="font-size: 1.20em; font-weight: bold;" aria-current="page">SaludRural</a></li>
             <li><a href="#" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Inicio</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -203,7 +201,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <section class="flex justify-center">
         <div class="w-full md:w-2/3 lg:w-1/2">
             <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-md shadow-lg" >
-                <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Agregar Necesidad</h2>
+                <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Agregar necesidad</h2>
 
                 <label class="block mb-2">Título:</label>
                 <input type="text" name="titulo" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4">

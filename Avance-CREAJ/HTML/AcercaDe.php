@@ -32,7 +32,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
         <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
-        <link rel="shortcut icon" href="../Imagenes/favicon.png" />
+        <link rel="shortcut icon" href="../Imagenes/favicon.png"/>
         <title>Acerca De</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -213,7 +213,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </div>
     <div class="bg-gray-200 p-4 md:w-1/3 rounded-lg mr-4">
       <p class="mb-6 text-justify">Así nació <strong>SaludRural</strong>, una organización sin fines de lucro con una visión clara: facilitar las donaciones a hospitales y centros médicos en zonas rurales a través de una plataforma web. Los cinco estudiantes se dedicaron por completo a este proyecto, invirtiendo su tiempo, esfuerzo y conocimientos en su desarrollo.</p>
-      <p>Trabajaron arduamente para diseñar y construir una plataforma intuitiva y segura donde las personas pudieran realizar donaciones de manera fácil y transparente. Sabían que la confianza de los donantes era fundamental, por lo que se aseguraron de establecer medidas de seguridad robustas para proteger la privacidad y la integridad de las transacciones.</p>
+      <p class="text-justify">Trabajaron arduamente para diseñar y construir una plataforma intuitiva y segura donde las personas pudieran realizar donaciones de manera fácil y transparente. Sabían que la confianza de los donantes era fundamental, por lo que se aseguraron de establecer medidas de seguridad robustas para proteger la privacidad y la integridad de las transacciones.</p>
     </div>
     <div class="bg-gray-300 p-4 md:w-1/3 rounded-lg mr-8">
       <p class="text-justify mb-6">La historia de SaludRural se convirtió en un ejemplo de cómo una simple idea, impulsada por la pasión y el deseo de ayudar, puede transformarse en una fuerza poderosa para el cambio. Los cinco estudiantes demostraron que no importa cuán jóvenes sean, si tienen una visión y trabajan juntos, pueden marcar una diferencia significativa en la sociedad.</p>

@@ -21,7 +21,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
 <div class="container">
         <div class="row">
             <div class="col-lg-12">            
-            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Nuevo</button>    
+            <button id="btnNuevo" type="button" class="btn btn-success" data-toggle="modal">Agregar</button>    
             </div>    
         </div>    
     </div>    
@@ -33,8 +33,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <table id="tablaNecesidades" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>Id</th>
-                                <th>Titulo</th>
+                                <th>ID</th>
+                                <th>Título</th>
                                 <th>Contenido</th>                                
                                 <th>Lugar</th>  
                                 <th>Acciones</th>
@@ -73,7 +73,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
         <form id="formNecesidades">    
             <div class="modal-body">
                 <div class="form-group">
-                <label for="nombre" class="col-form-label">Titulo:</label>
+                <label for="nombre" class="col-form-label">Título:</label>
                 <input type="text" class="form-control" id="titulo">
                 </div>
                 <div class="form-group">
@@ -87,7 +87,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                <button type="submit" id="btnGuardar" class="btn btn-dark">Guardar</button>
+                <button type="submit" id="btnGuardar" class="btn btn-dark">Publicar</button>
             </div>
         </form>    
         </div>

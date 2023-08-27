@@ -27,7 +27,7 @@ if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <title>Lista de Necesidades</title>
+    <title>Lista de necesidades</title>
     <style>
     /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
@@ -140,7 +140,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
-                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
     </nav>

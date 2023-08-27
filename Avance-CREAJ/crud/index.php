@@ -26,10 +26,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                         <table id="tablaPersonas" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>Id</th>
+                                <th>ID</th>
                                 <th>Nombre</th>
-                                <th>apellidos</th>                                
-                                <th>telefono</th>  
+                                <th>Apellidos</th>                                
+                                <th>Teléfono</th>  
                                 <th>Acciones</th>
                             </tr>
                         </thead>

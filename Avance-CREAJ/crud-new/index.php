@@ -29,7 +29,7 @@
             <table class="table-auto">
                 <thead>
                     <tr>
-                        <th class="px-4 py-2">id</th>
+                        <th class="px-4 py-2">ID</th>
                         <th class="px-4 py-2">Nombre</th>
                         <th class="px-4 py-2">Apellidos</th>
                         <th class="px-4 py-2">Teléfono</th>
