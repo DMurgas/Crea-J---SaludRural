@@ -1,5 +1,24 @@
 <?php
+session_start();
+error_reporting(0);
 
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
+    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+    die();
+} else {
+    include("../PHP/conex.php");
+
+    // Consulta SQL para obtener el ID del usuario según el correo electrónico
+    $nombre = $_SESSION['nombre'];
+    $query = "SELECT id FROM hospitales WHERE nombre = '$nombre'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['hospital_id'] = $row['id'];
+    }
+}
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
@@ -16,7 +35,7 @@ if (!$conn) {
 
 if (isset($_POST["submit"])) {
     // Verificar si se envió el formulario del blog
-    session_start();
+
     $hospital_id = $_SESSION['hospital_id'];
 
     if (!empty($_POST["titulo"]) && !empty($_POST["contenido"]) && !empty($_FILES["imagen"]["name"])) {
