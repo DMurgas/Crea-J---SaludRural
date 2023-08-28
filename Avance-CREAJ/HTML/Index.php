@@ -4,7 +4,7 @@ error_reporting(0);
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
-    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+    echo '<script language="javascript">alert("Bienvenido a Salud Rural");window.location.href="../HTML/Index.html"</script>';
     die();
 } else {
     include("../PHP/conex.php");
