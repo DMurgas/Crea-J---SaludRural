@@ -66,8 +66,8 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
             </div>
             <div class="modal-body">
                 ¿Estás seguro que deseas eliminar este registro?
-                <form action="bd/eliminar_re.php" method="POST">
-                    <input type="hidden" name="id_donacion" value="<?php echo $dat['id'] ?>">
+                <form action="bd/eliminar.php" method="POST">
+                    <input type="hidden" name="id" value="<?php echo $dat['id'] ?>">
                     <!-- Puedes incluir otros elementos en el formulario si es necesario -->
                     <button type="submit" class="btn btn-danger">Eliminar</button>
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>

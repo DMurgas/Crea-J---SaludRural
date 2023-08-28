@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "DELETE FROM registro WHERE id = $id_donacion";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Donación eliminada exitosamente.";
+        echo "Registro eliminado exitosamente.";
     } else {
         echo "Error al eliminar la donación: " . $conn->error;
     }
