@@ -163,7 +163,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       <div class=" p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Sobre Nosotros</h2>
         <p class="text-gray-600 text-justify">Somos una organización que busca ayudar a la sociedad más necesitada de nuestro país <span class="font-bold">"El Salvador"</span>, a través de donaciones para hospitales y centros médicos que se encuentran en las zonas rurales del país, es decir, las comunidades marginadas y abandonadas que existen en todo el territorio nacional.</p>
-        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-7 rounded-lg" width="335" height="315" alt="imagen">
+        <img src="../Imagenes/CajaDonativos.png" class="mx-auto mt-6 rounded-lg" width="335" height="315" alt="imagen">
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <p class="text-gray-600 text-justify">Nuestro equipo está conformado por profesionales apasionados y comprometidos con la salud pública y la equidad en la atención médica. Trabajamos en estrecha colaboración con hospitales y centros médicos en áreas rurales para comprender sus necesidades y brindarles el apoyo necesario. Valoramos la transparencia y la responsabilidad en nuestro trabajo. Nos esforzamos por mantener una comunicación clara con nuestros donantes y socios, proporcionándoles actualizaciones sobre cómo se utilizan sus contribuciones y el impacto que están generando.</p><br>

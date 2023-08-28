@@ -7,6 +7,7 @@
       src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="../CSS/login.css">
+    <link rel="shortcut icon" href="../Imagenes/favicon.png"/>
     <title>Formularios</title>
   </head>
   <body>
