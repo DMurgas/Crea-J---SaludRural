@@ -188,9 +188,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     echo '<article class="bg-white p-6 rounded-md shadow-lg hover:shadow-xl transition duration-300">';
                     echo '<div class="flex flex-col items-center">';
                     echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">' . $blog['titulo'] . '</h2>';
-                    echo'<div class="max-h-96 overflow-auto mb-4">';
-                    echo '<p class="text-gray-600 mb-4 overflow-hidden max-h-36">' . $blog['contenido'] . '</p>';
-                    echo'</div>';
+                    echo '<div class="overflow-auto mb-4">';
+                    echo '<p class="text-gray-600">' . $blog['contenido'] . '</p>';
+                    echo '</div>';
                     echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-full h-auto mb-4 rounded-md">';
                     echo '</div>';
                     echo '<div class="flex justify-center">';
@@ -209,6 +209,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
     </section>
 </main>
+
+
 <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
