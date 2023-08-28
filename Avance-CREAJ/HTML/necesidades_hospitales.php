@@ -249,7 +249,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
     </ul>
     <div class="footer-bottom">
-        <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
+        <p><small id="26">&copy; 2023 <b>Salud Rural</b> - Todos los Derechos Reservados.</small></p>
       </div>
   </div>
 </footer>
