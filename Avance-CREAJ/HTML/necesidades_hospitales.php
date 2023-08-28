@@ -192,7 +192,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             while ($row = $result->fetch_assoc()) {
               echo '<article class="bg-white p-6 rounded-md shadow-lg hover:shadow-xl transition duration-300 flex flex-col justify-between">';
                 echo '<div>';
-                echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">Nombre:' . $row['nombre'] . '</h2>';
+                echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">Nombre:  ' . $row['nombre'] . '</h2>';
                 echo '<p class="text-gray-700 mb-4">Necesidad: ' . $row['descripcion'] . '</p>';
                 echo '<p class="text-gray-700 mb-4">Lugar: ' . $row['lugar'] . '</p>';
                 echo '<img src="' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
