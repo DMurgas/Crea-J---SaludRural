@@ -5,9 +5,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $blogId = $_POST['id_necesidad'];
     $nuevoNombre = $_POST['nombre'];
     $nuevaDescripcion = $_POST['descripcion'];
-    $nuevaImagen = $_POST['imagen'];
     
-    $actualizarSql = "UPDATE necesidades SET nombre = '$nuevoNombre', descripcion = '$nuevaDescripcion', imagen = '$nuevaImagen' WHERE id_necesidad = $blogId";
+    $actualizarSql = "UPDATE necesidades SET nombre = '$nuevoNombre', descripcion = '$nuevaDescripcion' WHERE id_necesidad = $blogId";
     
     if ($conn->query($actualizarSql) === TRUE) {
         header("Location: realizado-nece.php?id=$blogId"); // Redirige de vuelta a la página de detalles del blog

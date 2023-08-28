@@ -3,7 +3,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id_donacion,id_usuario,id_hospital,correo, `telefono`, `fecha`, monto FROM monetaria";
+$consulta = "SELECT id_donacion,id_usuario,id_hospital,correo, `telefono`, `fecha`, monto,estado FROM monetaria";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
