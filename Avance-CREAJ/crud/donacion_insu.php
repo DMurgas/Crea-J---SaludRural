@@ -16,10 +16,10 @@
                         <table id="tablaHospitales" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>Id</th>
-                                <th>Donador</th>
-                                <th>Para</th>
-                               <th>fecha</th>
+                                <th>ID</th>
+                                <th>Donante</th>
+                                <th>Donatario</th>
+                                <th>Fecha</th>
                                 <th>Correo</th>                                
                                 <th>Nombre del insumo</th> 
                                 <th>Cantidad</th> 

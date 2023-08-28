@@ -42,6 +42,6 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         $conn->close();
     }
 } else {
-    echo "Debe iniciar sesión para realizar una donación.";
+    echo "Debe iniciar sesión para realizar una donación...";
 }
 ?>

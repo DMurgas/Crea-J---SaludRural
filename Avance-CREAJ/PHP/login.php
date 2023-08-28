@@ -35,7 +35,7 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contraseña']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../crud/index.php";alert("¡Bienvenid@ a SaludRural!");</script>';
+            echo '<script language="javascript">window.location.href="../crud/index.php";alert("¡Bienvenid@ Administrador, tienes el poder!");</script>';
         }
     }
 } else if ($existe2 > 0) {

@@ -2,7 +2,7 @@
 
 <!--INICIO del cont principal-->
 <div class="container">
-    <h1>Donaciones Medicamentos</h1>
+    <h1>Donaciones de medicamentos</h1>
 
    
     <br>  
@@ -14,13 +14,13 @@
                         <table id="tablaHospitales" class="table table-striped table-bordered table-condensed" style="width:100%">
                         <thead class="text-center">
                             <tr>
-                                <th>Id</th>
-                                <th>Donador</th>
-                                <th>Para</th>
-                               <th>fecha</th>
+                                <th>ID</th>
+                                <th>Donante</th>
+                                <th>Donatario</th>
+                                <th>Fecha</th>
                                 <th>Correo</th>                                
                                 <th>Medicamento</th>  
-                                <th>cantidad</th>  
+                                <th>Cantidad</th>
                                 <th>Estado</th>
                                 <th>Acciones</th>
                             </tr>
@@ -36,7 +36,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="editarModalLabel">Editar Estado</h5>
+                    <h5 class="modal-title" id="editarModalLabel">Editar estado</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -47,7 +47,7 @@
                     <form action="bd/estado_medi.php" method="POST">
                     <input type="hidden" name="id_donacion" value="<?php echo $dat['id_donacion'] ?>">
                         <div class="form-group">
-                            <label for="nuevoEstado">Nuevo Estado:</label>
+                            <label for="nuevoEstado">Nuevo estado:</label>
                             <input type="text" id="nuevoEstado" name="estado" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
@@ -62,13 +62,13 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="eliminarModalLabel">Eliminar Estado</h5>
+                <h5 class="modal-title" id="eliminarModalLabel">Eliminar estado</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
-                ¿Estás seguro de que deseas eliminar este estado?
+                ¿Estás seguro que deseas eliminar este estado?
                 <form action="bd/eliminar_medi.php" method="POST">
                     <input type="hidden" name="id_donacion" value="<?php echo $dat['id_donacion'] ?>">
                     <!-- Puedes incluir otros elementos en el formulario si es necesario -->
