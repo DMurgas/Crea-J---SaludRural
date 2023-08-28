@@ -190,6 +190,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             echo '<div class="bg-white p-4 rounded-lg shadow-md mb-4">';
             echo '<h2 class="text-lg font-semibold mb-2">' . $blog['nombre'] . '</h2>';
             echo '<p class="text-gray-600 mb-4">' . $blog['descripcion'] . '</p>';
+            echo '<p class="text-blck-800 mb-4 font-semibold">' . $blog['lugar'] . '</p>';
             echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-50 h-50 mx-auto mb-4">';
             echo '<a href="editar_nece.php?id=' . $blog['id_necesidad'] . '" class="text-blue-500 hover:underline mr-4">Editar</a>';
             echo '<a href="eliminar_nece.php?id=' . $blog['id_necesidad'] . '" class="text-red-500 hover:underline">Eliminar</a>';

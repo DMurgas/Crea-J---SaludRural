@@ -194,7 +194,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 echo '<div>';
                 echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">Nombre:  ' . $row['nombre'] . '</h2>';
                 echo '<p class="text-gray-700 mb-4">Necesidad: ' . $row['descripcion'] . '</p>';
-                echo '<p class="text-gray-700 mb-4">Lugar: ' . $row['lugar'] . '</p>';
+                echo '<p class="text-gray-700 mb-4">Nombre del hospital que lo necesita: ' . $row['lugar'] . '</p>';
                 echo '<img src="' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
 
                 // Obtener el nombre del hospital
