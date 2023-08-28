@@ -89,10 +89,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   <body>
   <nav class="bg-white p-4  w-full z-10 ">
         <div class="flex justify-between items-center">
-            <!-- Logo o nombre del sitio y traductor-->
-            <div id="google_translate_element"></div>
-            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <script src="../JS/traductor.js"></script>
+           
             
 
             <!-- Menú de navegación -->
@@ -129,6 +126,10 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </ul>
 
             <div class="hidden sm:block">
+              <div id="google_translate_element"></div>
+            
+            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="../JS/traductor.js"></script>
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
@@ -171,6 +172,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Agrega más elementos de menú aquí si es necesario -->
         </ul>
     </li>
+    li
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
