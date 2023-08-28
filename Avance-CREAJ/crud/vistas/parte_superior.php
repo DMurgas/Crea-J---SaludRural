@@ -31,7 +31,59 @@ if($_SESSION["correo"] === null){
     <link rel="stylesheet" type="text/css" href="vendor/datatables/datatables.min.css"/>
     <!--datables estilo bootstrap 4 CSS-->  
     <link rel="stylesheet"  type="text/css" href="vendor/datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">      
-    
+     <style>
+      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+
+/* Quita el texto (Con la tecnologia de) */
+div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+    font-size: 0%;
+  }
+  
+  /* Quita el texto (Traductor de google) */
+  div .skiptranslate.goog-te-gadget span a{
+    font-size: 0;
+  }
+  
+  /* Cambia el estilo del boton para seleccionar el idioma */
+  div .goog-te-combo{
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px 20px;
+            transition: background-color 0.1s, color 0.1s;
+  }
+  div .goog-te-combo:hover{
+    background-color: blue;
+    color: #ffffff;
+  }
+  /* Cambia el tamaño y mueve la parte azul del traductor*/
+  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
+    width: 55%;
+    top: 1.3%;
+    left: -52.9%;
+  }
+  
+  /* Cambia el estilo de la lista de idiomas del menú del traductor */
+  .goog-te-combo option{
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #000000;
+    -webkit-o-border-radius: 10px;
+    -moz-o-border-radius: 10px;
+    -ms-o-border-radius: 10px;
+  }
+  
+  /* Hace invisible la imagen de "Google" */
+  a img{
+    width: 0;
+  }
+  
+  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+    </style>   
 </head>
 
 <body id="page-top">
@@ -80,6 +132,8 @@ if($_SESSION["correo"] === null){
 
       <!-- Divider -->
       <li class="nav-item">
+         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="../JS/traductor.js"></script>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i  class="fa fa-university"></i>
