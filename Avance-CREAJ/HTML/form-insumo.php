@@ -164,6 +164,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div class="label">Nombre del insumo medico</div>
             <input type="text" name="insumo" id="insumo-field" required>
           </div>
+          
             <div class="field">
               <div class="label">Cantidad de insumo medico</div>
               <input type="number"name="cantidad" placeholder="Cantidad de cajas a donar" required>
