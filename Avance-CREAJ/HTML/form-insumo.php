@@ -112,6 +112,19 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           <div class="check fas fa-check"></div>
         </div>
       </div>
+      <script>
+        // Función para validar que los valores ingresados no sean negativos
+        function validatePositiveNumber(inputElement) {
+          const value = parseFloat(inputElement.value);
+          if (isNaN(value) || value < 0) {
+            alert("Por favor, ingrese un valor positivo.");
+            inputElement.value = "";
+            inputElement.focus();
+            return false;
+          }
+          return true;
+        }
+      </script>
       <div class="form-outer">
         <form action="../PHP/form-donacion-insumos.php" method="post">
           <div class="page slide-page">
@@ -132,7 +145,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div class="title">Información extra</div>
             <div class="field">
               <div class="label">Número de Telefono</div>
-              <input type="Number" name="telefono" required>
+              <input type="Number" name="telefono" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field">
              <div class="label">Fecha de la donación</div>
@@ -167,7 +180,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           
             <div class="field">
               <div class="label">Cantidad de insumo medico</div>
-              <input type="number"name="cantidad" placeholder="Cantidad de cajas a donar" required>
+              <input type="number"name="cantidad" placeholder="Cantidad de cajas a donar" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
