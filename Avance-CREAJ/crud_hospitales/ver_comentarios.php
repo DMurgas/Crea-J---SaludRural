@@ -1,88 +1,33 @@
 <?php
+session_start();
+error_reporting(0);
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
+    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+    die();
+} else {
+    include("../PHP/conex.php");
 
-$db_host = 'localhost';
-$db_username = 'root';
-$db_password = '';
-$db_name = 'saludrural';
-$conn = mysqli_connect($db_host, $db_username, $db_password, $db_name);
+    // Consulta SQL para obtener el ID del usuario según el correo electrónico
+    $nombre = $_SESSION['nombre'];
+    $query = "SELECT id FROM hospitales WHERE nombre = '$nombre'";
+    $result = $conn->query($query);
 
-if (!$conn) {
-    die("Error de la conexión a la base de datos: " . mysqli_connect_error());
-}
-
-if (isset($_POST["submit"])) {
-    // Verificar si se envió el formulario del blog
-    session_start();
-    $hospital_id = $_SESSION['hospital_id'];
-
-    if (!empty($_POST["titulo"]) && !empty($_POST["contenido"]) && !empty($_FILES["imagen"]["name"])) {
-        // Recuperar los datos del formulario del blog
-        $titulo = $_POST['titulo'];
-        $contenido = $_POST['contenido'];
-
-        // Procesar la imagen
-        $target_dir = "../imagen/";
-        $target_file = $target_dir . basename($_FILES["imagen"]["name"]);
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-
-        $check = getimagesize($_FILES["imagen"]["tmp_name"]);
-        if ($check === false) {
-            echo "El archivo no es una imagen";
-            $uploadOk = 0;
-        }
-
-        if (file_exists($target_file)) {
-            echo "El archivo ya existe";
-            $uploadOk = 0;
-        }
-
-        if ($_FILES["imagen"]["size"] > 5000000) {
-            echo "El archivo es demasiado grande";
-            $uploadOk = 0;
-        }
-
-        if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
-            echo "Solo se permiten archivos JPG, JPEG, PNG y GIF.";
-            $uploadOk = 0;
-        }
-
-        if ($uploadOk == 0) {
-            echo "Error al subir la imagen";
-        } else {
-            if (move_uploaded_file($_FILES["imagen"]["tmp_name"], $target_file)) {
-                // Preparar y ejecutar la consulta SQL para insertar el blog
-                $sql = "INSERT INTO blogs (hospital_id, titulo, contenido, imagen) VALUES ('$hospital_id', '$titulo', '$contenido', '$target_file')";
-                if (mysqli_query($conn, $sql)) {
-                    header("index.php");
-                } else {
-                    echo "Error al agregar el blog: " . mysqli_error($conn);
-                }
-            } else {
-                echo "Error al subir la imagen.";
-            }
-        }
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['hospital_id'] = $row['id'];
     }
 }
 ?>
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SaludRural</title>
-    <link rel="shortcut icon" href="../Imagenes/favicon.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Lista de necesidades</title>
     <style>
     /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
@@ -136,7 +81,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   
   </style>
 </head>
-<body class="bg-gray-100 font-sans flex flex-col min-h-screen">
+<body class="bg-gray-100">
+
 <nav class="bg-white p-4  w-full z-10 ">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
@@ -195,7 +141,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
-                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
             <button id="menu-toggle" class="block sm:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
@@ -228,30 +174,62 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <!-- Agrega más elementos de menú aquí si es necesario -->
 </ul>
 
-    <main class="container mx-auto mt-8 flex-grow mb-8">
+<?php
+// Establece la conexión a la base de datos y verifica la sesión aquí
+
+if (isset($_GET['blog_id'])) {
+    $blogId = $_GET['blog_id'];
+
+    // Obtener el ID del hospital a partir del ID del blog
+    $sql = "SELECT hospital_id FROM blogs WHERE id = $blogId";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $hospitalId = $row['hospital_id'];
+
+        // Obtener los comentarios del blog específico para el hospital
+        $comentariosSql = "SELECT contenido FROM comentarios WHERE blog_id = $blogId";
+        $comentariosResult = $conn->query($comentariosSql);
+ // Incluir el encabezado de la página
+?>
+
+<!-- Contenido de la página -->
+<div class="container mx-auto mt-8 flex-grow mb-8">
     <section class="flex justify-center">
         <div class="w-full md:w-2/3 lg:w-1/2">
-            <form method="POST" enctype="multipart/form-data" class="bg-white p-6 rounded-md shadow-lg">
-                <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Agregar Blog</h2>
+            <h2 class="text-2xl font-semibold mb-4 text-indigo-600 text-center">Comentarios del Blog</h2>
 
-                <label class="block mb-2">Título:</label>
-                <input type="text" name="titulo" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4">
+            <?php
+            if ($comentariosResult->num_rows > 0) {
+                while ($comentario = $comentariosResult->fetch_assoc()) {
+                    echo '<p class="bg-white p-2 rounded-md mb-2">' . $comentario['contenido'] . '</p>';
+                }
+            } else {
+                echo '<p>No hay comentarios para este blog.</p>';
+            }
+            ?>
 
-                <label class="block mb-2">Contenido:</label>
-                <textarea name="contenido" rows="4" class="w-full px-3 py-2 border rounded focus:outline-none focus:border-indigo-600 mb-4"></textarea>
-
-                <label class="block mb-2">Imagen:</label>
-                <input type="file" name="imagen" class="mb-4">
-
-                <button type="submit" name="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white py-2 px-4 rounded-full w-full">Publicar</button>
-            </form>
+            <!-- Agrega enlaces o elementos de navegación según tus necesidades -->
         </div>
     </section>
-</main>
+</div>
+
+<?php
+        // Incluir el pie de página
+    } else {
+        echo 'No se encontró el blog.';
+    }
+} else {
+    echo 'ID de blog no proporcionado.';
+}
+
+// Cierra la conexión a la base de datos
+$conn->close();
+?>
 
 
-  <!-- Pie de página -->
-  <script>
+<script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
     const userMenu = document.getElementById('user-menu');
@@ -299,8 +277,3 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 </script>
 </body>
 </html>
-
-<?php
-// Cierra la conexión a la base de datos
-$conn->close();
-?>

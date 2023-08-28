@@ -39,7 +39,10 @@
                                 <td><?php echo $dat['equipo'] ?></td>   
                                 <td><?php echo $dat['cantidad'] ?></td>  
                                 <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado -->
-                                <td></td>
+                                <td>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editarModal">Editar</button>
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#eliminarModal">Eliminar</button>
+                                </td>
                             </tr>
                             <?php
                                 }

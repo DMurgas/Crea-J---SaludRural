@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-08-2023 a las 03:55:53
+-- Tiempo de generación: 28-08-2023 a las 07:02:22
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -55,13 +55,6 @@ CREATE TABLE `blogs` (
   `fecha_publicacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `blogs`
---
-
-INSERT INTO `blogs` (`id`, `hospital_id`, `titulo`, `contenido`, `imagen`, `fecha_publicacion`) VALUES
-(2, 2, 'd', 'dasdasdad', 0x2e2e2f696d6167656e2f4772616669636f206d617472697a20666f64612073656e63696c6c6f2062656967652e706e67, '2023-08-21 20:11:18');
-
 -- --------------------------------------------------------
 
 --
@@ -97,14 +90,6 @@ CREATE TABLE `equipo` (
   `descripcion` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `equipo`
---
-
-INSERT INTO `equipo` (`id_donacion`, `id_hospital`, `id_usuario`, `nombre`, `correo`, `telefono`, `fecha`, `equipo`, `cantidad`, `estado`, `descripcion`) VALUES
-(1, 1, 1, 'dsadads', 'asdasda', 'dsadsadasdsa', '2023-08-21 21:32:31', 'dasda', 'dsadad', 'Pendiente', 'dasdadad'),
-(2, 1, 2, 'dasdas', 'dasdsad', '12321', '2023-08-22 13:42:00', 'd', '1111', 'Pendiente', '11111111');
-
 -- --------------------------------------------------------
 
 --
@@ -118,14 +103,6 @@ CREATE TABLE `hospitales` (
   `lugar` text NOT NULL,
   `foto_hospital` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `hospitales`
---
-
-INSERT INTO `hospitales` (`id`, `nombre`, `descripcion`, `lugar`, `foto_hospital`) VALUES
-(1, 'San rafael', 'dasdadasdsa', 'Mi casa', NULL),
-(2, 'mejia', 'dsadasd', 'sadasdas', NULL);
 
 -- --------------------------------------------------------
 
@@ -187,13 +164,6 @@ CREATE TABLE `monetaria` (
   `cvv` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Volcado de datos para la tabla `monetaria`
---
-
-INSERT INTO `monetaria` (`id_donacion`, `id_hospital`, `id_usuario`, `nombre`, `correo`, `telefono`, `fecha`, `monto`, `estado`, `tarjeta`, `cvv`) VALUES
-(1, 1, 2, 'dsadad', 'dasdad', '123213', '2023-08-25 17:54:00', '123', 'Pendiente', '123123', '1232131');
-
 -- --------------------------------------------------------
 
 --
@@ -227,14 +197,6 @@ CREATE TABLE `registro` (
   `contra` varchar(50) NOT NULL,
   `foto_perfil` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Volcado de datos para la tabla `registro`
---
-
-INSERT INTO `registro` (`id`, `nombre`, `apellidos`, `telefono`, `correo`, `dui`, `contra`, `foto_perfil`) VALUES
-(1, 'julio', 'jacinto', '13123121232', 'jrsanchez@gmail.com', '1321321131', '123', NULL),
-(2, 'julio ', 'jacinto', '12331231', 'cesar@gmail.com', '123123321321', '123', NULL);
 
 -- --------------------------------------------------------
 
@@ -354,25 +316,19 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
--- AUTO_INCREMENT de la tabla `comentarios`
---
-ALTER TABLE `comentarios`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `hospitales`
 --
 ALTER TABLE `hospitales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `insumos`
@@ -390,19 +346,19 @@ ALTER TABLE `medicamentos`
 -- AUTO_INCREMENT de la tabla `monetaria`
 --
 ALTER TABLE `monetaria`
-  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_donacion` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `necesidades`
 --
 ALTER TABLE `necesidades`
-  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_donacion`
@@ -424,8 +380,8 @@ ALTER TABLE `blogs`
 -- Filtros para la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
-  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`),
-  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `registro` (`id`);
+  ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`blog_id`) REFERENCES `blogs` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `comentarios_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `registro` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `equipo`

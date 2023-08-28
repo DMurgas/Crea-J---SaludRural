@@ -3,7 +3,7 @@ include_once 'bd/conexion.php';
 $objeto = new Conexion();
 $conexion = $objeto->Conectar();
 
-$consulta = "SELECT id_donacion,id_usuario,id_hospital,correo, `telefono`, `fecha`, medicamento, cantidad FROM medicamentos";
+$consulta = "SELECT id_donacion,id_usuario,id_hospital,correo, `telefono`, `fecha`, medicamento, cantidad,estado FROM medicamentos";
 $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
@@ -40,7 +40,10 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['medicamento'] ?></td>   
                                 <td><?php echo $dat['cantidad'] ?></td>  
                                 <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado -->
-                                <td></td>
+                                <td>
+                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editarModal">Editar</button>
+                                    <button class="btn btn-danger" data-toggle="modal" data-target="#eliminarModal">Eliminar</button>
+                                </td>
                             </tr>
                             <?php
                                 }

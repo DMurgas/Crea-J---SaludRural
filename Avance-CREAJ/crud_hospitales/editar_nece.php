@@ -98,8 +98,6 @@
             echo '<label for="descripcion" class="block mb-2 font-semibold">Descripción:</label>';
             echo '<textarea name="descripcion" id="descripcion" class="border rounded px-2 py-1 mb-4 w-full">' . $blog['descripcion'] . '</textarea>';
             
-            echo '<label for="imagen" class="block mb-2 font-semibold">Imagen URL:</label>';
-            echo '<input type="text" name="imagen" id="imagen" class="border rounded px-2 py-1 mb-4 w-full" value="' . $blog['imagen'] . '">';
             
             echo '<button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>';
             echo '</form>';
