@@ -28,7 +28,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>SaludRural</title>
+    <title>Salud Rural</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -99,7 +99,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -186,7 +186,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <!-- Código del slider (portada) -->
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
-        <h1 class="text-4xl font-bold mb-4" style="font-size: 950;">¡Bienvenid@ a SaludRural!</h1>
+        <h1 class="text-4xl font-bold mb-4" style="font-size: 950;">¡Bienvenid@ a Salud Rural!</h1>
         <p class="text-lg mb-8" style="font-size: larger;">"Sembrando Bienestar en Cada Rincón. Únete a Nuestro Camino de Salud y Comunidad".</p>
         <a href="../HTML/boton-donaciones.php" class="bg-green-500 hover:bg-green-600 text-white py-2 px-6 rounded-full text-lg font-semibold transition duration-300 ease-in-out">Realizar donación</a>
       </div>
@@ -296,7 +296,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
 <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">
-    <p class="text-lg font-bold">SaludRural</p>
+    <p class="text-lg font-bold">Salud Rural</p>
     <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
     <div class="flex justify-center space-x-4 mb-4">
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
@@ -311,7 +311,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
     </ul>
     <div class="footer-bottom">
-     <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
+     <p><small id="26">&copy; 2023 <b>Salud Rural</b> - Todos los Derechos Reservados.</small></p>
  </div>
 </footer>
 

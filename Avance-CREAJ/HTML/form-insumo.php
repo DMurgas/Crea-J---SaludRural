@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
     <title>Donacion insumo medico</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <style>
@@ -63,11 +65,20 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
-
     <a href="boton-donaciones.php">
     <button class="back-button" >
     <i class="fas fa-arrow-left"></i> Volver atras
     </button></a>
+
+    <button class="mas-info">
+        <i class="fas fa-arrow-left"></i> ¿Que tipo de insumos medicos puedo donar?
+    </button>
+
+    <script>
+        document.querySelector('.mas-info').addEventListener('click', function() {
+            alert('Equipo de protección personal: Esto puede incluir mascarillas quirúrgicas, guantes, batas, protectores faciales y gafas de seguridad.\n\n Suministros de desinfección: Desinfectantes de manos, desinfectantes para superficies, toallitas desinfectantes y otros productos similares.\n\n Material quirúrgico: Instrumentos médicos desechables o esterilizables, como guantes quirúrgicos, campos quirúrgicos, jeringas y agujas.  \n\n Suministros para curación: Vendajes, gasas, algodón, cintas médicas, antisépticos y otros suministros utilizados en el cuidado de heridas. \n\n Suministros para atención a largo plazo: Pañales para adultos, toallitas húmedas, suministros para cuidado de heridas crónicas, entre otros.');
+        });
+    </script>
 
     <div class="container">
       <header>Donacion de insumos medicos</header>
@@ -101,6 +112,19 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           <div class="check fas fa-check"></div>
         </div>
       </div>
+      <script>
+        // Función para validar que los valores ingresados no sean negativos
+        function validatePositiveNumber(inputElement) {
+          const value = parseFloat(inputElement.value);
+          if (isNaN(value) || value < 0) {
+            alert("Por favor, ingrese un valor positivo.");
+            inputElement.value = "";
+            inputElement.focus();
+            return false;
+          }
+          return true;
+        }
+      </script>
       <div class="form-outer">
         <form action="../PHP/form-donacion-insumos.php" method="post">
           <div class="page slide-page">
@@ -118,15 +142,29 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
 
           <div class="page">
-            <div class="title">Información de Contacto</div>
+            <div class="title">Información extra</div>
             <div class="field">
               <div class="label">Número de Telefono</div>
-              <input type="Number" name="telefono" required>
+              <input type="Number" name="telefono" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field">
-              <div class="label">Fecha de la donación</div>
-              <input type="datetime-local" id="fecha" name="fecha" required>
-              <script src="../JS/validar-fechas.js"></script>
+             <div class="label">Fecha de la donación</div>
+             <input type="datetime-local" id="fecha" name="fecha" required>
+             
+              <script>
+              document.getElementById("fecha").addEventListener("input", function() {
+                  var fechaIngresada = document.getElementById("fecha").value;
+                  var fechaActual = new Date();
+                  
+                  // Asegurarse de que el formato de fecha sea 'YYYY-MM-DDTHH:mm'
+                  fechaActual.setSeconds(0, 0); // Establecer segundos y milisegundos en cero
+                  
+                  if (new Date(fechaIngresada) < fechaActual) {
+                      alert("La fecha debe ser presente o futura.");
+                      document.getElementById("fecha").value = ""; // Limpiar el campo de fecha
+                  }
+              });
+              </script>
             </div>
             <div class="field btns">
               <button class="prev-1 prev">Atrás</button>
@@ -135,13 +173,14 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </div>
 
           <div class="page">
-            <div class="field">
-              <div class="label">Nombre del insumo medico</div>
-              <input type="text" name="insumo" required>
-            </div>
+          <div class="field">
+            <div class="label">Nombre del insumo medico</div>
+            <input type="text" name="insumo" id="insumo-field" required>
+          </div>
+          
             <div class="field">
               <div class="label">Cantidad de insumo medico</div>
-              <input type="number"name="cantidad" required>
+              <input type="number"name="cantidad" placeholder="Cantidad de cajas a donar" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
@@ -184,7 +223,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
             <div class="field">
               <div class="label">Descripcion del insumo</div>
-              <input type="text" placeholder="Informacion del insumo" name="descripcion" required>
+              <input type="text" placeholder="Informacion del insumo y cantidad total" name="descripcion" required>
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>
@@ -194,6 +233,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </form>
       </div>
     </div>
+   
     <script src="../JS/donaciones.JS"></script>
+    
   </body>
 </html>

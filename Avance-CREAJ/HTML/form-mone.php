@@ -104,6 +104,21 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           <div class="check fas fa-check"></div>
         </div>
       </div>
+      
+      <script>
+        // Función para validar que los valores ingresados no sean negativos
+        function validatePositiveNumber(inputElement) {
+          const value = parseFloat(inputElement.value);
+          if (isNaN(value) || value < 0) {
+            alert("Por favor, ingrese un valor positivo.");
+            inputElement.value = "";
+            inputElement.focus();
+            return false;
+          }
+          return true;
+        }
+      </script>
+
       <div class="form-outer">
         <form action="../PHP/form-donacion-monetaria.php" method="post">
           <div class="page slide-page">
@@ -124,7 +139,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div class="title">Información de contacto</div>
             <div class="field">
               <div class="label">Número de teléfono</div>
-              <input type="Number" name="telefono" required>
+              <input type="Number" name="telefono" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field">
             <div class="label">Nombre del hospital</div>
@@ -166,16 +181,32 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
           <div class="page">
           <div class="field">
-          <div class="label">Fecha de la donación</div>
-            <input type="datetime-local" id="fecha" name="fecha" required>
-            <script src="../JS/validar-fechas.js"></script>
-          </div>
+             <div class="label">Fecha de la donación</div>
+             <input type="datetime-local" id="fecha" name="fecha" required>
+             
+              <script>
+              document.getElementById("fecha").addEventListener("input", function() {
+                  var fechaIngresada = document.getElementById("fecha").value;
+                  var fechaActual = new Date();
+                  
+                  // Asegurarse de que el formato de fecha sea 'YYYY-MM-DDTHH:mm'
+                  fechaActual.setSeconds(0, 0); // Establecer segundos y milisegundos en cero
+                  
+                  if (new Date(fechaIngresada) < fechaActual) {
+                      alert("La fecha debe ser presente o futura.");
+                      document.getElementById("fecha").value = ""; // Limpiar el campo de fecha
+                  }
+              });
+              </script>
+            </div>
 
 
             <div class="field">
               <div class="label">Monto a donar</div>
-              <input type="number" name="monto" required max="19000">
-              </div>
+              <input type="number" name="monto" required max="19000" onblur="validatePositiveNumber(this)">
+            </div>
+
+              
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
               <button class="next-2 next">Siguiente</button>
@@ -186,11 +217,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div class="title">Datos de tarjeta</div>
             <div class="field">
               <div class="label">Numero de tarjeta</div>
-              <input type="text" name="tarjeta" required>
+              <input type="text" name="tarjeta" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field">
               <div class="label">CVV</div>
-              <input type="password" name="cvv" required>
+              <input type="password" name="cvv" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field btns">
               <button class="prev-3 prev">Atrás</button>

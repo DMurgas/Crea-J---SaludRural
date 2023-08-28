@@ -6,7 +6,19 @@ error_reporting(0);
 if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
     die();
-} 
+} else {
+  include("../PHP/conex.php");
+
+  // Consulta SQL para obtener el ID del usuario según el correo electrónico
+  $correo = $_SESSION['correo'];
+  $query = "SELECT id FROM registro WHERE correo = '$correo'";
+  $result = $conn->query($query);
+
+  if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      $_SESSION['usuario_id'] = $row['id'];
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +106,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -167,14 +179,14 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <p class="text-gray-600 text-justify">Nuestro equipo está conformado por profesionales apasionados y comprometidos con la salud pública y la equidad en la atención médica. Trabajamos en estrecha colaboración con hospitales y centros médicos en áreas rurales para comprender sus necesidades y brindarles el apoyo necesario. Valoramos la transparencia y la responsabilidad en nuestro trabajo. Nos esforzamos por mantener una comunicación clara con nuestros donantes y socios, proporcionándoles actualizaciones sobre cómo se utilizan sus contribuciones y el impacto que están generando.</p><br>
-        <p class="text-gray-600 text-justify">En <span class="font-bold">SaludRural</span>, creemos firmemente en el poder de la solidaridad y la generosidad. A través de nuestra plataforma, permitimos a personas y organizaciones donar de manera segura y directa a proyectos y necesidades específicas de los hospitales y centros médicos rurales. Facilitamos la conexión entre donantes y receptores, asegurando que cada donación tenga un impacto significativo y positivo en la vida de las personas. Estamos emocionados de ser parte del cambio y el progreso en la atención médica de las zonas rurales. <a href="../HTML/login.php"><span class="negra">Únete a nosotros en SaludRural</span></a> y juntos hagamos la diferencia en la salud y el bienestar de las comunidades rurales de nuestro país.</p>
+        <p class="text-gray-600 text-justify">En <span class="font-bold">Salud Rural</span>, creemos firmemente en el poder de la solidaridad y la generosidad. A través de nuestra plataforma, permitimos a personas y organizaciones donar de manera segura y directa a proyectos y necesidades específicas de los hospitales y centros médicos rurales. Facilitamos la conexión entre donantes y receptores, asegurando que cada donación tenga un impacto significativo y positivo en la vida de las personas. Estamos emocionados de ser parte del cambio y el progreso en la atención médica de las zonas rurales. <a href="../HTML/login.php"><span class="negra">Únete a nosotros en SaludRural</span></a> y juntos hagamos la diferencia en la salud y el bienestar de las comunidades rurales de nuestro país.</p>
       </div>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
       <div class=" p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Misión</h2>
-        <p class="text-gray-600 text-justify">Ser una organización que promueva y facilite las donaciones a hospitales y centros médicos ubicados en zonas rurales del país. <strong class="strongT">SaludRural</strong> se compromete a conectar de manera efectiva a los donantes con estas instituciones, brindando una plataforma segura y transparente para canalizar recursos y apoyar la atención médica en las comunidades más remotas y marginadas de todo el territorio nacional. Por último, impulsar un cambio significativo en la salud, promoviendo la equidad y la mejora de la calidad de vida de quienes más lo necesitan.</p>
+        <p class="text-gray-600 text-justify">Ser una organización que promueva y facilite las donaciones a hospitales y centros médicos ubicados en zonas rurales del país. <strong class="strongT">Salud Rural</strong> se compromete a conectar de manera efectiva a los donantes con estas instituciones, brindando una plataforma segura y transparente para canalizar recursos y apoyar la atención médica en las comunidades más remotas y marginadas de todo el territorio nacional. Por último, impulsar un cambio significativo en la salud, promoviendo la equidad y la mejora de la calidad de vida de quienes más lo necesitan.</p>
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Visión</h2>
@@ -182,8 +194,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
       <div class="p-4 bg-white rounded-lg shadow-md">
         <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nuestros valores</h2>
-        <h3 class="mb-3 text-justify px-2">A continuación, se presentan los valores fundamentales que guían nuestro trabajo en SaludRural.</h3>
-        <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Transparencia:</span> En SaludRural poseemos una confianza cultivada a través de la apertura y honestidad.</p>
+        <h3 class="mb-3 text-justify px-2">A continuación, se presentan los valores fundamentales que guían nuestro trabajo en Salud Rural.</h3>
+        <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Transparencia:</span> En Salud Rural poseemos una confianza cultivada a través de la apertura y honestidad.</p>
         <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Compromiso:</span> Tenemos una dedicación inquebrantable para empoderar comunidades, asegurando su bienestar y salud a través de acciones sólidas y continuas.</p>
         <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Solidaridad:</span> Extendemos una mano amiga para fortalecer y apoyar a nuestras comunidades en su camino hacia una vida más saludable y plena.</p>
         <p class="text-gray-600 px-3 text-justify mb-1"><span class="text-gray-600 text-justify font-bold">- Equidad:</span> Garantizamos que cada individuo tenga acceso igualitario a oportunidades de salud y bienestar.</p>
@@ -196,16 +208,16 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       <div class="bg-blue-600 py-1 px-3 rounded-t-lg rounded-b-lg">
         <p class="font-bold text-justify" style="font-size: larger; color: #E9E9E9;">Historia de SaludRural</p>
       </div>
-        <p class="mt-4 mb-6 text-justify"><strong>SaludRural</strong> nació como una idea en común de 5 estudiantes del <a href="https://www.cdb.edu.sv/" class="hover:text-blue-600 hover:underline"><strong>Colegio Don Bosco</strong></a>, estos estudiantes son: Xavier Zañas, Carlos López, David Murgas, César Serrano y Julio Jacinto. Estos jóvenes compartían una pasión común por ayudar a los demás y siempre estaban buscando formas de marcar una diferencia positiva en la sociedad.</p>
+        <p class="mt-4 mb-6 text-justify"><strong>Salud Rural</strong> nació como una idea en común de 5 estudiantes del <a href="https://www.cdb.edu.sv/" class="hover:text-blue-600 hover:underline"><strong>Colegio Don Bosco</strong></a>, estos estudiantes son: Xavier Zañas, Carlos López, David Murgas, César Serrano y Julio Jacinto. Estos jóvenes compartían una pasión común por ayudar a los demás y siempre estaban buscando formas de marcar una diferencia positiva en la sociedad.</p>
         <p class="text-justify mb-1">Un día, mientras se reunían en la biblioteca de la escuela para trabajar en un proyecto conjunto, surgió una idea que iluminó sus mentes. Se dieron cuenta de que muchas comunidades rurales cercanas carecían de acceso adecuado a servicios de salud, y esto les preocupaba profundamente. Decidieron unir fuerzas y crear una solución que pudiera marcar la diferencia en la vida de las personas en estas áreas.</p>
     </div>
     <div class="bg-gray-200 p-4 md:w-1/3 rounded-lg mr-4">
-      <p class="mb-6 text-justify">Así nació <strong>SaludRural</strong>, una organización sin fines de lucro con una visión clara: facilitar las donaciones a hospitales y centros médicos en zonas rurales a través de una plataforma web. Los cinco estudiantes se dedicaron por completo a este proyecto, invirtiendo su tiempo, esfuerzo y conocimientos en su desarrollo.</p>
+      <p class="mb-6 text-justify">Así nació <strong>Salud Rural</strong>, una organización sin fines de lucro con una visión clara: facilitar las donaciones a hospitales y centros médicos en zonas rurales a través de una plataforma web. Los cinco estudiantes se dedicaron por completo a este proyecto, invirtiendo su tiempo, esfuerzo y conocimientos en su desarrollo.</p>
       <p class="text-justify">Trabajaron arduamente para diseñar y construir una plataforma intuitiva y segura donde las personas pudieran realizar donaciones de manera fácil y transparente. Sabían que la confianza de los donantes era fundamental, por lo que se aseguraron de establecer medidas de seguridad robustas para proteger la privacidad y la integridad de las transacciones.</p>
     </div>
     <div class="bg-gray-300 p-4 md:w-1/3 rounded-lg mr-8">
-      <p class="text-justify mb-6">La historia de SaludRural se convirtió en un ejemplo de cómo una simple idea, impulsada por la pasión y el deseo de ayudar, puede transformarse en una fuerza poderosa para el cambio. Los cinco estudiantes demostraron que no importa cuán jóvenes sean, si tienen una visión y trabajan juntos, pueden marcar una diferencia significativa en la sociedad.</p>
-      <p class="text-justify">Hasta el día de hoy, SaludRural continúa su labor, creciendo y expandiéndose para llevar esperanza y mejorar la calidad de vida de las comunidades rurales a través de la solidaridad y la generosidad de aquellos que creen en su misión.</p>
+      <p class="text-justify mb-6">La historia de Salud Rural se convirtió en un ejemplo de cómo una simple idea, impulsada por la pasión y el deseo de ayudar, puede transformarse en una fuerza poderosa para el cambio. Los cinco estudiantes demostraron que no importa cuán jóvenes sean, si tienen una visión y trabajan juntos, pueden marcar una diferencia significativa en la sociedad.</p>
+      <p class="text-justify">Hasta el día de hoy, Salud Rural continúa su labor, creciendo y expandiéndose para llevar esperanza y mejorar la calidad de vida de las comunidades rurales a través de la solidaridad y la generosidad de aquellos que creen en su misión.</p>
     </div>
   </div>
 </body>
@@ -232,7 +244,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
       </div>
 
       <div class="footer-bottom">
-        <p><small id="26">&copy; 2023 <b>SaludRural</b> - Todos los Derechos Reservados.</small></p>
+        <p><small id="26">&copy; 2023 <b>Salud Rural</b> - Todos los Derechos Reservados.</small></p>
       </div>
     </footer>
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

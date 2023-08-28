@@ -1,3 +1,26 @@
+<?php
+session_start();
+error_reporting(0);
+
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
+    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+    die();
+} else {
+  include("../PHP/conex.php");
+
+  // Consulta SQL para obtener el ID del usuario según el correo electrónico
+  $correo = $_SESSION['correo'];
+  $query = "SELECT id FROM registro WHERE correo = '$correo'";
+  $result = $conn->query($query);
+
+  if ($result->num_rows > 0) {
+      $row = $result->fetch_assoc();
+      $_SESSION['usuario_id'] = $row['id'];
+  }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +98,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -156,7 +179,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
-</ul>
+</ul><br><br><br>
     <section class="bg-blue-600 text-white py-24">
       <div class="container mx-auto text-center">
         <h1 class="text-4xl font-bold mb-4">¡Ayúdanos a mejorar la salud en zonas rurales!</h1>
@@ -164,9 +187,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         
       </div>
     </section>
-    <section class="bg-white py-24">
+    <section class="bg-white py-8 md:py-16 lg:py-24">
     <div class="flex justify-center items-center ">
-  <div class="flex gap-4">
+  <div class="flex flex-col md:flex-row gap-4">
   <a href="../HTML/form-mone.php">
     <button class="relative h-12 w-40 overflow-hidden border border-blue-600 text-blue-600 shadow-2xl transition-all duration-200 before:absolute before:bottom-0 before:left-0 before:right-0 before:top-0 before:m-auto before:h-0 before:w-0 before:rounded-sm before:bg-blue-600 before:duration-300 before:ease-out hover:text-white hover:shadow-blue-600 hover:before:h-40 hover:before:w-40 hover:before:opacity-80">
         <span class="relative z-9">Monetaria</span>
@@ -193,6 +216,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </button>
 </a>
   </div>
+    </div>
+    </section>
   </body>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
