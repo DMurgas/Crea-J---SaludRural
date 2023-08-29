@@ -48,7 +48,7 @@ if ($existe1 > 0) {
     }
 } else if ($existe3 > 0) {
     while ($row = mysqli_fetch_array($result_hospital)) {
-        if ($correo == $row['nombre']) {
+        if ($correo == $row['nombre'] ) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
             echo '<script language="javascript">alert("¡Bienvenid@ a SaludRural!"); window.location.href="../crud_hospitales/index.php";</script>';

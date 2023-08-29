@@ -232,27 +232,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 </section>
 </main>
 
-<footer class="bg-gray-800 text-center text-white py-8">
-  <div class="container mx-auto">
-    <p class="text-lg font-bold">SaludRural</p>
-    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
-    <div class="flex justify-center space-x-4 mb-4">
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
-      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
-    </div>
-    <ul class="flex items-center justify-center space-x-4">
-      <li><a href="Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
-      <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
-      <li><a href="../HTML/blog.php" class="text-gray-400 hover:text-white">Blog</a></li>
-      <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
-    </ul>
-    <div class="footer-bottom">
-        <p><small id="26">&copy; 2023 <b>Salud Rural</b> - Todos los Derechos Reservados.</small></p>
-      </div>
-  </div>
-</footer>
+
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
@@ -299,5 +279,27 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         });
     });
 </script>
+<footer class="bg-gray-800 text-center text-white py-8">
+  <div class="container mx-auto">
+    <p class="text-lg font-bold">Salud Rural</p>
+    <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
+    <div class="flex justify-center space-x-4 mb-4">
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-twitter"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <ul class="flex items-center justify-center space-x-4">
+      <li><a href="Index.php" class="text-gray-400 hover:text-white">Inicio</a></li>
+      <li><a href="../HTML/boton-donaciones.php" class="text-gray-400 hover:text-white">Donaciones</a></li>
+      <li><a href="../HTML/blog.php
+" class="text-gray-400 hover:text-white">Blog</a></li>
+      <li><a href="../HTML/AcercaDe.php" class="text-gray-400 hover:text-white">Acerca de</a></li>
+    </ul>
+    <div class="footer-bottom">
+        <p><small id="26">&copy; 2023 <b>Salud Rural</b> - Todos los Derechos Reservados.</small></p>
+      </div>
+  </div>
+</footer>
 </body>
 </html>

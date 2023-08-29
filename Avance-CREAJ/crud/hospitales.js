@@ -81,19 +81,25 @@ $("#formHospitales").submit(function(e){
     nombre = $.trim($("#nombre").val());
     descripcion = $.trim($("#descripcion").val());
     lugar = $.trim($("#lugar").val()); 
+    contra = $.trim($("#contra").val()); // Cambio de "password" a "contra"
     $.ajax({
         url: "bd/crud_hospitales.php",
         type: "POST",
         dataType: "json",
-        data: {nombre:nombre, descripcion:descripcion, lugar:lugar, id:id, opcion:opcion},
+        data: {nombre: nombre, descripcion: descripcion, lugar: lugar, contra: contra, id: id, opcion: opcion}, // Cambio de "password" a "contra"
         success: function(data){  
             console.log(data);
             id = data[0].id;            
             nombre = data[0].nombre;
             descripcion = data[0].descripcion;
             lugar = data[0].lugar;
-            if(opcion == 1){tablahospitales.row.add([id,nombre,descripcion,lugar]).draw();}
-            else{tablahospitales.row(fila).data([id,nombre,descripcion,lugar]).draw();}  
+            contra = data[0].contra;
+                
+                if(opcion == 1){
+                    tablaregistro.row.add([id, nombre, descripcion, lugar, contra]).draw();
+                } else {
+                    tablaregistro.row(fila).data([id, nombre, descripcion, lugar]).draw();
+                }  
             location.reload();          
         }        
     });

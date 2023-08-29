@@ -55,11 +55,6 @@ if (isset($_POST["submit"])) {
             $uploadOk = 0;
         }
 
-        if (file_exists($target_file)) {
-            echo "El archivo ya existe";
-            $uploadOk = 0;
-        }
-
         if ($_FILES["imagen"]["size"] > 5000000) {
             echo "El archivo es demasiado grande";
             $uploadOk = 0;

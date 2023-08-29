@@ -48,7 +48,10 @@
                     <input type="hidden" name="id_donacion" value="<?php echo $dat['id_donacion'] ?>">
                         <div class="form-group">
                             <label for="nuevoEstado">Nuevo Estado:</label>
-                            <input type="text" id="nuevoEstado" name="estado" class="form-control">
+                            <select id="nuevoEstado" name="estado" class="form-control">
+                                <option value="aceptada">Aceptar</option>
+                                <option value="rechazar">Rechazar</option>
+                            </select>
                         </div>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </form>

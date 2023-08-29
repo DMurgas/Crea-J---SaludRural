@@ -40,10 +40,22 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['medicamento'] ?></td>   
                                 <td><?php echo $dat['cantidad'] ?></td>  
                                 <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado -->
-                                <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editarModal">Editar</button>
-                                    <button class="btn btn-danger" data-toggle="modal" data-target="#eliminarModal">Eliminar</button>
-                                </td>
+                            <td>
+                                <?php
+                                if ($dat['estado'] == "Pendiente") {
+                                    echo "<form action='bd/estado_medi.php' method='post'>";
+                                    echo "<input type='hidden' name='id' value='{$dat["id_donacion"]}'>";
+                                    echo "<select name='accion'>";
+                                    echo "<option value='Aceptar'>Aceptar</option>";
+                                    echo "<option value='Rechazar'>Rechazar</option>";
+                                    echo "</select>";
+                                    echo "<input type='submit' name='actualizar' value='Actualizar'>";
+                                    echo "</form>";
+                                } 
+                                ?>
+                            
+                                <button class="btn btn-danger" data-toggle="modal" data-target="#eliminarModal">Eliminar</button>
+                            </td>
                             </tr>
                             <?php
                                 }

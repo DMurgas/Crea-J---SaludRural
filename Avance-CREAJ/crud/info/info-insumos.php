@@ -39,9 +39,21 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                                 <td><?php echo $dat['correo'] ?></td>
                                 <td><?php echo $dat['insumo'] ?></td>  
                                 <td><?php echo $dat['cantidad'] ?></td>  
-                                <td><?php echo $dat['estado'] ?></td> <!-- Mostrar el estado -->
+                                <td><?php echo $dat['estado'] ?></td>
                                 <td>
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#editarModal">Editar</button>
+                                    <?php
+                                    if ($dat['estado'] == "Pendiente") {
+                                        echo "<form action='bd/estado_insu.php' method='post'>";
+                                        echo "<input type='hidden' name='id' value='{$dat["id_donacion"]}'>";
+                                        echo "<select name='accion'>";
+                                        echo "<option value='Aceptar'>Aceptar</option>";
+                                        echo "<option value='Rechazar'>Rechazar</option>";
+                                        echo "</select>";
+                                        echo "<input type='submit' name='actualizar' value='Actualizar'>";
+                                        echo "</form>";
+                                    } 
+                                    ?>
+                                
                                     <button class="btn btn-danger" data-toggle="modal" data-target="#eliminarModal">Eliminar</button>
                                 </td>
                             </tr>

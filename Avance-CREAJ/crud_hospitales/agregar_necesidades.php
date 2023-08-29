@@ -1,5 +1,24 @@
 <?php
+session_start();
+error_reporting(0);
 
+// Verificar si el usuario ha iniciado sesión
+if (!isset($_SESSION['nombre']) || empty($_SESSION['nombre'])) {
+    echo '<script language="javascript">alert("Por favor inicie sesión o regístrese");window.location.href="../HTML/login.php"</script>';
+    die();
+} else {
+    include("../PHP/conex.php");
+
+    // Consulta SQL para obtener el ID del usuario según el correo electrónico
+    $nombre = $_SESSION['nombre'];
+    $query = "SELECT id FROM hospitales WHERE nombre = '$nombre'";
+    $result = $conn->query($query);
+
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $_SESSION['hospital_id'] = $row['id'];
+    }
+}
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -17,7 +36,6 @@ if (!$conn) {
 
 if (isset($_POST["submit"])) {
     // Verificar si se envió el formulario del blog
-    session_start();
     $hospital_id = $_SESSION['hospital_id'];
 
     if (!empty($_POST["titulo"]) && !empty($_POST["contenido"]) && !empty($_FILES["imagen"]["name"])) {
@@ -36,11 +54,6 @@ if (isset($_POST["submit"])) {
         $check = getimagesize($_FILES["imagen"]["tmp_name"]);
         if ($check === false) {
             echo "El archivo no es una imagen";
-            $uploadOk = 0;
-        }
-
-        if (file_exists($target_file)) {
-            echo "El archivo ya existe";
             $uploadOk = 0;
         }
 
@@ -178,11 +191,25 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     </ul>
                 </li>
             </ul>
-
-            
-            <button id="menu-toggle" class="block sm:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
-            <i class="fas fa-bars"></i>
-        </button>
+            <div class="hidden sm:block">
+                <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                    <span class="absolute -inset-1.5"></span>
+                    <span class="sr-only">Open user menu</span>
+                    <?php include 'mostra-imagen.php' ?>
+                    <img src="<?php echo ($usuario['foto_hospital'] != '') ? $usuario['foto_hospital'] : $imagen_predeterminada; ?>" alt="Foto de perfil" class="h-8 w-8 rounded-full" >
+                </button>
+                <!-- Menú desplegable del usuario -->
+                <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
+                <?php
+                // Mostrar nombre del usuario si está disponible en la sesión
+                if (isset($_SESSION['nombre']) && !empty($_SESSION['nombre'])) {
+                    echo '<li><a  class="block px-1 py-2 text-gray-800 ">' . $_SESSION['nombre'] . '</a></li>';
+                }
+                ?>
+                <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+                <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar Sesión</a></li>
+            </ul>
+            </div>
     </nav>
     <ul class="mobile-menu hidden sm:hidden bg-white p-2 mt-0 rounded-md shadow-md absolute right-0 w-40">
     <li><a href="Index.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Inicio</a></li>

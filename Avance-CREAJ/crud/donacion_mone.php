@@ -47,10 +47,11 @@
                     <!-- Aquí puedes colocar tu formulario de edición -->
                     <form action="bd/estado_mo.php" method="POST">
                     <input type="hidden" name="id_donacion" value="<?php echo $dat['id_donacion'] ?>">
-                        <div class="form-group">
-                            <label for="nuevoEstado">Nuevo estado:</label>
-                            <input type="text" id="nuevoEstado" name="estado" class="form-control">
-                        </div>
+                    <label for="nuevoEstado">Nuevo Estado:</label>
+                            <select id="nuevoEstado" name="estado" class="form-control">
+                                <option value="aceptada">Aceptar</option>
+                                <option value="rechazar">Rechazar</option>
+                            </select><br>
                         <button type="submit" class="btn btn-primary">Guardar Cambios</button>
                     </form>
                 </div>

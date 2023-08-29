@@ -172,10 +172,12 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
-</ul>
-
+</ul><br><br>
+<h1 class="text-2xl font-bold mb-4 text-center">Necesidades Realizados</h1>
 <div class="container mx-auto mt-8 p-4 ">
-    <h1 class="text-2xl font-bold mb-4 text-center">Necesidades Realizados</h1>
+<main class="container mx-auto mt-8 mb-8">
+    <section class="flex justify-center">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
     
     <!-- Lista de blogs desde la base de datos -->
     <?php
@@ -187,15 +189,19 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     
     if ($resultado->num_rows > 0) {
         while ($blog = $resultado->fetch_assoc()) {
-            echo '<div class="bg-white p-4 rounded-lg shadow-md mb-4">';
+            echo '<article class="bg-white p-6 rounded-md shadow-lg hover:shadow-xl transition duration-300">';
+            echo '<div class="flex flex-col items-center">';
             echo '<h2 class="text-lg font-semibold mb-2">' . $blog['nombre'] . '</h2>';
             echo '<p class="text-gray-600 mb-4">' . $blog['descripcion'] . '</p>';
             echo '<p class="text-blck-800 mb-4 font-semibold">' . $blog['lugar'] . '</p>';
-            echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-50 h-50 mx-auto mb-4">';
+            echo '</div>';
+            echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-full h-auto mb-4 rounded-md">';
+            echo '<div class="flex justify-center">';
             echo '<a href="editar_nece.php?id=' . $blog['id_necesidad'] . '" class="text-blue-500 hover:underline mr-4">Editar</a>';
             echo '<a href="eliminar_nece.php?id=' . $blog['id_necesidad'] . '" class="text-red-500 hover:underline">Eliminar</a>';
            
             echo '</div>';
+            echo '</article>';
         }
     } else {
         echo '<p>No se encontraron necesidades.</p>';
@@ -204,6 +210,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     $conn->close();
     ?>
 </div>
+</section>
+</main>
 <script>
     // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
     const userMenuButton = document.getElementById('user-menu-button');
