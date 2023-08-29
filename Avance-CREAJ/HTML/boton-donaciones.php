@@ -143,7 +143,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <?php
                 // Mostrar nombre del usuario si está disponible en la sesión
                 if (isset($_SESSION['correo']) && !empty($_SESSION['correo'])) {
-                    echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
+                    echo '<li><a  class="block px-1 py-2 text-gray-800">' . $_SESSION['correo'] . '</a></li>';
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
@@ -220,35 +220,27 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </section>
   </body>
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
-        const donacionesMenu = document.getElementById('donaciones-menu');
-        const donacionesMenuItems = document.getElementById('donaciones-menu-items');
-        donacionesMenu.addEventListener('click', () => {
-            donacionesMenuItems.classList.toggle('hidden');
-        });
+<script>
+    // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
+    const userMenuButton = document.getElementById('user-menu-button');
+    const userMenu = document.getElementById('user-menu');
+    userMenuButton.addEventListener('click', () => {
+        userMenu.classList.toggle('hidden');
+    });
 
-        // Script para mostrar/ocultar el menú desplegable al hacer clic en "Donaciones"
-        const donacionesMenuCate = document.getElementById('donaciones-menu-cate');
-        const donacionesMenuItemsCate = document.getElementById('donaciones-cate-items');
-        donacionesMenuCate.addEventListener('click', () => {
-            donacionesMenuItemsCate.classList.toggle('hidden');
-        });
-
-        // Script para mostrar/ocultar el menú desplegable del usuario al hacer clic en el botón del usuario
-        const userMenuButton = document.getElementById('user-menu-button');
-        const userMenu = document.getElementById('user-menu');
-        userMenuButton.addEventListener('click', () => {
-            userMenu.classList.toggle('hidden');
-        });
-        // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
-        const hospitalesMenuButton = document.getElementById('hospitales-menu');
-        const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
-        hospitalesMenuButton.addEventListener('click', () => {
-            hospitalesMenuItems.classList.toggle('hidden');
-        });
-        //responsive
-        document.addEventListener("DOMContentLoaded", function () {
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const donacionesMenuButton = document.getElementById('donaciones-menu');
+    const donacionesMenuItems = document.getElementById('donaciones-menu-items');
+    donacionesMenuButton.addEventListener('click', () => {
+        donacionesMenuItems.classList.toggle('hidden');
+    });
+    // Script para mostrar/ocultar el menú desplegable de donaciones al hacer clic en el botón de donaciones
+    const hospitalesMenuButton = document.getElementById('hospitales-menu');
+    const hospitalesMenuItems = document.getElementById('hospitales-menu-items');
+    hospitalesMenuButton.addEventListener('click', () => {
+        hospitalesMenuItems.classList.toggle('hidden');
+    });
+    document.addEventListener("DOMContentLoaded", function () {
         const menuToggle = document.getElementById("menu-toggle");
         const mobileMenu = document.querySelector(".mobile-menu");
 
@@ -272,5 +264,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             hospitalesMenuItems.classList.toggle("hidden");
         });
     });
-    </script>
+      
+</script>
 </html>

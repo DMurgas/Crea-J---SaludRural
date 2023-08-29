@@ -141,7 +141,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <?php
                 // Mostrar nombre del usuario si está disponible en la sesión
                 if (isset($_SESSION['correo']) && !empty($_SESSION['correo'])) {
-                    echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
+                    echo '<li><a  class="block px-1 py-2 text-gray-800">' . $_SESSION['correo'] . '</a></li>';
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
