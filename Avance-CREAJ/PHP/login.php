@@ -26,7 +26,7 @@ $sql_user = "SELECT * FROM registro WHERE correo = '$correo' and contra = '$cont
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
-$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' ";
+$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' and contra ='$contra' ";
 $result_hospital = mysqli_query($conn, $sql_hospital);
 $existe3 = mysqli_num_rows($result_hospital);
 
@@ -35,7 +35,7 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contraseña']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../crud/index.php";alert("¡Bienvenid@ Administrador, tienes el poder!");</script>';
+            echo '<script language="javascript">window.location.href="../crud/index.php";swal("¡Bienvenid@ Administrador, tienes el poder!");</script>';
         }
     }
 } else if ($existe2 > 0) {
@@ -43,12 +43,12 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contra']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../HTML/index.php";alert("¡Bienvenid@ a SaludRural!");</script>';
+            echo '<script language="javascript">window.location.href="../HTML/index.php";("¡Bienvenid@ a SaludRural!");</script>';
         }
     }
 } else if ($existe3 > 0) {
     while ($row = mysqli_fetch_array($result_hospital)) {
-        if ($correo == $row['nombre'] ) {
+        if ($correo == $row['nombre'] && $contra == $row['contra']) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
             echo '<script language="javascript">alert("¡Bienvenid@ a SaludRural!"); window.location.href="../crud_hospitales/index.php";</script>';

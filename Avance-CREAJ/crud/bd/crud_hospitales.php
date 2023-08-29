@@ -12,12 +12,12 @@ $opcion = (isset($_POST['opcion'])) ? $_POST['opcion'] : '';
 $id = (isset($_POST['id'])) ? $_POST['id'] : '';
 
 switch($opcion){
-    case 1: //alta
-        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar, contra) VALUES ('$nombre', '$descripcion', '$lugar', '$contra') ";
+    case 1: // alta
+        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar, contra) VALUES (?, ?, ?, ?)";
         $resultado = $conexion->prepare($consulta);
-        $resultado->execute(); 
-
-        $consulta = "SELECT id, nombre, descripcion, lugar FROM hospitales ORDER BY id DESC LIMIT 1";
+        $resultado->execute([$nombre, $descripcion, $lugar, $contra]); // Insertar la contraseña
+        
+        $consulta = "SELECT id, nombre, descripcion, lugar, contra FROM hospitales ORDER BY id DESC LIMIT 1";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute();
         $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
