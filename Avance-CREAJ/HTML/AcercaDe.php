@@ -151,14 +151,43 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 <?php
                 // Mostrar nombre del usuario si está disponible en la sesión
                 if (isset($_SESSION['correo']) && !empty($_SESSION['correo'])) {
-                    echo '<li><a href="#" class="block px-1 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">' . $_SESSION['correo'] . '</a></li>';
+                    echo '<li><a  class="block px-1 py-2 text-gray-800">' . $_SESSION['correo'] . '</a></li>';
                 }
                 ?>
                 <li><a href="perl-usu.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
                 <li><a href="../PHP/cerrar.php" class="block px-4 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
             </ul>
             </div>
+            <button id="menu-toggle" class="block sm:hidden text-gray-600 hover:text-gray-800 focus:outline-none">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
+    <ul class="mobile-menu hidden sm:hidden bg-white p-4 mt-12 rounded-md shadow-md absolute right-0 w-40">
+    <li><a href="Index.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Inicio</a></li>
+    <li>
+        <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="donaciones-menu-cel">
+            Donar <i class="fas fa-chevron-down ml-1"></i>
+        </a>
+        <ul class="mt-2"  id="donaciones-menu-items-cel">
+            <li><a href="boton-donaciones.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
+            <li><a href="donaciones-reali.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
+        </ul>
+    </li>
+    <li><a href="blog.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Blog</a></li>
+    <li><a href="AcercaDe.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Acerca de</a></li>
+    <li>
+        <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="hospitales-menu-cel">
+            Hospitales <i class="fas fa-chevron-down ml-1"></i>
+        </a>
+        <ul class="mt-2" id="hospitales-menu-items-cel">
+            <li><a href="necesidades_hospitales.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Necesidades actuales</a></li>
+            <!-- Agrega más elementos de menú aquí si es necesario -->
+        </ul>
+    </li>
+    <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
+    <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
+    <!-- Agrega más elementos de menú aquí si es necesario -->
+</ul>
 
   <!-- Código del slider (portada) -->
   <section class="bg-blue-600 text-white py-24">

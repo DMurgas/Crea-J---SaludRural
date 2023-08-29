@@ -192,16 +192,18 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         // Genera el contenido HTML de los blogs a partir de los datos de la base de datos
         if ($result->num_rows > 0) {
             while ($row = $result->fetch_assoc()) {
-                echo '<article class="bg-white p-6 rounded-md shadow-lg hover:shadow-xl transition duration-300 flex flex-col justify-between">';
+                echo '<article class="bg-white p-6 rounded-md shadow-lg hover:shadow-xl transition duration-300 flex flex-col justify-between items-center">';
                 echo '<div>';
                 echo '<img src="' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
                 echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">' . $row['titulo'] . '</h2>';
                 echo'<div class="max-h-96 overflow-auto mb-4">';
                 echo '<p class="mt-2 text-gray-600">' . $row['contenido'] . '</p>';
                 echo '</div>';
-                echo '<a href="get-blogs.php?id=' . $row['id'] . '" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 text-center">Leer más</a>';
+                echo '<a href="get-blogs.php?id=' . $row['id'] . '" class="text-white p-20  bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 text-center">Leer más</a>';
                 echo '</article>';
             }
+        }else {
+            echo '<p>No se Blog hechos por hospitales.</p>';
         }
         ?>
       </div>

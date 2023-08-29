@@ -192,7 +192,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     echo '<p class="text-gray-600">' . $blog['contenido'] . '</p>';
                     echo '</div>';
                     echo '<img src="' . $blog['imagen'] . '" alt="Imagen del blog" class="w-full h-auto mb-4 rounded-md">';
-                    echo '</div>';
+                    
                     echo '<div class="flex justify-center">';
                     echo '<a href="editar_blog.php?id=' . $blog['id'] . '" class="text-blue-500 hover:underline mr-4">Editar</a>';
                     echo '<a href="cambios/eliminar_blog.php?id=' . $blog['id'] . '" class="text-red-500 hover:underline">Eliminar</a>';

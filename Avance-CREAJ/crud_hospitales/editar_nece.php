@@ -1,4 +1,26 @@
+<?php
+session_start();
+include_once 'db_connection.php'; // Incluye la conexión a la base de datos
 
+if (isset($_SESSION['id'])) {
+    $idUsuario = $_SESSION['id'];
+    
+    $consulta = "SELECT * FROM hospitales WHERE id = $idUsuario"; // Cambia el ID según tu caso
+    $resultado = $conn->query($consulta);
+    $ruta_imagen = "../imagen-hos/"; // Cambia esto a la ruta real de la imagen
+    
+    // Si la ruta de la imagen está vacía, utiliza una imagen predeterminada
+    if (empty($ruta_imagen)) {
+        $ruta_imagen = "../imagen-hos/"; // Cambia esto a la ruta de la imagen predeterminada
+    }
+    
+    if ($resultado->num_rows > 0) {
+        $usuario = $resultado->fetch_assoc();
+        $imagen_predeterminada = "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80";
+    }
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +28,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css">
     <title>Editar Blog</title>
+    <style>
+    /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+
+/* Quita el texto (Con la tecnologia de) */
+div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+    font-size: 0%;
+  }
+  
+  /* Quita el texto (Traductor de google) */
+  div .skiptranslate.goog-te-gadget span a{
+    font-size: 0;
+  }
+  
+  /* Cambia el estilo del boton para seleccionar el idioma */
+  div .goog-te-combo{
+            color: #000000;
+            font-weight: bold;
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            padding: 10px 20px;
+            transition: background-color 0.1s, color 0.1s;
+  }
+  div .goog-te-combo:hover{
+    background-color: blue;
+    color: #ffffff;
+  }
+  /* Cambia el tamaño y mueve la parte azul del traductor*/
+  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
+    width: 55%;
+    top: 1.3%;
+    left: -52.9%;
+  }
+  
+  /* Cambia el estilo de la lista de idiomas del menú del traductor */
+  .goog-te-combo option{
+    background-color: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    color: #000000;
+    -webkit-o-border-radius: 10px;
+    -moz-o-border-radius: 10px;
+    -ms-o-border-radius: 10px;
+  }
+  
+  /* Hace invisible la imagen de "Google" */
+  a img{
+    width: 0;
+  }
+  
+  </style>
 </head>
 <body class="bg-gray-100">
 
-<nav class="bg-white p-4  w-full z-10 fixed">
+<nav class="bg-white p-4  w-full z-10 ">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
@@ -59,7 +133,7 @@
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>
                     <?php include 'mostra-imagen.php'; ?>
-                    <img src="<?php echo ($usuario['foto_perfil'] != '') ? $usuario['foto_perfil'] : $imagen_predeterminada; ?>" alt="Foto de perfil"  class="rounded-full h-8 w-8">
+                    <img src="<?php echo ($usuario['foto_hospital'] != '') ? $usuario['foto_hospital'] : $imagen_predeterminada; ?>" alt="Foto de perfil"  class="rounded-full h-8 w-8">
                 </button>
                 <!-- Menú desplegable del usuario -->
                 <ul class="absolute right-0 mt-2 py-2 w-50 bg-white rounded-lg shadow-md hidden" id="user-menu">
@@ -75,8 +149,8 @@
             </div>
     </nav>
 
-<div class="container mx-auto mt-8 p-4 ">
-    <h1 class="text-2xl font-bold mb-4 text-center">Editar Blog</h1>
+<div class="container mx-auto mt-8 p-4 bg-white ">
+    <h1 class="text-2xl font-bold mb-4 text-center">Editar Necesidad</h1>
     
     <!-- Formulario de edición -->
     <?php
@@ -91,13 +165,13 @@
         if ($resultado->num_rows > 0) {
             $blog = $resultado->fetch_assoc();
             
-            echo '<form action="cambios/actualizar_ne.php" method="post">';
+            echo '<form action="actualizar_ne.php" method="post">';
             echo '<input type="hidden" name="id_necesidad" value="' . $blog['id_necesidad'] . '">';
             echo '<label for="nombre" class="block mb-2 font-semibold">Nombre:</label>';
-            echo '<input type="text" name="nombre" id="nombre" class="border rounded px-2 py-1 mb-4 w-full" value="' . $blog['nombre'] . '">';
+            echo '<input type="text" name="nombre" id="nombre" class="border bg-gray-100 rounded px-2 py-1 mb-4 w-full" value="' . $blog['nombre'] . '">';
             
             echo '<label for="descripcion" class="block mb-2 font-semibold">Descripción:</label>';
-            echo '<textarea name="descripcion" id="descripcion" class="border rounded px-2 py-1 mb-4 w-full">' . $blog['descripcion'] . '</textarea>';
+            echo '<textarea name="descripcion" id="descripcion" class="border bg-gray-100 rounded px-2 py-1 mb-4 w-full">' . $blog['descripcion'] . '</textarea>';
             
             
             echo '<button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Actualizar</button>';
@@ -108,7 +182,7 @@
     } else {
         echo 'ID de blog no proporcionado.';
     }
-    
+}
     $conn->close();
     ?>
 </div>

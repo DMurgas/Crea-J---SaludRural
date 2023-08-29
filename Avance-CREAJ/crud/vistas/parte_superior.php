@@ -35,6 +35,7 @@ if($_SESSION["correo"] === null){
       /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
 /* Quita el texto (Con la tecnologia de) */
+
 div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     font-size: 0%;
   }
@@ -52,7 +53,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             border: none;
             border-radius: 10px;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            padding: 10px 20px;
+            padding: 10px 10px 8px;
             transition: background-color 0.1s, color 0.1s;
   }
   div .goog-te-combo:hover{
@@ -62,8 +63,11 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   /* Cambia el tamaño y mueve la parte azul del traductor*/
   .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
     width: 55%;
-    top: 1.3%;
-    left: -52.9%;
+    top: 2.0%;
+    left: -30.9%;
+  }
+  .google{
+    margin: 10px 0;
   }
   
   /* Cambia el estilo de la lista de idiomas del menú del traductor */
@@ -76,7 +80,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     -moz-o-border-radius: 10px;
     -ms-o-border-radius: 10px;
   }
-  
+
   /* Hace invisible la imagen de "Google" */
   a img{
     width: 0;
@@ -132,8 +136,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
       <!-- Divider -->
       <li class="nav-item">
-         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <script src="../JS/traductor.js"></script>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages"
                     aria-expanded="true" aria-controls="collapsePages">
                     <i  class="fa fa-university"></i>
@@ -184,12 +186,13 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
           </button>
 
          
-
+          <br><br><br><br><br><br>
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
-
-           
-
+          <div id="google_translate_element" class="google"></div>
+         <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="../JS/traductor.js"></script>
+            
             <div class="topbar-divider d-none d-sm-block"></div>
 
             <!-- Nav Item - User Information -->

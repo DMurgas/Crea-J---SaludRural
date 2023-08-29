@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $actualizarSql = "UPDATE necesidades SET nombre = '$nuevoNombre', descripcion = '$nuevaDescripcion' WHERE id_necesidad = $blogId";
     
     if ($conn->query($actualizarSql) === TRUE) {
-        header("Location: realizado-nece.php?id=$blogId"); // Redirige de vuelta a la página de detalles del blog
+        header("Location: realizado-necesidades.php?id=$blogId"); // Redirige de vuelta a la página de detalles del blog
         exit();
     } else {
         echo "Error al actualizar la entrada: " . $conn->error;
