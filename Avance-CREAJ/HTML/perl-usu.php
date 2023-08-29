@@ -190,8 +190,32 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 
                 <!-- Formulario para cambiar la imagen -->
                 <form action="../hace_cambios/cambiar_imagen.php" method="post" enctype="multipart/form-data" class="mb-2">
-                    <input type="file" name="nueva_imagen" class="mb-1" required>
-                    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
+                    
+                <label for="nueva-imagen" class="file-label">
+                Seleccionar archivo
+                <input type="file" name="nueva_imagen" id="nueva-imagen" class="mb-1" required>
+                </label>
+
+                <style>
+                /* Estilos para el campo de entrada de tipo file */
+                .file-label {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    border: 2px dashed #ccc;
+                    padding: 10px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    text-align: center;
+                }
+
+                .file-label input[type="file"] {
+                    display: none; /* Oculta el campo de entrada real */
+                }
+                </style>
+                    
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Cambiar Imagen</button>
                 </form>
                 
                 <!-- Nombre del usuario -->
@@ -199,18 +223,20 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             
             <!-- Formulario para cambiar el correo -->
             <form action="../hace_cambios/cambiar_correo.php" method="post" class="mb-2">
+                <label for="">Correo:</label>
                 <input type="email" name="nuevo_correo" value="<?php echo $usuario['correo']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
                 <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
             </form>
             
             <!-- Formulario para cambiar el teléfono -->
             <form action="../hace_cambios/cambiar_telefono.php" method="post" class="mb-2">
+            <label for="">Telefono:</label>
                 <input type="text" name="nuevo_telefono" value="<?php echo $usuario['telefono']; ?>" class="border rounded px-2 py-1 focus:outline-none focus:border-blue-500">
                 <button type="submit" class="bg-blue-500 text-white px-2 py-1 rounded ml-2">Cambiar</button>
             </form>
             
             <!-- DUI del usuario -->
-            <p><?php echo $usuario['dui']; ?></p>
+            <p>DUI: <?php echo $usuario['dui']; ?></p>
         </div>
     </div>
     <?php
