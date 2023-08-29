@@ -90,7 +90,10 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   <nav class="bg-white p-4  w-full z-10 ">
         <div class="flex justify-between items-center">
            
+        <div id="google_translate_element"></div>
             
+            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+            <script src="../JS/traductor.js"></script>
 
             <!-- Menú de navegación -->
             
@@ -126,10 +129,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </ul>
 
             <div class="hidden sm:block">
-              <div id="google_translate_element"></div>
-            
-            <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-            <script src="../JS/traductor.js"></script>
                 <button type="button" class="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                     <span class="absolute -inset-1.5"></span>
                     <span class="sr-only">Open user menu</span>

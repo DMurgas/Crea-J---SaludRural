@@ -177,8 +177,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 <?php
 // Establece la conexión a la base de datos y verifica la sesión aquí
 
-if (isset($_GET['blog_id'])) {
-    $blogId = $_GET['blog_id'];
+if (isset($_GET['id'])) {
+    $blogId = $_GET['id'];
 
     // Obtener el ID del hospital a partir del ID del blog
     $sql = "SELECT hospital_id FROM blogs WHERE id = $blogId";

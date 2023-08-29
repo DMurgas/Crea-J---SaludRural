@@ -196,7 +196,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 echo '<div>';
                 echo '<img src="' . $row['imagen'] . '" alt="Imagen del artículo" class="mb-4 rounded-md">';
                 echo '<h2 class="text-xl font-semibold mb-2 text-indigo-600 text-center">' . $row['titulo'] . '</h2>';
-                echo '<p class="text-gray-700 mb-4">' . $row['contenido'] . '</p>';
+                echo'<div class="max-h-96 overflow-auto mb-4">';
+                echo '<p class="mt-2 text-gray-600">' . $row['contenido'] . '</p>';
                 echo '</div>';
                 echo '<a href="get-blogs.php?id=' . $row['id'] . '" class="text-white bg-indigo-600 hover:bg-indigo-700 rounded-md py-2 text-center">Leer más</a>';
                 echo '</article>';
