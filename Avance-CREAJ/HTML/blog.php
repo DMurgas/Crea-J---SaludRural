@@ -28,26 +28,26 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <title>Salud Rural</title>
+    <title>Blog</title>
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <link rel="stylesheet" href="../CSS/css-blog.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+        /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+        /* Quita el texto (Con la tecnologia de) */
 
-/* Quita el texto (Con la tecnologia de) */
-div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
-    font-size: 0%;
-  }
+        div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+            font-size: 0%;
+        }
   
-  /* Quita el texto (Traductor de google) */
-  div .skiptranslate.goog-te-gadget span a{
-    font-size: 0;
-  }
+        /* Quita el texto (Traductor de google) */
+        div .skiptranslate.goog-te-gadget span a{
+            font-size: 0;
+        }
   
-  /* Cambia el estilo del boton para seleccionar el idioma */
-  div .goog-te-combo{
+        /* Cambia el estilo del boton para seleccionar el idioma */
+        div .goog-te-combo{
             color: #000000;
             font-weight: bold;
             cursor: pointer;
@@ -56,39 +56,92 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             padding: 10px 20px;
             transition: background-color 0.1s, color 0.1s;
-  }
-  div .goog-te-combo:hover{
-    background-color: blue;
-    color: #ffffff;
-  }
-  /* Cambia el tamaño y mueve la parte azul del traductor*/
-  .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
-    width: 55%;
-    top: 1.3%;
-    left: -52.9%;
-  }
+        }
+
+        div .goog-te-combo:hover{
+            background-color: blue;
+            color: #ffffff;
+        }
   
-  /* Cambia el estilo de la lista de idiomas del menú del traductor */
-  .goog-te-combo option{
-    background-color: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    font-weight: bold;
-    color: #000000;
-    -webkit-o-border-radius: 10px;
-    -moz-o-border-radius: 10px;
-    -ms-o-border-radius: 10px;
-  }
+        /* Cambia el tamaño y mueve la parte azul del traductor*/
+        .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
+            width: 55%;
+            top: 1.3%;
+            left: -52.9%;
+        }
   
-  /* Hace invisible la imagen de "Google" */
-  a img{
-    width: 0;
-  }
+        /* Cambia el estilo de la lista de idiomas del menú del traductor */
+        .goog-te-combo option{
+            background-color: #ffffff;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-weight: bold;
+            color: #000000;
+            -webkit-o-border-radius: 10px;
+            -moz-o-border-radius: 10px;
+            -ms-o-border-radius: 10px;
+        }
   
-  /* FIN DE EL DISEÑO DE EL TRADUCTOR */
-    </style> 
-  </head>
+        /* Hace invisible la imagen de "Google" */
+        a img{
+            width: 0;
+        }
+        /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+    </style>
+    
+    <!-- Código JS para que el traductor no se oculte -->
+    <script>
+        // Obtener el estado del traductor desde la cookie
+        var traductorVisible = getCookie("traductorVisible");
+
+        // Mostrar u ocultar el traductor según el estado
+        if (traductorVisible === "true") {
+            document.getElementById("google_translate_element").style.display = "block";
+        } else {
+            document.getElementById("google_translate_element").style.display = "none";
+        }
+
+        // Función para cambiar el estado del traductor
+        function toggleTraductor() {
+        var traductor = document.getElementById("google_translate_element");
+            if (traductor.style.display === "none") {
+                traductor.style.display = "block";
+                setCookie("traductorVisible", "true", 7); // Guardar en cookie
+            } else {
+                traductor.style.display = "none";
+                setCookie("traductorVisible", "false", 7); // Guardar en cookie
+            }
+        }
+
+        // Función para establecer una cookie
+        function setCookie(name, value, days) {
+        var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Función para obtener el valor de una cookie
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Evento click para el botón del traductor
+        document.getElementById("google_translate_element").addEventListener("click", toggleTraductor);
+    </script>
+</head>
+
 <body class="bg-gray-100 font-sans flex flex-col min-h-screen">
-<nav class="bg-white p-4  w-full z-10 fixed">
+    <nav class="bg-white p-4  w-full z-10 fixed">
         <div class="flex justify-between items-center">
             <!-- Logo o nombre del sitio y traductor-->
             <div id="google_translate_element"></div>
@@ -96,11 +149,9 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
             <script src="../JS/traductor.js"></script>
             
-
             <!-- Menú de navegación -->
-            
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -115,7 +166,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
-                <li><a href="blog.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Blog</a></li>
+                <li><a class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium cursor-pointer">Blog</a></li>
                 <li><a href="AcercaDe.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Acerca de</a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -157,10 +208,10 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </button>
     </nav>
     <ul class="mobile-menu hidden sm:hidden bg-white p-4 mt-12 rounded-md shadow-md absolute right-0 w-40">
-    <li><a href="Index.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Inicio</a></li>
+    <li><a href="Index.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white"><strong>Inicio</strong></a></li>
     <li>
         <a href="#" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white" id="donaciones-menu-cel">
-            Donar <i class="fas fa-chevron-down ml-1"></i>
+            Donaciones<i class="fas fa-chevron-down ml-1"></i>
         </a>
         <ul class="mt-2"  id="donaciones-menu-items-cel">
             <li><a href="boton-donaciones.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
@@ -203,7 +254,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                 echo '</article>';
             }
         }else {
-            echo '<p>No se Blog hechos por hospitales.</p>';
+            echo '<br><p style="margin-top: 15px; color: #686868; font-size: large;">No existen Blogs de hospitales aún.</p>';
         }
         ?>
       </div>
@@ -262,7 +313,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
  <!-- Código del footer -->
  <footer class="bg-gray-800 text-center text-white py-8">
   <div class="container mx-auto">
-    <p class="text-lg font-bold">Salud Rural</p>
+    <p class="text-lg font-bold">SaludRural</p>
     <p class="text-sm mt-2 mb-4">Si deseas saber más información sobre nosotros, puedes buscarnos y contactarnos en nuestras redes sociales.</p>
     <div class="flex justify-center space-x-4 mb-4">
       <a href="#" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i></a>
