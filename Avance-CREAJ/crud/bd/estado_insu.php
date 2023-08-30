@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 $servername = "localhost"; // Nombre del servidor
 $username = "root";        // Nombre de usuario de la base de datos
@@ -66,3 +70,4 @@ if (isset($_POST["actualizar"])) {
     }
 }
 ?>
+    </body></html>

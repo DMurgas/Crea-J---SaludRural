@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
@@ -20,7 +24,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "DELETE FROM medicamentos WHERE id_donacion = $id_donacion";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Donación eliminada exitosamente.";
+        echo "
+        <script language='JavaScript'>
+            swal.fire({
+                icon: 'error',
+                title: '¡Donacion eliminada.!',
+                showConfirmButton: false,
+                timer: 2000
+            }).then(function() {
+                window.location = '../donacion_medi.php';
+            });
+        </script>";
     } else {
         echo "Error al eliminar la donación: " . $conn->error;
     }
@@ -28,3 +42,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
 ?>
+    </body></html>
