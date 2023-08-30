@@ -22,7 +22,7 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,17 +32,18 @@ if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Haz tu donación</title>
 </head>
-<style>
-      /* INICIO DE EL ESTILO DE EL TRADUCTOR */
 
-/* Quita el texto (Con la tecnologia de) */
-div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
-    font-size: 0%;
-  }
+<style>
+    /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+    /* Quita el texto (Con la tecnologia de) */
+
+    div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+        font-size: 0%;
+    }
   
-  /* Quita el texto (Traductor de google) */
-  div .skiptranslate.goog-te-gadget span a{
-    font-size: 0;
+    /* Quita el texto (Traductor de google) */
+    div .skiptranslate.goog-te-gadget span a{
+        font-size: 0;
   }
   
   /* Cambia el estilo del boton para seleccionar el idioma */
@@ -98,7 +99,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <!-- Menú de navegación -->
             
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -109,7 +110,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
                     <!-- Menú desplegable -->
                     <ul class="absolute top-10 left-1/2 transform -translate-x-1/2 bg-white shadow-md rounded-md hidden" id="donaciones-menu-items">
-                        <li><a href="boton-donaciones.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Haz tu donación</a></li>
+                        <li><a class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white cursor-pointer">Haz tu donación</a></li>
                         <li><a href="donaciones-reali.php" class="block px-4 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Realizadas</a></li>
                     </ul>
                 </li>
