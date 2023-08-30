@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 $db_host = 'localhost';
 $db_username = 'root';
@@ -35,7 +39,17 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contraseña']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../crud/index.php";swal("¡Bienvenid@ Administrador, tienes el poder!");</script>';
+            echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡Bienvenid@ a SaludRural Administrador!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../crud/index.php';
+                });
+            </script>";
         }
     }
 } else if ($existe2 > 0) {
@@ -43,20 +57,52 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contra']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../HTML/index.php";("¡Bienvenid@ a SaludRural!");</script>';
-        }
+            echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: '¡Bienvenid@ a SaludRural!',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../HTML/Index.php';
+        });
+    </script>";
+}
     }
 } else if ($existe3 > 0) {
     while ($row = mysqli_fetch_array($result_hospital)) {
         if ($correo == $row['nombre'] && $contra == $row['contra']) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">alert("¡Bienvenid@ a SaludRural!"); window.location.href="../crud_hospitales/index.php";</script>';
-             // Agrega esta línea para asegurarte de que el script se detiene después de la redirección
+            echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: '¡Bienvenid@ a SaludRural!',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = 'crud_hospitales/index.php';
+        });
+    </script>
+    ";
         }
     }
 } else {
-   echo '<script language="javascript">alert("Su usuario o contraseña pueden estar incorrectos. ¡Vuelva a ingresar sus datos!");window.location.href="../HTML/login.php";</script>';
+    echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'error',
+            title: 'Su usuario o contraseña pueden estar incorrecto',
+            text: '¡Vuelva a ingresar sus datos!',
+        }).then(function() {
+            window.location = '../HTML/login.php';
+        });
+    </script>
+    ";
 }
 
 ?>
+</body>
+</html>

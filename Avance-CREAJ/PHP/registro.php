@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 include("conex.php");
 $nombre = $_POST['nombre'];
@@ -11,5 +15,32 @@ $sql= "INSERT INTO `registro`(`id`, `nombre`, `apellidos`, `telefono`, `correo`,
 
 $resultado = mysqli_query($conn,$sql);
 mysqli_close($conn);
-    echo'<script language="javascript">alert("Se ha resgistrado con exito!!!!");window.location.href="../HTML/login.php"</script>'
-?>
+if ($resultado) {
+    echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: 'Te haz registrado correctamente',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../HTML/login.php';
+        });
+    </script>
+    ";
+}else{
+    echo "
+    <script language='JavaScript'>
+        swal.fire({type: 'success',
+            title: 'Mal!'
+        }).then(function() {
+            window.location = '../HTML/login.php';
+        });
+    </script>
+    ";
+}
+    
+?> 
+</body>
+</html>
+

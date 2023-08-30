@@ -55,7 +55,14 @@ submitBtn.addEventListener("click", function(){
     progressText[current - 1].classList.add("active");
     current += 1;
     setTimeout(function(){
-      alert("Tu formulario se ha enviado exitosamente.");
+      swal.fire({
+        icon: 'success',
+        title: '¡Tu formulario se ha enviado exitosamente!',
+        showConfirmButton: false,
+        timer: 2000
+    }).then(function() {
+        window.location = '../HTML/boton-donaciones.php';
+    });
       location.reload();
     }, 800);
   }
@@ -93,7 +100,10 @@ function validarCampos(paso) {
   
   for (const campo of campos) {
     if (campo.value.trim() === "") {
-      alert("Por favor completa todos los campos solicitados antes de continuar.");
+      swal.fire({
+        icon: 'error',
+        title: 'Por favor completa todos los campos solicitados',
+    });
       campo.focus();
       return false;
     }

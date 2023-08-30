@@ -28,6 +28,7 @@ $conn->close();
     <meta charset="utf-8">
     <title>Donacion medicamentos</title>
     <link rel="stylesheet" href="../CSS/form-donaciones.css">
+    
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <style>
@@ -84,6 +85,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   /* FIN DE EL DISEÑO DE EL TRADUCTOR */
     </style>
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
@@ -126,18 +128,24 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
       </div>
       <script>
-        // Función para validar que los valores ingresados no sean negativos
-        function validatePositiveNumber(inputElement) {
-          const value = parseFloat(inputElement.value);
-          if (isNaN(value) || value < 0) {
-            alert("Por favor, ingrese un valor positivo.");
-            inputElement.value = "";
-            inputElement.focus();
-            return false;
-          }
-          return true;
+  // Función para validar que los valores ingresados no sean negativos
+  function validatePositiveNumber(inputElement) {
+    const value = parseFloat(inputElement.value);
+    if (isNaN(value) || value < 0) {
+      swal.fire({
+        icon: 'error',
+        title: 'No se pueden colocar valores menores a 0',
+        text: 'Por favor utiliza valores mayores a 0',
+        onClose: () => {
+          inputElement.value = "";  // Limpia el campo si es negativo
+          inputElement.focus();     // Vuelve a enfocar el campo
         }
-      </script>
+      });
+      return false;
+    }
+    return true;
+  }
+</script>
 
       <div class="form-outer">
         <form action="../PHP/form-donacion-medicamentos.php" method="post">
@@ -164,7 +172,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div class="field">
              <div class="label">Fecha de la donación</div>
              <input type="datetime-local" id="fecha" name="fecha" required>
-             
+
               <script>
               document.getElementById("fecha").addEventListener("input", function() {
                   var fechaIngresada = document.getElementById("fecha").value;
@@ -174,7 +182,10 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                   fechaActual.setSeconds(0, 0); // Establecer segundos y milisegundos en cero
                   
                   if (new Date(fechaIngresada) < fechaActual) {
-                      alert("La fecha debe ser presente o futura.");
+                    swal.fire({
+                    icon: 'error',
+                    title: 'La fecha debe ser presente o futura',
+        });
                       document.getElementById("fecha").value = ""; // Limpiar el campo de fecha
                   }
               });
