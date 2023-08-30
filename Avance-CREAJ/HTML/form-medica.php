@@ -128,24 +128,18 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
       </div>
       <script>
-  // Función para validar que los valores ingresados no sean negativos
-  function validatePositiveNumber(inputElement) {
-    const value = parseFloat(inputElement.value);
-    if (isNaN(value) || value < 0) {
-      swal.fire({
-        icon: 'error',
-        title: 'No se pueden colocar valores menores a 0',
-        text: 'Por favor utiliza valores mayores a 0',
-        onClose: () => {
-          inputElement.value = "";  // Limpia el campo si es negativo
-          inputElement.focus();     // Vuelve a enfocar el campo
+        // Función para validar que los valores ingresados no sean negativos
+        function validatePositiveNumber(inputElement) {
+          const value = parseFloat(inputElement.value);
+          if (isNaN(value) || value < 0) {
+            alert("Por favor, ingrese un valor positivo.");
+            inputElement.value = "";
+            inputElement.focus();
+            return false;
+          }
+          return true;
         }
-      });
-      return false;
-    }
-    return true;
-  }
-</script>
+      </script>
 
       <div class="form-outer">
         <form action="../PHP/form-donacion-medicamentos.php" method="post">
@@ -204,7 +198,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </div>
             <div class="field">
               <div class="label">Cantidad de medicamentos</div>
-              <input type="number"name="cantidad" required onblur="validatePositiveNumber(this)">
+              <input type="number"name="cantidad" placeholder="Blister o cajas" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>
