@@ -26,19 +26,21 @@ if ($correo == null || $correo == '') {
     <link rel="shortcut icon" href="../Imagenes/favicon.png" />
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
-    /* INICIO DE EL ESTILO DE EL TRADUCTOR */
-    /* Quita el texto (Con la tecnologia de) */
-    div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
-        font-size: 0%;
-    }
+        /* INICIO DE EL ESTILO DE EL TRADUCTOR */
+        /* Quita el texto (Con la tecnologia de) */
+
+        div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
+            font-size: 0%;
+        }
   
-    /* Quita el texto (Traductor de google) */
+        /* Quita el texto (Traductor de google) */
         div .skiptranslate.goog-te-gadget span a{
             font-size: 0;
         }
   
-    /* Cambia el estilo del boton para seleccionar el idioma */
+        /* Cambia el estilo del boton para seleccionar el idioma */
         div .goog-te-combo{
             color: #000000;
             font-weight: bold;
@@ -55,14 +57,14 @@ if ($correo == null || $correo == '') {
             color: #ffffff;
         }
 
-    /* Cambia el tamaño y mueve la parte azul del traductor*/
+        /* Cambia el tamaño y mueve la parte azul del traductor*/
         .VIpgJd-ZVi9od-ORHb-OEVmcd.skiptranslate , .VIpgJd-ZVi9od-ORHb{
             width: 55%;
             top: 1.3%;
             left: -52.9%;
         }
   
-    /* Cambia el estilo de la lista de idiomas del menú del traductor */
+        /* Cambia el estilo de la lista de idiomas del menú del traductor */
         .goog-te-combo option{
             background-color: #ffffff;
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -73,13 +75,63 @@ if ($correo == null || $correo == '') {
             -ms-o-border-radius: 10px;
         }
   
-    /* Hace invisible la imagen de "Google" */
+        /* Hace invisible la imagen de "Google" */
         a img{
             width: 0;
         }
-  
-    /* FIN DE EL DISEÑO DE EL TRADUCTOR */
+        /* FIN DE EL DISEÑO DE EL TRADUCTOR */
     </style>
+
+    <!-- Código JS para que el traductor no se oculte -->
+    <script>
+        // Obtener el estado del traductor desde la cookie
+        var traductorVisible = getCookie("traductorVisible");
+
+        // Mostrar u ocultar el traductor según el estado
+        if (traductorVisible === "true") {
+            document.getElementById("google_translate_element").style.display = "block";
+        } else {
+            document.getElementById("google_translate_element").style.display = "none";
+        }
+
+        // Función para cambiar el estado del traductor
+        function toggleTraductor() {
+        var traductor = document.getElementById("google_translate_element");
+            if (traductor.style.display === "none") {
+                traductor.style.display = "block";
+                setCookie("traductorVisible", "true", 7); // Guardar en cookie
+            } else {
+                traductor.style.display = "none";
+                setCookie("traductorVisible", "false", 7); // Guardar en cookie
+            }
+        }
+
+        // Función para establecer una cookie
+        function setCookie(name, value, days) {
+        var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        // Función para obtener el valor de una cookie
+        function getCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+            for(var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Evento click para el botón del traductor
+        document.getElementById("google_translate_element").addEventListener("click", toggleTraductor);
+    </script>
 
 </head>
 <body class="bg-gray-100">
@@ -93,9 +145,8 @@ if ($correo == null || $correo == '') {
             
 
             <!-- Menú de navegación -->
-            
             <ul class="hidden sm:flex space-x-4">
-            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">Salud Rural</a></li>
+            <li><a class="text-green-600 rounded-md px-3 py-2 text-sm font-medium cursor-default" style="font-size: 23.5px; font-weight: bold;" aria-current="page">SaludRural</a></li>
                 <li><a href="Index.php" class="text-black hover:bg-blue-600 hover:text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page"><strong>Inicio</strong></a></li>
                 <li class="relative">
                     <!-- Enlace con menú desplegable -->
@@ -176,7 +227,7 @@ if ($correo == null || $correo == '') {
     <li><a href="perl-usu.php" class="block px-3 py-2 text-gray-800 hover:bg-blue-600 hover:text-white">Configuración</a></li>
     <li><a href="../PHP/cerrar.php" class="block px-3 py-2 text-red-600 hover:bg-red-600 hover:text-white">Cerrar sesión</a></li>
     <!-- Agrega más elementos de menú aquí si es necesario -->
-</ul></br></br></br></br></br>
+</ul></br></br></br></br>
     <div class="cuadro">
         <p class="mensaje">Si necesitas corregir alguna información de tus donaciones, envíanos un mensaje a este correo</p>
         <a class="correo" href="mailto:admin@gmail.com">admin@gmail.com</a>
