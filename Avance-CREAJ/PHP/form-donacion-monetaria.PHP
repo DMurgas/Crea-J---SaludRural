@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 session_start();
 
@@ -33,7 +37,17 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         $sql = "INSERT INTO monetaria (id_hospital, id_usuario, `nombre`, `correo`, `telefono`, `fecha`, `monto`, `tarjeta`, `cvv`) VALUES ('$id_hospital', '$usuarioId', '$nombre','$correo','$telefono','$fecha','$monto','$tarjeta', '$cvv')";
 
         if ($conn->query($sql) === TRUE) {
-            echo '<script language="javascript">alert("Donación registrada correctamente"); window.location.href="../HTML/Index.php";</script>';
+            echo "
+            <scrip language='JavaScript'>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡Tu formulario se ha registrado exitosamente!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../HTML/boton-donaciones.php';
+                });
+            </script>";
         } else {
             echo "Error al realizar la donación: " . $conn->error;
         }
@@ -45,3 +59,5 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
     echo "Debe iniciar sesión para realizar una donación...";
 }
 ?>
+</body>
+</html>
