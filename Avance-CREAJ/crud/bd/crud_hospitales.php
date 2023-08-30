@@ -13,7 +13,7 @@ $id = (isset($_POST['id'])) ? $_POST['id'] : '';
 
 switch($opcion){
     case 1: // alta
-        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar, contra) VALUES (?, ?, ?, ?)";
+        $consulta = "INSERT INTO hospitales (nombre, descripcion, lugar, pass) VALUES (?, ?, ?, ?)";
         $resultado = $conexion->prepare($consulta);
         $resultado->execute([$nombre, $descripcion, $lugar, $contra]); // Insertar la contraseña
         

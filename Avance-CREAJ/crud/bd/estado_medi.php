@@ -1,4 +1,8 @@
-<?php
+
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script><?php
 $servername = "localhost"; // Nombre del servidor
 $username = "root";        // Nombre de usuario de la base de datos
 $password = "";            // Contraseña de la base de datos
@@ -26,7 +30,17 @@ if (isset($_POST["actualizar"])) {
             // Actualizar el estado de la donación a "aceptada"
             $updateQuery = "UPDATE medicamentos SET estado = 'Aceptada' WHERE id_donacion = '$donacionId'";
             if ($conex->query($updateQuery)) {
-                echo '<script language="javascript">window.location.href="../donacion_medi.php";alert("Donación aceptada exitosamente.");</script>';
+                echo "
+                <script language='JavaScript'>
+                    swal.fire({
+                        icon: 'success',
+                        title: '¡Donación aceptada exitosamente.!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        window.location = '../donacion_medi.php';
+                    });
+                </script>";
             } else {
                 echo "Error al actualizar el estado: " . $conex->error;
             }
@@ -34,7 +48,17 @@ if (isset($_POST["actualizar"])) {
             // Actualizar el estado de la donación a "rechazada"
             $updateQuery = "UPDATE medicamentos SET estado = 'Rechazada' WHERE id_donacion = '$donacionId'";
             if ($conex->query($updateQuery)) {
-                echo '<script language="javascript">window.location.href="../donacion_medi.php";alert("Donación rechazada exitosamente.");</script>';
+                echo "
+                <script language='JavaScript'>
+                    swal.fire({
+                        icon: 'error',
+                        title: '¡Donacion rechazada.!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        window.location = '../donacion_medi.php';
+                    });
+                </script>";
             } else {
                 echo "Error al actualizar el estado: " . $conex->error;
             }
@@ -46,3 +70,4 @@ if (isset($_POST["actualizar"])) {
     }
 }
 ?>
+    </body></html>

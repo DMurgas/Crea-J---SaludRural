@@ -26,6 +26,17 @@ if (isset($_POST["actualizar"])) {
             // Actualizar el estado de la donación a "aceptada"
             $updateQuery = "UPDATE equipo SET estado = 'Aceptada' WHERE id_donacion = '$donacionId'";
             if ($conex->query($updateQuery)) {
+                echo "
+                <script language='JavaScript'>
+                    swal.fire({
+                        icon: 'error',
+                        title: '¡Donacion rechazada.!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        window.location = '../donacion_equi.php';
+                    });
+                </script>";
                 echo '<script language="javascript">window.location.href="../donacion_equi.php";alert("Donación aceptada exitosamente.");</script>';
             } else {
                 echo "Error al actualizar el estado: " . $conex->error;
@@ -34,7 +45,17 @@ if (isset($_POST["actualizar"])) {
             // Actualizar el estado de la donación a "rechazada"
             $updateQuery = "UPDATE equipo SET estado = 'Rechazada' WHERE id_donacion = '$donacionId'";
             if ($conex->query($updateQuery)) {
-                echo '<script language="javascript">window.location.href="../donacion_equi.php";alert("Donación rechazada exitosamente.");</script>';
+                echo "
+                <script language='JavaScript'>
+                    swal.fire({
+                        icon: 'error',
+                        title: '¡Donacion rechazada.!',
+                        showConfirmButton: false,
+                        timer: 2000
+                    }).then(function() {
+                        window.location = '../donacion_equi.php';
+                    });
+                </script>";
             } else {
                 echo "Error al actualizar el estado: " . $conex->error;
             }

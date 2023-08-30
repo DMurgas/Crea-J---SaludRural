@@ -3,7 +3,7 @@ $(document).ready(function(){
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"  
+        "defaultContent": "<div class='text-center'><button class='btn btn-danger btnBorrar'>Borrar</button></div>"  
        }],
         
     "language": {
@@ -33,7 +33,7 @@ $("#btnNuevo").click(function(){
     opcion = 1; //alta
 });    
 
-$(document).on("click", ".btnEditar", function(){
+$(document).on("click", "", function(){
     fila = $(this).closest("tr");
     id = parseInt(fila.find('td:eq(0)').text());
     nombre = fila.find('td:eq(1)').text();
@@ -86,7 +86,7 @@ $("#formHospitales").submit(function(e){
         url: "bd/crud_hospitales.php",
         type: "POST",
         dataType: "json",
-        data: {nombre: nombre, descripcion: descripcion, lugar: lugar, contra: contra, id: id, opcion: opcion}, // Cambio de "password" a "contra"
+        data: {nombre: nombre, descripcion: descripcion, lugar: lugar, pass: contra, id: id, opcion: opcion}, // Cambio de "password" a "contra"
         success: function(data){  
             console.log(data);
             id = data[0].id;            

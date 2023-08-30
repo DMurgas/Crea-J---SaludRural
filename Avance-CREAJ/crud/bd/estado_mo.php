@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 $servername = "localhost"; // Nombre del servidor
 $username = "root";        // Nombre de usuario de la base de datos
@@ -26,7 +30,17 @@ if (isset($_POST["actualizar"])) {
             // Actualizar el estado de la donación a "aceptada"
             $updateQuery = "UPDATE monetaria SET estado = 'Aceptada' WHERE id_donacion = '$donacionId'";
             if ($conex->query($updateQuery)) {
-                echo '<script language="javascript">window.location.href="../donacion_mone.php";alert("Donación aceptada exitosamente.");</script>';
+                echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡Estado Actualizado!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../donacion_mone.php';
+                });
+            </script>";
             } else {
                 echo "Error al actualizar el estado: " . $conex->error;
             }
@@ -34,7 +48,17 @@ if (isset($_POST["actualizar"])) {
             // Actualizar el estado de la donación a "rechazada"
             $updateQuery = "UPDATE monetaria SET estado = 'Rechazada' WHERE id_donacion = '$donacionId'";
             if ($conex->query($updateQuery)) {
-                echo '<script language="javascript">window.location.href="../donacion_mone.php";alert("Donación rechazada exitosamente.");</script>';
+                echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'error',
+                    title: '¡Donación rechazada exitosamente.!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../donacion_mone.php';
+                });
+            </script>";
             } else {
                 echo "Error al actualizar el estado: " . $conex->error;
             }
@@ -46,3 +70,5 @@ if (isset($_POST["actualizar"])) {
     }
 }
 ?>
+    
+    </body></html>

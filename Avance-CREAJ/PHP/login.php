@@ -20,7 +20,7 @@ if (!isset($_POST['correo'])) {
 }
 
 $correo = $_POST['correo'];
-$contra = $_POST['contraseña'];
+$contra = $_POST['contra'];
 
 $sql_admin = "SELECT * FROM administradores WHERE correo = '$correo' and contraseña = '$contra'";
 $result_admin = mysqli_query($conn, $sql_admin);
@@ -30,7 +30,7 @@ $sql_user = "SELECT * FROM registro WHERE correo = '$correo' and contra = '$cont
 $result_user = mysqli_query($conn, $sql_user);
 $existe2 = mysqli_num_rows($result_user);
 
-$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' and contra ='$contra' ";
+$sql_hospital = "SELECT * FROM hospitales WHERE nombre = '$correo' and pass ='$contra' ";
 $result_hospital = mysqli_query($conn, $sql_hospital);
 $existe3 = mysqli_num_rows($result_hospital);
 
@@ -72,7 +72,7 @@ if ($existe1 > 0) {
     }
 } else if ($existe3 > 0) {
     while ($row = mysqli_fetch_array($result_hospital)) {
-        if ($correo == $row['nombre'] && $contra == $row['contra']) {
+        if ($correo == $row['nombre'] && $contra == $row['pass']) {
             $_SESSION['nombre'] = $row['nombre'];
             $_SESSION['id'] = $row['id'];
             echo "
@@ -83,7 +83,7 @@ if ($existe1 > 0) {
             showConfirmButton: false,
             timer: 2000
         }).then(function() {
-            window.location = 'crud_hospitales/index.php';
+            window.location = '../crud_hospitales/index.php';
         });
     </script>
     ";
