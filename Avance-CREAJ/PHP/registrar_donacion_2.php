@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -33,10 +37,30 @@ if(!empty($_POST["correo"])){
     
         // Ejecutar la consulta
         if ($sql) {
-            echo '<script language="javascript">alert("Donación registrada correctamente"); window.location.href="../HTML/Index.php";</script>';
+            echo "
+            <scrip language='JavaScript'>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡El formulario se ha registrado correctamente!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../HTML/Index.php';
+                });
+            </script>";
             exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
         } else {
-            echo '<script language="javascript">alert("Error en el registro de la donación: ' . mysqli_error($conn) . '");</script>';
+            echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'error',
+            title: 'Error en el registro de la donación',
+            text: '¡Vuelva a ingresar los datos!' ,
+        }).then(function() {
+            window.location = '../HTML/Index.php';
+        });
+    </script>
+    ";
         }
     }
 }else{
@@ -44,3 +68,5 @@ if(!empty($_POST["correo"])){
     exit; // Salir del script después de mostrar el mensaje de éxito y redirigir
 }
 ?>
+</body>
+</html>
