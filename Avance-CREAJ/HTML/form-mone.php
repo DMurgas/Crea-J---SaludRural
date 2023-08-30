@@ -110,7 +110,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         function validatePositiveNumber(inputElement) {
           const value = parseFloat(inputElement.value);
           if (isNaN(value) || value < 0) {
-            alert("Por favor, ingrese un valor positivo.");
+            alert("Por favor, ingrese un valor positivo antes de continuar...");
             inputElement.value = "";
             inputElement.focus();
             return false;

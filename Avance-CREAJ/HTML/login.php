@@ -27,7 +27,6 @@
             <input type="submit" value="INGRESAR" class="btn solid">
           </form>
           <form action="../php/registro.php" class="sign-up-form" method="post" autocomplete="off">
-
             <h2 class="title">Regístrate</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -53,7 +52,7 @@
               <i class="fas fa-lock"></i>
                 <input type="password" placeholder="Contraseña" name="contra" required>
             </div>
-                <input type="submit" class="btn" id="creaCuenta" name="creaCuenta" value="CREAR CUENTA">
+                <input type="submit" class="btn" value="CREAR CUENTA">
           </form>
         </div>
       </div>
@@ -87,8 +86,6 @@
     </div>
 
     <script src="../JS/app.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    
   </body>
 </html>
 
