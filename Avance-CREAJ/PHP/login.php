@@ -39,7 +39,17 @@ if ($existe1 > 0) {
         if ($correo == $row['correo'] && $contra == $row['contraseña']) {
             $_SESSION['correo'] = $row['correo'];
             $_SESSION['id'] = $row['id'];
-            echo '<script language="javascript">window.location.href="../crud/index.php";swal("¡Bienvenid@ Administrador, tienes el poder!");</script>';
+            echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'success',
+                    title: '¡Bienvenid@ a SaludRural Administrador!',
+                    showConfirmButton: false,
+                    timer: 2000
+                }).then(function() {
+                    window.location = '../crud/index.php';
+                });
+            </script>";
         }
     }
 } else if ($existe2 > 0) {
