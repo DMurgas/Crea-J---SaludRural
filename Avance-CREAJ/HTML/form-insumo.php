@@ -120,18 +120,24 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
       </div>
       <script>
-        // Función para validar que los valores ingresados no sean negativos
-        function validatePositiveNumber(inputElement) {
-          const value = parseFloat(inputElement.value);
-          if (isNaN(value) || value < 0) {
-            alert("Por favor, ingrese un valor positivo.");
-            inputElement.value = "";
-            inputElement.focus();
-            return false;
-          }
-          return true;
+  // Función para validar que los valores ingresados no sean negativos
+  function validatePositiveNumber(inputElement) {
+    const value = parseFloat(inputElement.value);
+    if (isNaN(value) || value < 0) {
+      swal.fire({
+        icon: 'error',
+        title: 'No se pueden colocar valores menores a 0',
+        text: 'Por favor utiliza valores mayores a 0',
+        onClose: () => {
+          inputElement.value = "";  // Limpia el campo si es negativo
+          inputElement.focus();     // Vuelve a enfocar el campo
         }
-      </script>
+      });
+      return false;
+    }
+    return true;
+  }
+</script>
       <div class="form-outer">
         <form action="../PHP/form-donacion-insumos.php" method="post">
           <div class="page slide-page">
