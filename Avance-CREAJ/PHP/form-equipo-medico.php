@@ -54,7 +54,15 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         $conn->close();
     }
 } else {
-    echo "Debe iniciar sesión para realizar una donación...";
+    echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'error',
+                    title: 'Debes iniciar sesion para realizar una donación',
+                }).then(function() {
+                    window.location = '../HTML/login.php';
+                });
+            </script>";
 }
 ?>
 </body>
