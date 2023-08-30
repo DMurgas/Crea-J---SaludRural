@@ -103,7 +103,7 @@ function validarCampos(paso) {
       swal.fire({
         icon: 'error',
         title: 'Por favor completa todos los campos solicitados',
-     });
+    });
       campo.focus();
       return false;
     }

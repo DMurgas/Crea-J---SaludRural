@@ -172,6 +172,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             <div class="field">
              <div class="label">Fecha de la donación</div>
              <input type="datetime-local" id="fecha" name="fecha" required>
+
               <script>
               document.getElementById("fecha").addEventListener("input", function() {
                   var fechaIngresada = document.getElementById("fecha").value;
