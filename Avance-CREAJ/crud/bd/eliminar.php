@@ -1,3 +1,7 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 // Conexión a la base de datos
 $servername = "localhost";
@@ -20,11 +24,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "DELETE FROM registro WHERE id = $id_donacion";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Registro eliminado exitosamente.";
+        echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: 'Registro eliminado correctamente',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../index.php';
+        });
+    </script>
+    ";
     } else {
-        echo "Error al eliminar la donación: " . $conn->error;
+        echo "
+    <script language='JavaScript'>
+        swal.fire({
+            icon: 'success',
+            title: 'Error',
+            showConfirmButton: false,
+            timer: 2000
+        }).then(function() {
+            window.location = '../HTML/login.php';
+        });
+    </script>
+    ". $conn->error;
     }
 }
 
 $conn->close();
 ?>
+</body>
+</html>

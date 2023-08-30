@@ -375,7 +375,7 @@ ALTER TABLE `tipo_donacion`
 -- Filtros para la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  ADD CONSTRAINT `blogs_ibfk_1` FOREIGN KEY (`hospital_id`) REFERENCES `hospitales` (`id`);
+  ADD CONSTRAINT `blogs_ibfk_1` FOREIGN KEY (`hospital_id`) REFERENCES `hospitales` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `comentarios`
@@ -388,36 +388,36 @@ ALTER TABLE `comentarios`
 -- Filtros para la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`),
-  ADD CONSTRAINT `equipo_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`);
+  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`)ON DELETE CASCADE,
+  ADD CONSTRAINT `equipo_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`)ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `insumos`
 --
 ALTER TABLE `insumos`
-  ADD CONSTRAINT `insumos_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`),
-  ADD CONSTRAINT `insumos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`);
+  ADD CONSTRAINT `insumos_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `insumos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `medicamentos`
 --
 ALTER TABLE `medicamentos`
-  ADD CONSTRAINT `medicamentos_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`),
-  ADD CONSTRAINT `medicamentos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`);
+  ADD CONSTRAINT `medicamentos_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `medicamentos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `monetaria`
 --
 ALTER TABLE `monetaria`
-  ADD CONSTRAINT `monetaria_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`),
-  ADD CONSTRAINT `monetaria_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`);
+  ADD CONSTRAINT `monetaria_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `monetaria_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `necesidades`
 --
 ALTER TABLE `necesidades`
-  ADD CONSTRAINT `necesidades_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`),
-  ADD CONSTRAINT `necesidades_ibfk_2` FOREIGN KEY (`id_donacion`) REFERENCES `tipo_donacion` (`id_donacion`);
+  ADD CONSTRAINT `necesidades_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `necesidades_ibfk_2` FOREIGN KEY (`id_donacion`) REFERENCES `tipo_donacion` (`id_donacion`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
