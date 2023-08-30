@@ -62,6 +62,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
   /* FIN DE EL DISEÑO DE EL TRADUCTOR */
     </style>
 <body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div id="google_translate_element"></div>
     <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <script src="../JS/traductor.js"></script>
@@ -75,9 +76,15 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
     </button>
 
     <script>
-        document.querySelector('.mas-info').addEventListener('click', function() {
-            alert('Equipo de protección personal: Esto puede incluir mascarillas quirúrgicas, guantes, batas, protectores faciales y gafas de seguridad.\n\n Suministros de desinfección: Desinfectantes de manos, desinfectantes para superficies, toallitas desinfectantes y otros productos similares.\n\n Material quirúrgico: Instrumentos médicos desechables o esterilizables, como guantes quirúrgicos, campos quirúrgicos, jeringas y agujas.  \n\n Suministros para curación: Vendajes, gasas, algodón, cintas médicas, antisépticos y otros suministros utilizados en el cuidado de heridas. \n\n Suministros para atención a largo plazo: Pañales para adultos, toallitas húmedas, suministros para cuidado de heridas crónicas, entre otros.');
-        });
+        document.addEventListener('DOMContentLoaded', function() {
+  document.querySelector('.mas-info').addEventListener('click', function() {
+    Swal.fire({
+      imageUrl: '../imagenes/Informacion.png',
+      imageHeight: 450,
+      imageAlt: 'A tall image'
+    });
+  });
+});
     </script>
 
     <div class="container">
@@ -113,18 +120,24 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
         </div>
       </div>
       <script>
-        // Función para validar que los valores ingresados no sean negativos
-        function validatePositiveNumber(inputElement) {
-          const value = parseFloat(inputElement.value);
-          if (isNaN(value) || value < 0) {
-            alert("Por favor, ingrese un valor positivo.");
-            inputElement.value = "";
-            inputElement.focus();
-            return false;
-          }
-          return true;
+  // Función para validar que los valores ingresados no sean negativos
+  function validatePositiveNumber(inputElement) {
+    const value = parseFloat(inputElement.value);
+    if (isNaN(value) || value < 0) {
+      swal.fire({
+        icon: 'error',
+        title: 'No se pueden colocar valores menores a 0',
+        text: 'Por favor utiliza valores mayores a 0',
+        onClose: () => {
+          inputElement.value = "";  // Limpia el campo si es negativo
+          inputElement.focus();     // Vuelve a enfocar el campo
         }
-      </script>
+      });
+      return false;
+    }
+    return true;
+  }
+</script>
       <div class="form-outer">
         <form action="../PHP/form-donacion-insumos.php" method="post">
           <div class="page slide-page">
@@ -148,9 +161,8 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
               <input type="Number" name="telefono" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field">
-             <div class="label">Fecha de la donación</div>
-             <input type="datetime-local" id="fecha" name="fecha" required>
-             
+              <div class="label">Fecha de la donación</div>
+              <input type="datetime-local" id="fecha" name="fecha" required>
               <script>
               document.getElementById("fecha").addEventListener("input", function() {
                   var fechaIngresada = document.getElementById("fecha").value;
@@ -160,7 +172,10 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                   fechaActual.setSeconds(0, 0); // Establecer segundos y milisegundos en cero
                   
                   if (new Date(fechaIngresada) < fechaActual) {
-                      alert("La fecha debe ser presente o futura.");
+                    swal.fire({
+                    icon: 'error',
+                    title: 'La fecha debe ser presente o futura',
+                  });
                       document.getElementById("fecha").value = ""; // Limpiar el campo de fecha
                   }
               });

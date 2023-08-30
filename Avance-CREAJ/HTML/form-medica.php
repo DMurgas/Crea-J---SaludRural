@@ -204,7 +204,7 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
             </div>
             <div class="field">
               <div class="label">Cantidad de medicamentos</div>
-              <input type="number"name="cantidad" required onblur="validatePositiveNumber(this)">
+              <input type="number"name="cantidad" placeholder="Blister o caja" required onblur="validatePositiveNumber(this)">
             </div>
             <div class="field btns">
               <button class="prev-2 prev">Atrás</button>

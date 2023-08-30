@@ -38,7 +38,7 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
 
         if ($conn->query($sql) === TRUE) {
             echo "
-            <scrip language='JavaScript'>
+            <script language='JavaScript'>
                 swal.fire({
                     icon: 'success',
                     title: '¡Tu formulario se ha registrado exitosamente!',
