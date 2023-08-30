@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-08-2023 a las 07:02:22
+-- Tiempo de generación: 30-08-2023 a las 02:15:55
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -101,6 +101,7 @@ CREATE TABLE `hospitales` (
   `nombre` varchar(70) NOT NULL,
   `descripcion` text NOT NULL,
   `lugar` text NOT NULL,
+  `contra` varchar(70) NOT NULL,
   `foto_hospital` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -159,7 +160,7 @@ CREATE TABLE `monetaria` (
   `telefono` varchar(100) NOT NULL,
   `fecha` datetime NOT NULL,
   `monto` varchar(100) NOT NULL,
-  `estado` varchar(50) DEFAULT 'Pendiente',
+  `estado` enum('Pendiente','Aceptada','Rechazada') DEFAULT 'Pendiente',
   `tarjeta` varchar(100) NOT NULL,
   `cvv` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -316,7 +317,7 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `equipo`
@@ -352,7 +353,7 @@ ALTER TABLE `monetaria`
 -- AUTO_INCREMENT de la tabla `necesidades`
 --
 ALTER TABLE `necesidades`
-  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
