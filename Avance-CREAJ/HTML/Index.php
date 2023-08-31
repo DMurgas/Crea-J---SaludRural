@@ -1,10 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+    <body>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <?php
 session_start();
 error_reporting(0);
 
 // Verificar si el usuario ha iniciado sesión
 if (!isset($_SESSION['correo']) || empty($_SESSION['correo'])) {
-    echo '<script language="javascript">alert("Bienvenido a Salud Rural");window.location.href="../HTML/Index.html"</script>';
+  echo "
+      <script language='JavaScript'>
+          swal.fire({
+              icon: 'success',
+              title: '¡Bienvenid@ a SaludRural!',
+              showConfirmButton: false,
+              timer: 2000
+          }).then(function() {
+              window.location = 'Index.html';
+          });
+      </script>";
     die();
 } else {
     include("../PHP/conex.php");
