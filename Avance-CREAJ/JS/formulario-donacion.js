@@ -8,4 +8,12 @@ document.addEventListener('click', e => {
         $signIn.classList.toggle('active');
         $signUp.classList.toggle('active')
     }
+
+});
+document.addEventListener('keydown', e => {
+    if (e.target === $btnSignIn || e.target === $btnSignUp) {
+        $signIn.classList.toggle('active');
+        $signUp.classList.toggle('active')
+    }
+
 });
