@@ -157,11 +157,6 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
                     <i class="fa fa-hospital-o"></i>
                     <span>Hospitales</span></a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="necesidades.php">
-                    <i class="fa fa-hospital-o"></i>
-                    <span>Necesidades actuales</span></a>
-            </li>
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">

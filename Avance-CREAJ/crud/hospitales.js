@@ -1,9 +1,9 @@
 $(document).ready(function(){
-    tablaregistro = $("#tablaHospitales").DataTable({
+    tablahospitales = $("#tablaHospitales").DataTable({
        "columnDefs":[{
         "targets": -1,
         "data":null,
-        "defaultContent": "<div class='text-center'><button class='btn btn-danger btnBorrar'>Borrar</button></div>"  
+        "defaultContent": "<div class='text-center'><div class='btn-group'><button class='btn btn-primary btnEditar'>Editar</button><button class='btn btn-danger btnBorrar'>Borrar</button></div></div>"  
        }],
         
     "language": {
@@ -33,7 +33,7 @@ $("#btnNuevo").click(function(){
     opcion = 1; //alta
 });    
 
-$(document).on("click", "", function(){
+$(document).on("click", ".btnEditar", function(){
     fila = $(this).closest("tr");
     id = parseInt(fila.find('td:eq(0)').text());
     nombre = fila.find('td:eq(1)').text();
@@ -77,29 +77,25 @@ $(document).on("click", ".btnBorrar", function(){
 });
     
 $("#formHospitales").submit(function(e){
-    e.preventDefault();    
+    e.preventDefault();
     nombre = $.trim($("#nombre").val());
     descripcion = $.trim($("#descripcion").val());
     lugar = $.trim($("#lugar").val()); 
-    contra = $.trim($("#contra").val()); // Cambio de "password" a "contra"
+    pass = $.trim($("#pass").val()); // Obtener el valor de la contraseña
     $.ajax({
         url: "bd/crud_hospitales.php",
         type: "POST",
         dataType: "json",
-        data: {nombre: nombre, descripcion: descripcion, lugar: lugar, pass: contra, id: id, opcion: opcion}, // Cambio de "password" a "contra"
+        data: {nombre: nombre, descripcion: descripcion, lugar: lugar, pass: pass, id: id, opcion: opcion},
         success: function(data){  
             console.log(data);
             id = data[0].id;            
             nombre = data[0].nombre;
             descripcion = data[0].descripcion;
             lugar = data[0].lugar;
-            contra = data[0].contra;
-                
-                if(opcion == 1){
-                    tablaregistro.row.add([id, nombre, descripcion, lugar, contra]).draw();
-                } else {
-                    tablaregistro.row(fila).data([id, nombre, descripcion, lugar]).draw();
-                }  
+            pass = data[0].pass;
+            if(opcion == 1){tablahospitales.row.add([id,nombre,descripcion,lugar,pass]).draw();}
+            else{tablahospitales.row(fila).data([id,nombre,descripcion,lugar]).draw();}  
             location.reload();          
         }        
     });

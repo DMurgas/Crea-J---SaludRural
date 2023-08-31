@@ -76,23 +76,24 @@ $(document).on("click", ".btnBorrar", function(){
     }   
 });
     
-$("#formNecesidades").submit(function(e){
-    e.preventDefault();    
-    titulo = $.trim($("#titulo").val());
-    contenido = $.trim($("#contenido").val());
+$("#formHospitales").submit(function(e){
+    e.preventDefault();
+    nombre = $.trim($("#nombre").val());
+    descripcion = $.trim($("#descripcion").val());
     lugar = $.trim($("#lugar").val()); 
+    contra = $.trim($("#contra").val()); // Obtener el valor de la contraseña
     $.ajax({
-        url: "bd/crud_necesidades.php",
+        url: "bd/crud_hospitales.php",
         type: "POST",
         dataType: "json",
-        data: {titulo:titulo, contenido:contenido, lugar:lugar, id:id, opcion:opcion},
-        success: function(data){  
+        data: {nombre: nombre, descripcion: descripcion, lugar: lugar, pass: contra, id: id, opcion: opcion},
+        success: function(data){   
             console.log(data);
             id = data[0].id;            
             titulo = data[0].titulo;
             contenido = data[0].contenido;
             lugar = data[0].lugar;
-            if(opcion == 1){tablaNecesidades.row.add([id,titulo,contenido,lugar]).draw();}
+            if(opcion == 1){tablaNecesidades.row.add([id,titulo,contenido,lugar,contra]).draw();}
             else{tablaNecesidades.row(fila).data([id,titulo,contenido,lugar]).draw();}  
             location.reload();          
         }        

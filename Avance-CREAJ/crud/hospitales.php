@@ -85,7 +85,7 @@ $data=$resultado->fetchAll(PDO::FETCH_ASSOC);
                 </div>     
                 <div class="form-group">
                     <label for="contra" class="col-form-label">Contraseña:</label>
-                    <input type="password" class="form-control" id="contra" >
+                    <input type="password" class="form-control" id="pass" >
                 </div>                  
             </div>
             <div class="modal-footer">
