@@ -101,7 +101,7 @@ CREATE TABLE `hospitales` (
   `nombre` varchar(70) NOT NULL,
   `descripcion` text NOT NULL,
   `lugar` text NOT NULL,
-  `contra` varchar(70) NOT NULL,
+  `pass` varchar(70) NOT NULL,
   `foto_hospital` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
