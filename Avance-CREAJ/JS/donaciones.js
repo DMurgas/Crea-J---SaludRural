@@ -1,3 +1,13 @@
+// Obtén todos los campos del formulario
+const inputFields = document.querySelectorAll('input');
+
+inputFields.forEach(function(input) {
+  input.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+      event.preventDefault(); // Esto evita que se realice una acción al presionar "Enter"
+    }
+  });
+});
 
 const slidePage = document.querySelector(".slide-page");
 const nextBtnFirst = document.querySelector(".firstNext");

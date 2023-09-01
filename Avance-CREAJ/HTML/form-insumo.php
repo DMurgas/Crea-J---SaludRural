@@ -77,14 +77,14 @@ div .skiptranslate.goog-te-gadget, .goog-te-combo .dark{
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-  document.querySelector('.mas-info').addEventListener('click', function() {
-    Swal.fire({
-      imageUrl: '../imagenes/Informacion.png',
-      imageHeight: 450,
-      imageAlt: 'A tall image'
-    });
-  });
-});
+       document.querySelector('.mas-info').addEventListener('click', function() {
+          Swal.fire({
+            imageUrl: '../imagenes/Informacion.png',
+            imageHeight: 450,
+            imageAlt: 'A tall image'
+          });
+        });
+      });
     </script>
 
     <div class="container">
