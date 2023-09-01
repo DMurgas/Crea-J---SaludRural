@@ -35,7 +35,7 @@ if ($resultado) {
     <script language='JavaScript'>
         swal.fire({
             icon: 'success',
-            title: 'Te haz registrado correctamente',
+            title: 'Te has registrado correctamente',
             showConfirmButton: false,
             timer: 2000
         }).then(function() {
