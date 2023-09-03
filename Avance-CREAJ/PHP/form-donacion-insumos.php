@@ -18,7 +18,20 @@ if (isset($_SESSION['usuario_id']) && !empty($_SESSION['usuario_id'])) {
         $insumo = $_POST['insumo'];
         $cantidad = $_POST ['cantidad'];
         $descripcion = $_POST['descripcion'];
-
+if (strpos($correo, "@gmail.com") === false) {
+            echo "
+            <script language='JavaScript'>
+                swal.fire({
+                    icon: 'error',
+                    title: 'El correo electrónico debe ser de dominio @gmail.com',
+                    showConfirmButton: false,
+                    timer: 3000
+                }).then(function() {
+                    window.location = '../HTML/form-mone.php';
+                });
+            </script>";
+            exit; // Detiene la ejecución del script si el correo no es válido
+        }
         // Realizar la conexión a la base de datos
         $db_host = 'localhost';
         $db_username = 'root';
