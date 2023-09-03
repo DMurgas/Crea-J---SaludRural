@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-08-2023 a las 02:15:55
+-- Tiempo de generación: 04-09-2023 a las 00:47:30
 -- Versión del servidor: 10.4.27-MariaDB
 -- Versión de PHP: 8.0.25
 
@@ -105,6 +105,13 @@ CREATE TABLE `hospitales` (
   `foto_hospital` blob DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `hospitales`
+--
+
+INSERT INTO `hospitales` (`id`, `nombre`, `descripcion`, `lugar`, `pass`, `foto_hospital`) VALUES
+(1, 'Hospital Nacional Rosales', 'Proporcionar servicios de salud especializados y de alta complejidad en medicina y cirugía a la población mayor de doce años del país, en los aspectos curativos, de rehabilitación e investigación, con el propósito de restablecer la salud de la población salvadoreña.', '25 Avenida Norte entre 1a. Calle Poniente y, Alameda Franklin Delano Roosevelt, San Salvador', '123', NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -181,6 +188,13 @@ CREATE TABLE `necesidades` (
   `imagen` blob DEFAULT NULL,
   `fecha_creacion` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `necesidades`
+--
+
+INSERT INTO `necesidades` (`id_necesidad`, `id_hospital`, `id_donacion`, `nombre`, `descripcion`, `lugar`, `imagen`, `fecha_creacion`) VALUES
+(7, 1, 2, 'messi', 'dadsadasds sdasdad ', 'dsadsa', 0x2e2e2f696d6167656e2d6e652f686f73706974616c2e6a7067, '2023-09-03 22:02:10');
 
 -- --------------------------------------------------------
 
@@ -317,7 +331,13 @@ ALTER TABLE `administradores`
 -- AUTO_INCREMENT de la tabla `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios`
+--
+ALTER TABLE `comentarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `equipo`
@@ -329,7 +349,7 @@ ALTER TABLE `equipo`
 -- AUTO_INCREMENT de la tabla `hospitales`
 --
 ALTER TABLE `hospitales`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `insumos`
@@ -353,13 +373,13 @@ ALTER TABLE `monetaria`
 -- AUTO_INCREMENT de la tabla `necesidades`
 --
 ALTER TABLE `necesidades`
-  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_necesidad` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `registro`
 --
 ALTER TABLE `registro`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_donacion`
@@ -403,7 +423,7 @@ ALTER TABLE `insumos`
 --
 ALTER TABLE `medicamentos`
   ADD CONSTRAINT `medicamentos_ibfk_1` FOREIGN KEY (`id_hospital`) REFERENCES `hospitales` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `medicamentos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`)ON DELETE CASCADE;
+  ADD CONSTRAINT `medicamentos_ibfk_2` FOREIGN KEY (`id_usuario`) REFERENCES `registro` (`id`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `monetaria`
